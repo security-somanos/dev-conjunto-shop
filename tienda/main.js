@@ -3,7 +3,8 @@ var app = new Vue({
     el: '#app',
     data: {
         search: "",
-        price: 0,
+        price: 55,
+        discounts: discounts,
         productList: products,
         cartTotal: 0,
         cart: [],
@@ -36,17 +37,32 @@ var app = new Vue({
             this.cart = this.productList.filter(function (item) {
                 return item.total > 0;
             });
-
             for (var item in this.cart) {
-                this.cart[item].total = this.cart[item].amount * this.cart[item].price;
-                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
+                if (this.cart[item].type == 'veggie')
+                    this.cartItems += this.cart[item].amount;
+            }
+            
+            // add discount by tier
+            if (this.cartItems <= 1) { this.price = 55 }
+            else if (this.cartItems == 2) { this.price = 52.50 }
+            else if (this.cartItems == 3) { this.price = 50 }
+            else if (this.cartItems == 4) { this.price = 47.50 }
+            else if (this.cartItems >= 5 && this.cartItems) { this.price = 45 }
+            
+            for (var item in this.cart) {
                 if (this.cart[item].type == 'fruit') {
+                    this.cart[item].total = this.cart[item].amount * this.cart[item].price;
+                    this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
                     this.cartHas.fruit = true;
                 }
                 if (this.cart[item].type == 'veggie') {
+                    this.cart[item].price = this.price;
+                    this.cart[item].total = this.cart[item].amount * this.price;
                     this.cartHas.veggie = true;
                 }
                 if (this.cart[item].type == "meal") {
+                    this.cart[item].total = this.cart[item].amount * this.cart[item].price;
+                    this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
                     this.cartHas.meal = true;
                 }
                 this.cartTotal += this.cart[item].total;
@@ -55,7 +71,11 @@ var app = new Vue({
         },
         addItem: function (item) {
             item.amount++;
-            item.total = item.amount * item.price;
+            if (item.price && item.type != "veggie") {
+                item.total = item.amount * item.price;
+            } else {
+                item.total = item.amount * this.price;
+            }
             this.getTotal();
         },
         removeItem: function (item) {
@@ -63,13 +83,22 @@ var app = new Vue({
             if (item.amount > 0) {
                 item.amount--;
             }
-            item.total = item.amount * item.price;
+            if (item.price && item.type != "veggie") {
+                item.total = item.amount * item.price;
+            } else {
+                item.price = this.price;
+                item.total = item.amount * this.price;
+            }
             this.getTotal();
         },
         updateValue: function (item) {
             if (item.amount == "" || parseFloat(item.amount) == NaN) { item.amount = 0 }
             else (item.amount = parseFloat(item.amount))
-            item.total = item.amount * item.price;
+            if (item.price) {
+                item.total = item.amount * item.price;
+            } else {
+                item.total = item.amount * this.price;
+            }
             this.getTotal();
         },
         saveSale: function (cart) {
@@ -107,13 +136,13 @@ var app = new Vue({
                     sale.push({
                         variedad: cart[item].name,
                         cantidad: cart[item].amount,
-                        precio: cart[item].price,
+                        precio: cart[item].price || this.price,
                         pago: cart[item].total
                     })
                 }
 
                 var self = this;
-                database.ref('salesMayorista/' + today).push(sale, function (error) {
+                database.ref('sales/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
@@ -121,13 +150,34 @@ var app = new Vue({
                     }
                 });
 
-                database.ref('salesMayoristaArchive/' + today).push(sale, function (error) {
+                database.ref('salesArchive/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
                         self.saleComplete = true;
                     }
                 });
+                
+                // ref.child("users").orderByChild("name").equalTo(sale.name).once("value",snapshot => {
+                //     if (snapshot.exists()){
+                //     const userData = snapshot.val();
+                //       var userReg = {
+                //           name: sale.name,
+                //           address: sale.address,
+                //           phone: sale.phone
+                //       }
+                //       database.ref('users').push(userReg, function(){
+                //           if (error) {
+                //               console.log(error)
+                //           } else {
+                //               console.log('User already exists') 
+                //           }
+                //       })
+                //     } else {
+                //         console.log("exists!", userData);
+                //     }
+                // });
+
             }
         },
 
