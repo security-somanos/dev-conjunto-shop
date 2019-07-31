@@ -52,7 +52,7 @@ table {
     justify-content: center;
     align-items: center;
     color: white;
-    background-image: url('images/portadaaconcagua.jpg');
+    background-image: url('images/PORTADATUNUYAN.JPG');
     background-size: cover;
 }
 
@@ -193,36 +193,36 @@ table {
 .home .tiles .section .link .content {}
 
 .home .tiles .section.productores {
-    background-image: url(images/lavalle.jpg);
+    background-image: url(images/PAGLIAFORA2.JPG);
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.vrde {
-    background-image: url('images/TUNUYAN.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/sanmartin.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/lasheras.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.huertas {
-    background-image: url('images/lujan.jpg');
+    background-image: url('images/');
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.eventos {
-    background-image: url('images/tupungato.jpg');
+    background-image: url('images/');
     background-blend-mode: soft-light;
 }
 

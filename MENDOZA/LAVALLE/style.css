@@ -52,7 +52,7 @@ table {
     justify-content: center;
     align-items: center;
     color: white;
-    background-image: url('images/lavalle.jpg');
+    background-image: url('images/LAVALLEPORTADA2.jpg');
     background-size: cover;
 }
 
@@ -193,36 +193,36 @@ table {
 .home .tiles .section .link .content {}
 
 .home .tiles .section.productores {
-    background-imagen: url(images/fincacosmosvideo.mov);
+    background-image: url(images/FINCACOSMOS.JPG);
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.vrde {
-    background-image: url('images/fincacosmosvideo.mov');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/cocina.jpeg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/delivery.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.huertas {
-    background-image: url('images/huerta.jpg');
+    background-image: url('images/');
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.eventos {
-    background-image: url('images/feria3.jpg');
+    background-image: url('images/');
     background-blend-mode: soft-light;
 }
 

@@ -49,10 +49,10 @@ table {
     height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     color: white;
-    background-image: url('images/portadaaconcagua.jpg');
+    background-image: url('images/PAGLIAFORA1.JPG');
     background-size: cover;
 }
 
@@ -62,20 +62,20 @@ table {
 }
 
 .home .header img {
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .home .header .logo {
-    max-width: 250px;
-    margin-bottom:20px;
+    max-width: 150px;
+    margin-bottom:0px;
 }
 
 .home .header .headerContent .headerButton {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    background-color: #00cc66;
+    height: 50px;
+    background-color: #53014154;
     color: white;
 }
 
@@ -90,9 +90,9 @@ table {
     color: #ffffff;
     font-family: Ubuntu;
     text-align: center;
-    /* margin-top: 30px; */
+    /* margin-top: 100px; */
     position: relative;
-    top: 28px;
+    top: 10px;
 }
 
 .home .header .social {
@@ -100,7 +100,7 @@ table {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
     top: 40px;
 }
@@ -113,9 +113,9 @@ table {
     align-content: center;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 20px;
-    color: rgb(204, 204, 204);
-    font-family: Ubuntu;
+    margin-bottom: 50px;
+    color: rgb(255, 255, 255);
+    font-family: ;
     align-items: center;
 }
 
@@ -193,38 +193,29 @@ table {
 .home .tiles .section .link .content {}
 
 .home .tiles .section.productores {
-    background-image: url(images/lavalle.jpg);
+    background-image: url(images/sobrenosotros.JPG);
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.vrde {
-    background-image: url('images/TUNUYAN.jpg');
+    background-image: url('images/voluntariado.JPG');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/sanmartin.jpg');
+    background-image: url('images/TALLERES2.JPG');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/lasheras.jpg');
+    background-image: url('images/vISITASGUIADAS.JPG');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
-.home .tiles .section.huertas {
-    background-image: url('images/lujan.jpg');
-    background-blend-mode: soft-light;
-}
-
-.home .tiles .section.eventos {
-    background-image: url('images/tupungato.jpg');
-    background-blend-mode: soft-light;
-}
 
 .hyperspan
 {
