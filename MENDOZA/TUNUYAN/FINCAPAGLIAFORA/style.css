@@ -66,8 +66,8 @@ table {
 }
 
 .home .header .logo {
-    max-width: 150px;
-    margin-bottom:0px;
+    max-width: 250px;
+    margin-bottom:235px;
 }
 
 .home .header .headerContent .headerButton {
@@ -96,37 +96,37 @@ table {
 }
 
 .home .header .social {
-    max-width: 200px;
+    max-width: 550px;
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: flex;
     justify-content: center;
-    position: relative;
+    position: top;
     top: 40px;
 }
 
 .home .header .social .item {
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
+    flex-direction: flex;
+    text-align: flex;
+    justify-content: flex;
+    align-content: flex;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: rgb(255, 255, 255);
-    font-family: ;
-    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: flex;
 }
 
 .home .header .social .item .itemLink {
     text-decoration: none;
     font-family: Ubuntu;
-    text-align: center;
+    text-align: flex;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ccc;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: rgb(255, 255, 255);
 }
 
 .home .header .social .fb {}
