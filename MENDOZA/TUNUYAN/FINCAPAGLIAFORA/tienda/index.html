@@ -42,17 +42,16 @@
                     <br />
                     Consultar por entregas en otras provincias y/o precios myoristas
                     <br />
-                    Contacto: 2622 402689. 
+                    Contacto: 2622 402689.
                     <br />
-                    Última actualización 30/07. 
+                    Última actualización 30/07.
                 </div>
             </div>
         </div>
         <div class="products">
             <div v-cloak class="item" v-for="item in filteredItems">
                 <img :src="`${item.url}`" class="productImage">
-                <div class="title" v-if="item.type == 'veggie'">{{item.name}} = ${{ price }}</div>
-                <div class="title" v-if="item.type == 'fruit' || item.type == 'meal'">{{item.name}} = ${{ item.price }}
+                <div class="title">{{item.name}} = ${{ item.price }}
                 </div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
@@ -67,14 +66,14 @@
                 <div class="discounts">
                     <div class="discountTitle">
                         <div class="subtitle">
-                                     
+
                         </div>
                     </div>
                 </div>
                 <div class="schedule">
-                    
+
                     <div class="title">
-        
+
                     </div>
                     <img src="images/LOGOECOVALLE.png" alt="" class="logoMainIcon">
                 </div>
@@ -110,20 +109,21 @@
                 </div>
                 <div class="mealCart" v-if="cartHas.meal == true">
                     <div class="fruits">Verduras y Frutas
-                    <div class="item" v-for="item in cart" v-if="item.type == 'meal'">
-                        <img :src="`${item.url}`" alt="" class="img">
-                        <div class="itemName">
-                            <div class="name">{{item.name}}</div>
-                            <div class="itemTotal">
-                                <div class="amount">${{ item.price }} * {{item.amount}}</div>
-                                <div class="equals">=</div>
-                                <div class="total"> ${{item.total}}</div>
+                        <div class="item" v-for="item in cart" v-if="item.type == 'meal'">
+                            <img :src="`${item.url}`" alt="" class="img">
+                            <div class="itemName">
+                                <div class="name">{{item.name}}</div>
+                                <div class="itemTotal">
+                                    <div class="amount">${{ item.price }} * {{item.amount}}</div>
+                                    <div class="equals">=</div>
+                                    <div class="total"> ${{item.total}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="cartTotal">Total = ${{cartTotal}}</div>
                 </div>
             </div>
-            <div class="cartTotal">Total = ${{cartTotal}}</div>
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
                 <div class="required">* Por favor llene los campos requeridos</div>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="contact">
                         <img src="images/phone.png" alt="" class="phone"> 2622 402689
-                        
+
                     </div>
                 </div>
             </div>
@@ -167,14 +167,14 @@
     <script src="main.js"></script>
     <script>
 
-    
+
         var config = {
             apiKey: "AIzaSyD6JW21jvSLGp8dhmpNp7TqVy87RAkKnE4",
             authDomain: "finca-cosmos-lavalle.firebaseapp.com",
             databaseURL: "https://finca-cosmos-lavalle.firebaseio.com",
             projectId: "finca-cosmos-lavalle",
             storageBucket: "finca-cosmos-lavalle.appspot.com",
-             messagingSenderId: "953582604875",
+            messagingSenderId: "953582604875",
             appId: "1:953582604875:web:dae961e99dd76a31"
         };
 
@@ -183,5 +183,3 @@
 
     </script>
 </body>
-
-

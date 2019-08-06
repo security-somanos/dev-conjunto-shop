@@ -12,30 +12,11 @@ let products = [
     { name: 'Dulce de Manzana y Canela (450gr)', amount: 0, url: 'images/xdulcemanzanacanela.jpg', type: 'veggie', price: 90 },
     { name: 'Dulce de Tomate (450gr)', amount: 0, url: 'images/xdulcetomate.jpg', type: 'veggie', price: 90 },
     { name: 'Pasta de Cacho de Cabra (100gr)', amount: 0, url: 'images/xpastacachocabra.jpg', type: 'veggie', price: 55 },
-    { name: 'Pasta de Jalapeño (100gr)', amount: 0, url: 'images/xpastajalapeño.jpg', type: 'veggie', price: 55 },
-    
-    
-
-    
-    
+    { name: 'Pasta de Jalapeño (100gr)', amount: 0, url: 'images/xpastajalapeño.jpg', type: 'veggie', price: 55 }
+   
 ]
- products = products.sort()
 
-//Scroll top on pageload
-window.addEventListener('scroll', function (evt) {
-
-    var distance_from_top = document.documentElement.scrollTop
-
-    if (distance_from_top === 0) {
-        document.getElementsByClassName("search")[0].classList.remove("fixed");
-    }
-
-    if (distance_from_top > 0) {
-        document.getElementsByClassName("search")[0].classList.add("fixed");
-    }
-
-});
-
+products = products.sort();
 
 //Scroll top on pageload
 window.addEventListener('scroll', function (evt) {
