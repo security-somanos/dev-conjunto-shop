@@ -113,7 +113,7 @@ var app = new Vue({
                 }
 
                 var self = this;
-                database.ref('fincaCosmos/' + today).push(sale, function (error) {
+                database.ref('fincacosmos/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
@@ -121,7 +121,7 @@ var app = new Vue({
                     }
                 });
 
-                database.ref('fincaCosmosArchive/' + today).push(sale, function (error) {
+                database.ref('fincacosmosArchive/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
