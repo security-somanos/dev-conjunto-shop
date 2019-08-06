@@ -79,8 +79,6 @@
                 </div>
                 <div class="veggieCart" v-if="cartHas.veggie == true" v-cloak>
                     <div class="veggies">Conservas</div>
-                    <div class="price">Precio por unidad = ${{this.price}}</div>
-                    <div class="price">Unidades = {{this.cartItems}}</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'veggie'">
                         <img :src="`${item.url}`" alt="" class="img">
                         <div class="itemName">
