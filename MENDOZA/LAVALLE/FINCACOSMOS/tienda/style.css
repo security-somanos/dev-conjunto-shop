@@ -172,6 +172,7 @@ body {
 
 .filter .button {
     padding: 13px;
+    display: flex;
     background-color: #9e9e9e33;
     color: #808080;
     display: flex;
@@ -181,8 +182,10 @@ body {
     max-width: 146px;
     margin-bottom: 0px;
     flex: 1;
-    padding-top: 15px;
+    justify-content: center;
+    align-items: center;
     font-weight: 100;
+    font-size: 12px;
 }
 
 .filter .button:nth-child(2) {
