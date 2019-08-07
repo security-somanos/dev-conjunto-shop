@@ -194,7 +194,7 @@ body {
 
 .filter .button.active {
     color: white;
-    background-color: #00cc65;
+    background-color: #56a590;
 }
 
 
@@ -331,7 +331,7 @@ body {
 .fruitCart .fruits, .mealCart .fruits {
     padding: 10px;
     background: #333;
-    color: #00cc65;
+    color: #56a590;
     font-size: 25px;
 }
 
@@ -462,7 +462,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    background-color: #00cc65;
+    background-color: #56a590;
     height: 35px;
     color: white;
     font-size: 35px;
@@ -568,7 +568,7 @@ body {
 .main .cart .veggieCart .veggies {
     padding: 10px;
     background: #333;
-    color: #00cc65;
+    color: #56a590;
     font-size: 25px;
 }
 
@@ -637,13 +637,13 @@ body {
 }
 
 .main .cart .item .total {
-    color: #00cc70;
+    color: #56a590;
 }
 
 .main .cart .cartTotal {
     font-size: 25px;
     margin: 40px 0px;
-    color: #00cc65;
+    color: #56a590;
     flex: 1 100%;
     text-align: center;
 }
@@ -678,7 +678,7 @@ body {
     width: 280px;
     display: flex;
     text-align: center;
-    background-color: #00cc65;
+    background-color: #56a590;
     justify-content: center;
     padding: 20px;
     cursor: pointer;
