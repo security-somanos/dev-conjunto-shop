@@ -37,11 +37,13 @@
                     Bienvenides al carro de compras de Los Productores Agroecológicos y Orgánicos de Luján y alrededores
                     <br />
                     <br />
-                    Realizanos tu pedido con 48 Hrs. de anticipación. 
+                    Las entregas se realizan martes y jueves, los pedidos se toman con 48 hrs de anticipación. El mínimo es de $5.000.-
                     <br />
                     HACEMOS ENVÍOS A TODO EL PAIS ! (Consultar costos)
                     <br />
                     Retirá por nuestra Colonia y obtené un 10% de descuento !! Lunes a viernes de 10 a 18 hrs.
+                    <br />
+                    COMPRAS COMUNITARIAS: Se debe llenar el cupo mínimo para que pedido se confirme, una vez confirmado se pacta la entrega en 48hrs
                     <br />
                     <br />
                     Contacto: 011 15 6222 0308.
@@ -132,6 +134,8 @@
                 <input class="requiredInput" type="text" placeholder="Direccion" v-model="userData.address"
                     :disabled="userData.delivery == false" v-bind:class="{disabled:userData.delivery == false}">
                 <input type="email" placeholder="Correo" v-model="userData.email" required>
+                <input type="text" placeholder="Nombre de la Compra Comunitaria" v-model="userData.comprascomunitarias">
+                <input class="requiredInput" type="text" placeholder="Día de entrega: Martes o Jueves" v-model="userData.diadeentrega" required>
                 <div class="delivery">
                     <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a
                         tu casa <br>

@@ -46,7 +46,7 @@ table {
 .home {}
 
 .home .header {
-    height: 633px;
+    height: 700px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -92,10 +92,10 @@ table {
 
 .home .header .headerContent .headerText {
     color: #000000;
-    font-family: Ubuntu;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     position: relative;
-    top: 198px;
+    top: 225px;
 }
 
 .home .header .social {
