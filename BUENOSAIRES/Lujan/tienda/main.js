@@ -112,7 +112,7 @@ var app = new Vue({
                 }
 
                 var self = this;
-                database.ref('pagliafora/' + today).push(sale, function (error) {
+                database.ref('productoresdelujan/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
@@ -120,7 +120,7 @@ var app = new Vue({
                     }
                 });
 
-                database.ref('pagliaforaArchive/' + today).push(sale, function (error) {
+                database.ref('ProductoresdelujanArchive/' + today).push(sale, function (error) {
                     if (error) {
                         console.log(error)
                     } else {
