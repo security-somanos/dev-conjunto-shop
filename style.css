@@ -196,37 +196,37 @@ table {
 .home .tiles .section .link .content {}
 
 .home .tiles .section.productores {
-    background-image: url(images/mendoza.jpg);
+    background-image: url(images/buenosaires.jpg);
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.vrde {
-    background-image: url('images/buenosaires.jpg');
+    background-image: url('images/mendoza.JPG');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/cordoba.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/jujuy.jpg');
+    background-image: url('images/');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.huertas {
-    background-image: url('images/entrerios.jpg');
+    background-image: url('images/');
     background-blend-mode: soft-light;
     background-size: cover;
 }
 
 .home .tiles .section.eventos {
-    background-image: url('images/RIONEGRO.JPG');
+    background-image: url('images/');
     background-blend-mode: soft-light;
 }
 
