@@ -132,11 +132,9 @@
                 <input class="requiredInput" type="text" placeholder="Direccion" v-model="userData.address"
                     :disabled="userData.delivery == false" v-bind:class="{disabled:userData.delivery == false}" required>
                 <input type="email" placeholder="Correo" v-model="userData.email" required>
-                <input type="text" placeholder="Nombre de la Compra Comunitaria" v-model="userData.comprascomunitarias">
-                <input class="requiredInput" type="text" placeholder="Día de entrega: Martes o Jueves" v-model="userData.diadeentrega" required>
                 <div class="delivery">
                     <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a
-                        tu casa <br>
+                        domicilio <br>
                         <div class="small">* Consulte costo de envio</div>
                     </label>
                     <input id="delivery" type="checkbox" v-model="userData.delivery">
@@ -151,7 +149,7 @@
                 <img src="images/logoMainIconOnly.png" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="images/fb.png" alt="" class="fb">/ Colonia20deAbril
+                        <img src="images/fb.png" alt="" class="fb">/El Conjunto
                         <img src="images/insta.png" alt="" class="insta">
                     </div>
                     <div class="contact">
