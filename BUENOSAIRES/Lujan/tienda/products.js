@@ -8,7 +8,7 @@ let products = [
     { name: 'Cajón Apio (4kg)', amount: 0, url: 'images/apio.jpg', type: 'veggie', price: 300 },
     { name: 'Caja Banana (18kg)', amount: 0, url: 'images/banana.jpeg', type: 'fruit', price: 520 },
     // { name: 'Bolsa Batata (17kg)', amount: 0, url: 'images/batata.jpg', type: 'veggie', price: 460 },
-    // { name: 'Bolsa Boniato (17kg)', amount: 0, url: 'images/boniato.jpg', type: 'veggie', price: 460 },
+    { name: 'Bolsa Boniato (10kg)', amount: 0, url: 'images/boniato.jpg', type: 'veggie', price: 350 },
     { name: 'Cajón Brocoli (10 Paq)', amount: 0, url: 'images/brocoli.jpg', type: 'veggie', price: 300 },
     // { name: 'Cajón Berenjena (10kg)', amount: 0, url: 'images/berenjena.jpg', type: 'veggie', price: 300 },
     { name: 'Bolsa Caboutie (12kg)', amount: 0, url: 'images/caboutie.jpg', type: 'veggie', price: 500 },
@@ -87,10 +87,11 @@ let products = [
     { name: 'Bolsa Poroto Negro (5kg)', amount: 0, url: 'images/porotonegro.jpg', type: 'meal', price: 425 },
     { name: 'Bolsa Avena arrollada (5kg)', amount: 0, url: 'images/avena.jpg', type: 'meal', price: 500 },
     { name: 'Paq. Polenta "Del Campo" x 500g (20 u)', amount: 0, url: 'images/polenta.jpg', type: 'meal', price: 600 },
-    // { name: 'Azucar Mascabo (1kg)', amount: 0, url: 'images/azucarmascabo.jpg', type: 'meal', price: 160 },
-    // { name: 'Arroz Yamaní Integral "Schatzi" (500g)', amount: 0, url: 'images/arrozyamani.jpg', type: 'meal', price: 90 },
-    // { name: 'Arroz grano largo integral "Schatzi" (3kg)', amount: 0, url: 'images/arrozlargointegral.jpg', type: 'meal', price: 80 },
-    { name: 'Granola (5kg)', amount: 0, url: 'images/granolaintegral.jpg', type: 'meal', price: 1100 },
+    { name: 'Azucar "Schatzi" (3kg)', amount: 0, url: 'images/azucar.jpg', type: 'meal', price: 270 },
+    { name: 'Arroz Yamaní Integral "Schatzi" (3kg)', amount: 0, url: 'images/arrozyamani.jpg', type: 'meal', price: 320 },
+    { name: 'Arroz Blanco "Schatzi" (3kg)', amount: 0, url: 'images/arrozlargointegral.jpg', type: 'meal', price: 340 },
+    { name: 'Granola "Schatzi" (1,5kg)', amount: 0, url: 'images/granolaintegral.jpg', type: 'meal', price: 325 },
+    { name: 'Proteina de Soja "Schatzi" (1,5kg)', amount: 0, url: 'images/proteinadesoja.jpg', type: 'meal', price: 210 },
     // { name: 'Azucar rubia orgánica "Schatzi" (500g)', amount: 0, url: 'images/azucarrubia.jpg', type: 'meal', price: 65 },
     // { name: 'Queso crema "La Choza" (175grs)', amount: 0, url: 'images/quesocrema175.jpg', type: 'meal', price: 85 },
     // { name: 'Yogurt Natural descremado "La Choza" (1Lt)', amount: 0, url: 'images/yogurtchoza.jpg', type: 'meal', price: 160 },
@@ -101,7 +102,7 @@ let products = [
     // { name: 'Yogurt Entero de Mora "La Choza" (175g)', amount: 0, url: 'images/yogurtchoza.jpg', type: 'meal', price: 60 },
     // { name: 'Yogurt Entero de Frutilla "La Choza" (175g)', amount: 0, url: 'images/yogurtchoza.jpg', type: 'meal', price: 60 },
     // { name: 'Yogurt Descremado de Frutos del Bosque "La Choza" (175g)', amount: 0, url: 'images/yogurtchoza.jpg', type: 'meal', price: 60 },
-    { name: 'Maple Huevos (x30)', amount: 0, url: 'images/huevos.jpg', type: 'meal', price: 180 },
+    // { name: 'Maple Huevos (x30)', amount: 0, url: 'images/huevos.jpg', type: 'meal', price: 180 },
     { name: 'Miel Pura x Kg (10u)', amount: 0, url: 'images/mielkg.jpeg', type: 'meal', price: 1800 },
     { name: 'Miel Pura x 1/2Kg (10u)', amount: 0, url: 'images/mielmedio.jpeg', type: 'meal', price: 135 },
     // { name: 'Aceit Verdes "Simone" (100g)', amount: 0, url: 'images/aceitunaverdekilo.jpeg', type: 'meal', price: 40 },
@@ -135,7 +136,7 @@ window.addEventListener('scroll', function (evt) {
     if (distance_from_top === 0) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
     }
-
+k
     if (distance_from_top > 0) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
     }
