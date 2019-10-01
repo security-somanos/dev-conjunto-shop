@@ -196,25 +196,25 @@ table {
 .home .tiles .section .link .content {}
 
 .home .tiles .section.productores {
-    background-image: url(images/buenosaires.jpg);
+    background-image: url(images/comprascomunitarias.jpeg);
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.vrde {
-    background-image: url('images/mendoza.JPG');
+    background-image: url('images/talleres.jpg');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/');
+    background-image: url('images/radio.jpg');
     background-size: cover;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/');
+    background-image: url('images/cocina.jpeg');
     background-size: cover;
     background-blend-mode: soft-light;
 }
