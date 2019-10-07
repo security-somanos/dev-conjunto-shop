@@ -47,12 +47,13 @@ table {
 
 .home .header {
     height: 600px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     color: white;
     background-image: url('images/portada\ pag.png');
-    background-size: center;
+    background-size: cover;
 }
 
 .home .header .headerContent {
@@ -71,17 +72,18 @@ table {
 
 .home .header .headerContent .headerButton {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: normal;
+    justify-content: normal;
     height: 60px;
-    background-color: #00cc66;
-    color: white;
-    width: 240px;
+    background-color: transparent ;
+    color: black
+    width: 260px;
+    margin-bottom: 100px;
 }
 
 .home .header .headerContent .headerButton .headerLink {
     text-decoration: none;
-    color: white;
+    color: transparent;
     font-family: Ubuntu;
     font-size: 20px;
 }
@@ -90,8 +92,8 @@ table {
     color: #000000;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    position: relative;
-    top: 225px;
+    position: center;
+    top: 100px;
 }
 
 .home .header .social {
