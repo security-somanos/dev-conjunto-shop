@@ -46,13 +46,13 @@ table {
 .home {}
 
 .home .header {
-    height: 500px;
+    height: 600px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    background-image: url('images/portadaelconjunto.jpg');
-    background-size: cover;
+    background-image: url('images/portada\ pag.png');
+    background-size: center;
 }
 
 .home .header .headerContent {
@@ -61,7 +61,7 @@ table {
 }
 
 .home .header img {
-    max-width: 300px;
+    max-width: 100px;
 }
 
 .home .header .logo {
@@ -69,25 +69,21 @@ table {
     margin-bottom:20px;
 }
 
- .headerButton {
+.home .header .headerContent .headerButton {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: #00cc66;
+    color: white;
+    width: 240px;
 }
 
-.headerButton .headerLink {
+.home .header .headerContent .headerButton .headerLink {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: Ubuntu;
     font-size: 20px;
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .home .header .headerContent .headerText {
@@ -147,7 +143,7 @@ table {
 }
 
 .home .tiles {
-    display: flex;
+    display: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -171,7 +167,7 @@ table {
     align-items: center;
     align-content: center;
     flex-direction: column;
-    height: 300px;
+    height: 260px;
     margin: 0px;
     background-color: #3c3c3c;
     min-width: 340px;
@@ -208,14 +204,14 @@ table {
 }
 
 .home .tiles .section.cocina {
-    background-image: url('images/radio.jpg');
-    background-size: cover;
+    background-image: url('images/fractal\ urbano\ 700.gif');
+    background-size: 50;
     background-blend-mode: soft-light;
 }
 
 .home .tiles .section.delivery {
-    background-image: url('images/cocina.jpeg');
-    background-size: cover;
+    background-image: url('images/fractal\ tierra\ 700.gif');
+    background-size: 50;
     background-blend-mode: soft-light;
 }
 
