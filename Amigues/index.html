@@ -86,7 +86,7 @@
                     <img src="images/LOGOECOVALLE.png" alt="" class="logoMainIcon">
                 </div>
                 <div class="veggieCart" v-if="cartHas.veggie == true" v-cloak>
-                    <div class="veggies">Conservas</div>
+                    <div class="veggies">La Verduritaaaa que te vas a comer</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'veggie'">
                         <img :src="`${item.url}`" alt="" class="img">
                         <div class="itemName">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="fruitCart" v-if="cartHas.fruit == true">
-                    <div class="fruits">Almacén</div>
+                    <div class="fruits">La Frutita que elegiste</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruit'">
                         <img :src="`${item.url}`" alt="" class="img">
                         <div class="itemName">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="mealCart" v-if="cartHas.meal == true">
-                    <div class="fruits">Verduras y Frutas
+                    <div class="fruits">Otras cositas ricas
                         <div class="item" v-for="item in cart" v-if="item.type == 'meal'">
                             <img :src="`${item.url}`" alt="" class="img">
                             <div class="itemName">
