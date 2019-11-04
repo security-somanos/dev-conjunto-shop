@@ -34,21 +34,24 @@
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
-                    Bienvenides a la COMPRA COMUNITARIA AGROECOLÓGICA de PURA espacio ♥ 
+                    Bienvenides a la COMPRA COMUNITARIA AGROECOLÓGICA de PURA Espacio
                     <br />
                     <br />
-                    Podés realizar tu pedido hasta las 20 Hrs de los MARTES y pasarlo a buscar los VIERNES de 10 a 18 Hrs. 
+                    Los pedidos se toman hasta las 20 Hrs de los MARTES 
+                    <br />Se retiran los VIERNES de 10 a 16 Hrs por Primera Junta 1029, San Isidro.
                     <br />
                     <br />
-                    Formas de pago: Tenés tiempo de abonar tu pedido hasta las 22 Hrs de los días Miércoles con Mercado Pago escaneando el QR que aparece mas abajo 
-                    <br />o acercándonos el efectivo a PURA espacio, Primera Junta 1029, San Isidro 
-                    <br />o a Anchorena 684, La Lucila  .                
+                    Formas de pago: Tenés tiempo de abonar tu pedido hasta las 20 Hrs de los días Miércoles   
+                    <br />con Mercado Pago escaneando el QR que aparece mas abajo 
+                    <br />o acercándonos el efectivo a: Primera Junta 1029, San Isidro o a Anchorena 684, La Lucila.                
                     <br />
                     <br />
-                    Costo de envío: Si pediste el x % del total de la Compra Comunitaria, te corresponde el x % del valor de los fletes.  
-                    <br />-El envío se paga a contraentrega- (Al ser comunitaria varía depende cuantes usuaries se hayan sumado!)
+                    Costo de envío: Se utilizan 2 fletes que se dividen entre todes. EJEMPLO: si pediste el 15% del total de la compra, te corresponderá el 15% de los fletes.  
+                    <br />-El envío se paga a contraentrega- (varía depende cuantes usuaries se hayan sumado!)
                     <br />
-                    Contacto: 011 15 6222 0308 o al 4742 9526
+                    <br />
+                    Contacto: 011 4742 9526 / 15 6222 0308 
+                </div>
             </div>
         </div>
         <div class="products">
@@ -76,12 +79,12 @@
                 <div class="schedule">
 
                     <div class="title">
-
+                        ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
                     </div>
-                    <img src="images/LOGOECOVALLE.png" alt="" class="logoMainIcon">
+                    <img src="images/qr.jpg" alt="" class="logoMainIcon">
                 </div>
                 <div class="veggieCart" v-if="cartHas.veggie == true" v-cloak>
-                    <div class="veggies">La Verduritaaaa que te vas a comer</div>
+                    <div class="veggies">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'veggie'">
                         <img :src="`${item.url}`" alt="" class="img">
                         <div class="itemName">
@@ -95,7 +98,7 @@
                     </div>
                 </div>
                 <div class="fruitCart" v-if="cartHas.fruit == true">
-                    <div class="fruits">La Frutita que elegiste</div>
+                    <div class="fruits">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruit'">
                         <img :src="`${item.url}`" alt="" class="img">
                         <div class="itemName">
@@ -109,7 +112,7 @@
                     </div>
                 </div>
                 <div class="mealCart" v-if="cartHas.meal == true">
-                    <div class="fruits">Otras cositas ricas
+                    <div class="fruits">Almacén 
                         <div class="item" v-for="item in cart" v-if="item.type == 'meal'">
                             <img :src="`${item.url}`" alt="" class="img">
                             <div class="itemName">
@@ -147,14 +150,14 @@
                 <a class="reload" href="/">Realizar otro pedido</a>
             </div>
             <div class="footer">
-                <img src="images/logoMainIconOnly.png" alt="" class="footerLogo">
+                <img src="images/ACA EL LOGO.png" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="images/fb.png" alt="" class="fb">/El Conjunto
-                        <img src="images/insta.png" alt="" class="insta">
+                        <img src="images/insta.png" alt="" class="fb">@Puraespacio
+                        <img src="images/.png" alt="" class="insta">
                     </div>
                     <div class="contact">
-                        <img src="images/phone.png" alt="" class="phone"> 011 15 6222 0308
+                        <img src="images/phone.png" alt="" class="phone"> 011 4742 9526
 
                     </div>
                 </div>
