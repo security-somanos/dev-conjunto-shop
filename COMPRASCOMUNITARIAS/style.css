@@ -15,14 +15,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding: 20px;
     color: #636363;
     font-size: 12px;
-    font-family: bold;
-    line-height: 20px;
-    /* border: 1px solid #ececec; */
-    /* max-width: 650px; */
+    font-family: Ubuntu;
+    line-height: 14px;
     margin: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     font-weight: lighter;
+    font-size: 0.81em;
+    line-height: 1.4;
 }
 
 html {
@@ -70,10 +70,13 @@ body {
     margin: 0px;
 }
 
+.text-grey-dark {
+    display: none !important;
+}
+
 .main {
     align-content: center;
     justify-content: center;
-    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -88,6 +91,7 @@ body {
     align-items: center;
     height: 50px;
     margin-bottom: 10px;
+    transition: all .25s ease-in-out;
 }
 
 .main .search.fixed {
@@ -98,6 +102,63 @@ body {
     max-width: 100%;
     z-index: 1000;
     height: 50px;
+    justify-content: flex-start;
+}
+
+.main .filter.fixed {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 230px;
+    max-width: 100%;
+    z-index: 1000;
+    height: 50px;
+}
+
+.main .filter.fixed .button {
+    width: 50px;
+    color:#fff0;
+    background-color:white;
+    font-size: 0px;
+}
+
+.main .filter.fixed .button:nth-child(2) {
+    margin:0px;
+}
+
+.main .filter.fixed .filterIcon {
+
+right: 0px;
+
+height: 30px;
+
+width: 30px;
+}
+
+
+
+.netlify-identity-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-family: Ubuntu;
+    max-width: 680px;
+    margin: auto;
+}
+
+.netlify-identity-item {
+    padding: 20px;
+}
+
+.netlify-identity-signup, .netlify-identity-login {
+    color: #333;
+    text-decoration: none;
+    font-family: Ubuntu;
+}
+
+.headerBtc {
+    width: 50px;
+    opacity: 0.8;
 }
 
 .search input {
@@ -129,6 +190,7 @@ body {
     max-width: 110px;
     min-width: 110px;
     font-size: 16px;
+    font-size: 1em;
 }
 
 .main .search img.searchLabel {
@@ -146,6 +208,10 @@ body {
     margin-bottom: 0px;
     margin-bottom: 12px;
     margin-top: 10px;
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .main .header .contain {
@@ -159,6 +225,9 @@ body {
     margin-top: 10px;
     margin-bottom: 20px;
     margin: 10px;
+    /* margin-top: 40px; */
+    height: 105px;
+    width: 100%;
 }
 
 .filter {
@@ -172,7 +241,6 @@ body {
 
 .filter .button {
     padding: 13px;
-    background-color: #9e9e9e33;
     color: #808080;
     display: flex;
     justify-content: center;
@@ -183,24 +251,39 @@ body {
     flex: 1;
     padding-top: 15px;
     font-weight: 100;
+    font-size: 1em;
+    box-shadow: 0px 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
 }
 
+.filter .button .filterIcon {
+    width:25px;
+    height:25px;
+    position:relative;
+    bottom:7px;
+    right: 2px;
+}
 .filter .button:nth-child(2) {
     margin: 0px 10px;
 }
 
 .filter .button.active {
     color: white;
-    background-color: #00cc65;
+    background-color: #00cc65 !important;
 }
 
+a.button.active {}
 
- .headerDisplay {
+.headerDisplay {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
     box-shadow: 0px 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
+    max-width: 644px;
+    margin: 0px 10px;
 }
+
 .userForm {
     display: flex;
     flex-wrap: wrap;
@@ -224,10 +307,12 @@ body {
     font-size: 16px;
     margin: 5px 0px;
     min-width: 210px;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7ba;
     flex: 1;
     color: #808080;
     position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
 }
 
 .userForm .required {
@@ -238,19 +323,19 @@ body {
 }
 
 .userForm input.requiredInput {
-    /* border:0.5px solid red; */
-    box-shadow: 0px 0px 1px 0.5px #fe5046b0;
+    box-shadow: 0px 0px 1px 0.5px #fe504638;
+    border-left: 2px solid #fe5046;
 }
 
 .userForm input.disabled {
     border-width: 0px;
-    padding: 5px;
+    padding: 10px;
     font-size: 14px;
     margin: 6px;
     min-width: 210px;
     background-color: #f0f0f0;
     flex: 1;
-    opacity: 0.3;
+    opacity: 0.4;
     position: relative;
 }
 
@@ -277,7 +362,12 @@ body {
     width: 10px;
     min-width: 20px;
     position: relative;
-    top: 1.5px;
+    top: 3.5px;
+    right: 6px;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    box-shadow: none;
 }
 
 .discounts {
@@ -293,55 +383,49 @@ body {
     flex-wrap: wrap;
 }
 
-.discountTitle {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
-    color: #00cc65;
-    width: 100%;
-    margin-bottom: 10px;
+.cartTitle {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.discountTitle .subtitle {
-    font-size: 14px;
-    color: #808080;
-    line-height: 20px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-.fruitCart, .mealCart {
-    /* margin-top: 20px; */
-    padding: 10px;
-    background: #333;
-    color: white;
     padding-bottom: 20px;
-    /* max-width: 90%; */
-    /* max-width: 500px; */
-    width: 100%;
-    max-width: 800px;
+}
+.cartTitle .cartIcon{
+    height: 70px;
+}
+.cartTitle .title{
+    text-align: center;
+    font-size: 30px;
 }
 
-.fruitCart .fruits, .mealCart .fruits {
+
+.frutaCart, .almacenCart {
     padding: 10px;
-    background: #333;
+    padding-top: 20px;
+    background: #fff;
+    color: #333;
+    padding-bottom: 20px;
+    width: 95%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
+}
+
+.frutaCart .frutas, .almacenCart .frutas {
+    padding: 10px;
     color: #00cc65;
     font-size: 25px;
 }
 
-.mealCart .subtitle {
-    background: #333;
+.almacenCart .subtitle {
     color: #00cc65;
     font-size: 14px;
     padding-top: 10px;
-    color: #ffffff99;
-    margin-left: 5px
+    color: #3d4852;
+    margin-left: 5px;
 }
 
-.fruitCart .fruitCart .subtitle {
+.frutaCart .frutaCart .subtitle {
     background: #333;
     color: #00cc65;
     font-size: 14px;
@@ -391,22 +475,27 @@ body {
     margin-top: 30px;
     margin: 0px 20px;
 }
-.schedule .logoMainIcon {
-    width: 200px;
 
+.schedule .logoMainIcon {
+    width: auto;
+    padding: 15px;
+    margin-top: 13px;
+    height: 150px;
 }
+
 .main .products {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-content: flex-start;
     margin-top: 0px;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 .main .products .item {
-    width: 170px;
+    width: 200px;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -417,8 +506,9 @@ body {
     font-size: 10px;
     margin-top: 0px;
     margin-bottom: 10px;
-    max-height: 300px;
+    max-height: 240px;
     overflow: hidden;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
 }
 
 .main .products .item .productImage {
@@ -446,7 +536,7 @@ body {
 }
 
 .main .products .item .setAmount {
-    width: 170px;
+    width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -481,7 +571,7 @@ body {
 }
 
 .main .products .item .amount {
-    width: 50px;
+    width: 70px;
     height: 35px;
     display: flex;
     align-items: center;
@@ -508,36 +598,44 @@ body {
 .main .cart .head {
     display: flex;
     justify-content: center;
-    padding: 4%;
     flex-wrap: wrap;
     margin-bottom: 10px;
     background-position: 0px;
-    background-size: cover;
     margin-top: 0px;
     position: relative;
     bottom: 4px;
     padding-top: 0px;
-    max-width: 800px;
+    max-width: 700px;
 }
 
-.main .cart .head .schedule {
+.schedule {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-bottom: 50px;
+    max-width: 320px;
 }
 
-.main .cart .head .schedule .title {
+.schedule .title {
     display: flex;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 22px;
+    font-size: 13px;
     color: #00cc65;
-    width: 380px;
-    /* text-align: left; */
     margin-bottom: 5px;
-    max-width: 100%;
+    max-width: 30100%px;
+    line-height: 24px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 1em;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main .cart .head .schedule .day {
@@ -550,21 +648,20 @@ body {
     line-height: 20px;
 }
 
-.main .cart .veggieCart {
+.main .cart .verduraCart {
     padding: 10px;
     padding-top: 20px;
-    background: #333;
-    color: white;
+    color: #333;
     padding-bottom: 20px;
-    /* min-width: 90%; */
-    /* max-width: 90%; */
-    width: 100%;
+    width: 95%;
     max-width: 800px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
 }
 
-.main .cart .veggieCart .veggies {
+.main .cart .verduraCart .verduras {
     padding: 10px;
-    background: #333;
     color: #00cc65;
     font-size: 25px;
 }
@@ -582,21 +679,17 @@ body {
 
 .main .cart .item {
     margin-bottom: 20px;
-    padding: 5px;
-    margin: 5px;
-    border-bottom: 0.2px solid #777777;
+    margin: 13px;
+    border-bottom: 0.2px solid #ececec;
     font-family: 'Ubuntu', sans-serif;
     padding-bottom: 10px;
-    padding-left: 10px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
 }
 
 .main .cart .item .itemName {
     display: flex;
-    /* flex: 1; */
     flex-wrap: wrap;
 }
 
@@ -617,7 +710,6 @@ body {
 
 .main .cart .item .name {
     margin-right: -10px;
-    /* width: 160px; */
     font-size: 14px;
     padding-right: 20px;
     flex: 1;
@@ -625,6 +717,7 @@ body {
     align-items: center;
     line-height: 18px;
     flex: 1 100%;
+    font-weight: bold;
 }
 
 .main .cart .item .amount {
@@ -637,12 +730,17 @@ body {
     color: #00cc70;
 }
 
+.btc {
+    width: 50px;
+}
+
 .main .cart .cartTotal {
     font-size: 25px;
-    margin: 40px 0px;
     color: #00cc65;
     flex: 1 100%;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
 }
 
 .main .cart .confirm {
@@ -656,6 +754,21 @@ body {
     color: white;
     margin: 20px 0px;
     font-size: 20px;
+}
+
+.modal .confirmButton {
+    width: 200px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    text-align: center;
+    background-color: #00cc65;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
 }
 
 .main .cart .confirmSale {
@@ -683,6 +796,71 @@ body {
     margin: 20px 0px;
     font-size: 20px;
     text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #333333b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 10000;
+}
+
+.modal .modalItem {
+    width: 340px;
+    height: 160px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.29);
+    position: relative;
+    border-left: 2px solid #00cc65;
+}
+
+.modal .modalItem .title {
+    font-size: 16px;
+    color: #333;
+    padding: 0px 10px;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+.modal .modalItem .title.error {
+    border-left: 2px solid #fe5046;
+    text-align:left; 
+}
+
+
+.activateModal {
+    opacity:1 !important;
+}
+
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    color: #333;
+    padding: 5px 8px;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    z-index: 100000;
+}
+
+.hideReply {
+    width: 360px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    bottom: 120px;
 }
 
 .footer {
@@ -739,6 +917,7 @@ body {
 .footer .social .link {
     margin-bottom: 5px;
     position: relative;
+    font-size: 0.8em;
 }
 
 .footer .social .web {
@@ -759,6 +938,7 @@ body {
     position: relative;
     margin-top: 3px;
     line-height: 26px;
+    font-size: 0.8em;
 }
 
 .footer .contact .phone {
@@ -785,4 +965,147 @@ body {
 
 [v-cloak] {
     display: none;
+}
+
+.text-grey-dark {
+    display: none;
+}
+
+body {
+    position: relative;
+}
+
+.intro-copy {
+    padding: 1em;
+    margin: 50vh auto;
+    max-width: 15em;
+    font-family: Helvetica;
+    font-weight: lighter;
+    font-size: 2em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1em 2em 0;
+    border-radius: 50%;
+    padding: .25em;
+    width: 60px;
+    height: 60px;
+    background-color: #F8F8F8;
+}
+
+.top-link.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.top-link.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.top-link svg {
+    fill: #000;
+    width: 24px;
+    height: 12px;
+}
+
+.top-link:hover {
+    background-color: #E8E8E8;
+}
+
+.top-link:hover svg {
+    fill: #000000;
+}
+
+.screen-reader-text {
+    position: absolute;
+    clip-path: inset(50%);
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text:focus {
+    display: block;
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    clip-path: none;
+    background-color: #eee;
+    padding: 15px 23px 14px;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    line-height: normal;
+    color: #444;
+    font-size: 1em;
+    clip: auto !important;
+}
+
+
+@media (max-width: 580px) {
+    .main .search.fixed .searchLabel {
+        display:none;
+    }
+            .main .search.fixed #searchInput {
+        width: 100px;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 420px) {
+    .main .products .item {
+        width: 160px;
+        height:180px;
+        max-width: 250px;
+    }
+    .main .products .item .setAmount {
+        width: 100%;
+    }
+    .main .products .item .amount {
+        width: 40%;
+    }
+    .main .filter.fixed {
+        width: 180px;
+    }
+}
+
+@media (max-width: 380px) {
+    .main .filter .button {
+        font-size:0px;
+    }
+}
+
+@media (max-width: 340px) {
+    .main .products .item {
+        width: 95%;
+        max-width: 250px;
+    }
+    .main .products .item .setAmount {
+        width: 100%;
+    }
+    .main .filter .button {
+        font-size:0px;
+    }
+}
+
+@media (max-width: 300px) {
+    .facet_sidebar {
+        display: none;
+    }
 }
