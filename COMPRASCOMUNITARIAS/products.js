@@ -91,7 +91,7 @@ let products = [
     { name: 'Bolsa Porotos Soja (5kg)', amount: 0, url: 'images/soja.jpg', type: 'meal', price: 325 },
     { name: 'Bolsa Trigo candeal (5kg)', amount: 0, url: 'images/trigo.jpg', type: 'meal', price: 230 },
     { name: 'Bolsa Poroto Colorado (5kg)', amount: 0, url: 'images/porotocolorado.jpg', type: 'meal', price: 520 },
-    { name: 'Bolsa Poroto Alubia (5kg)', amount: 0, url: 'images/porotoalubia.jpg', type: 'meal', price: 520 },
+    { name: 'Bolsa Poroto Alubia (5kg)', amount: 0, url: 'images/alubia.jpg', type: 'meal', price: 520 },
     { name: 'Bolsa Poroto Negro (5kg)', amount: 0, url: 'images/porotonegro.jpg', type: 'meal', price: 520 },
     { name: 'Bolsa Avena arrollada (5kg)', amount: 0, url: 'images/avena.jpg', type: 'meal', price: 590 },
     // { name: 'Paq. Polenta "Del Campo" x 500g (20 u)', amount: 0, url: 'images/polenta.jpg', type: 'meal', price: 780 },
