@@ -4,61 +4,59 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Productores agroecológicos de Luján y alrededores</title>
+    <title>Compra comunitaria agroecologica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/ico" href="images/" />
+    <link rel="shortcut icon" type="image/ico" href="images/LOGO" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
 </head>
 
 <body>
     <div class="main" id="app">
+        <!-- <div class="top-bar">
+            <div data-netlify-identity-menu></div>
+        </div> -->
         <div class="header">
-            <img src="./images/ACA  EL ICONO" alt="" class="logo">
+            <img src="images/LOGO" alt="" class="logo">
             <div class="contain">
                 <div class="search">
-                    <div class="searchLabel">
-                        Que buscas?
-                    </div>
-                    <input id="searchInput" v-on:input="scrollTop()" type="text" v-model="search"
-                        placeholder="Variedad">
+                    <div class="searchLabel">Bienvenides!</div>
+                    <input id="searchInput" v-on:input="scrollTopProducts()" type="text" v-model="search"
+                        placeholder="Que buscas?">
                 </div>
                 <div class="filter">
-                    <a class="button" v-bind:class="{active : active['veggie'].status}"
-                        @click="setVisibility('veggie');">Verduras</a>
-                    <a class="button" v-bind:class="{active : active['fruit'].status}"
-                        @click="setVisibility('fruit');">Frutas</a>
-                    <a class="button" v-bind:class="{active : active['meal'].status}"
-                        @click="setVisibility('meal');">Almacén</a>
+                    <a class="button" v-bind:class="{active : active['verdura'].status}"
+                        @click="setVisibility('verdura');"><img class="filterIcon" src="images/carrot.png">Verduras</a>
+                    <a class="button" v-bind:class="{active : active['fruta'].status}"
+                        @click="setVisibility('fruta');"><img class="filterIcon" src="images/apple.png">Frutas</a>
+                    <a class="button" v-bind:class="{active : active['almacen'].status}"
+                        @click="setVisibility('almacen');"><img class="filterIcon" src="images/milk.png">Almacén</a>
                 </div>
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
-                    Bienvenides a la COMPRA COMUNITARIA AGROECOLÓGICA del Colegio Carmen Arriola de Marin
-                    <br />
-                    <br />
-                    Los pedidos se toman hasta las 20 Hrs de los MARTES 
-                    <br />Se retiran los JUEVES de 16 a 20 Hrs por el colegio Av. Libertador 17115, Beccar
-                    <br />
-                    <br />
+                    Bienvenides a la COMPRA COMUNITARIA AGROECOLÓGICA 
+                    <br> <br>
+                    Los pedidos se toman hasta las 20 Hrs de los MARTES
+                    <br>Las entregas se realizan los JUEVES o VIERNES! 
+                    <br> <br>
                     Formas de pago: Tenés tiempo de abonar tu pedido hasta las 20 Hrs de los días Miércoles   
-                    <br />* con Mercado Pago escaneando el QR que aparece mas abajo 
-                    <br />* o acercándonos el efectivo a: Anchorena 684, La Lucila.                
-                    <br />- PAGÁ CONTRAENTREGA CON UN 10% DE RECARGO - (Nosotros pagaríamos por vos)
-                    <br />
-                    <br />
+                    <br>* con Mercado Pago escaneando el QR que aparece mas abajo 
+                    <br>* o acercándonos el efectivo a: Anchorena 684, La Lucila.                
+                    <br>- PAGÁ CONTRAENTREGA CON UN 10% DE RECARGO - (Nosotros pagaríamos por vos)
+                    <br> <br>
                     Costo de envío: Hoy es aproximadamente es un 21% extra 
-                    <br />(Se paga a contraentrega ya que varía depende cuantes usuaries se hayan sumado)
-                    <br />
-                    <br />
-                    Contacto: TELEFONO / 15 6222 0308 
+                    <br>(Se paga a contraentrega ya que varía depende cuantes usuaries se hayan sumado)
+                    <br> <br>
+                    Contacto: 011 15 6222 0308.
                 </div>
             </div>
         </div>
-        <div class="products">
-            <div v-cloak class="item" v-for="item in filteredItems">
-                <img :src="`${item.url}`" class="productImage">
-                <div class="title">{{item.name}} = ${{ item.price }}
+        <div class="products" id="products">
+            <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
+                <img :src="`images/${item.image}`" class="productImage">
+                <div class="title">
+                    {{item.name}} = ${{ item.price }}
                 </div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
@@ -70,24 +68,14 @@
         </div>
         <div class="cart">
             <div class="head">
-                <div class="discounts">
-                    <div class="discountTitle">
-                        <div class="subtitle">
-
-                        </div>
-                    </div>
+                <div class="cartTitle">
+                    <img src="images/scale.png" alt="" class="cartIcon">
+                    <div class="title">Carrito</div>
                 </div>
-                <div class="schedule">
-
-                    <div class="title">
-                        ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
-                    </div>
-                    <img src="images/qr.jpg" alt="" class="logoMainIcon">
-                </div>
-                <div class="veggieCart" v-if="cartHas.veggie == true" v-cloak>
-                    <div class="veggies">Verduras</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'veggie'">
-                        <img :src="`${item.url}`" alt="" class="img">
+                <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
+                    <div class="verduras">Verduras</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
+                        <img :src="`images/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -98,10 +86,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="fruitCart" v-if="cartHas.fruit == true">
-                    <div class="fruits">Frutas</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'fruit'">
-                        <img :src="`${item.url}`" alt="" class="img">
+                <div class="frutaCart" v-if="cartHas.fruta == true">
+                    <div class="frutas">Frutas</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
+                        <img :src="`images/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -112,84 +100,107 @@
                         </div>
                     </div>
                 </div>
-                <div class="mealCart" v-if="cartHas.meal == true">
-                    <div class="fruits">Almacén 
-                        <div class="item" v-for="item in cart" v-if="item.type == 'meal'">
-                            <img :src="`${item.url}`" alt="" class="img">
-                            <div class="itemName">
-                                <div class="name">{{item.name}}</div>
-                                <div class="itemTotal">
-                                    <div class="amount">${{ item.price }} * {{item.amount}}</div>
-                                    <div class="equals">=</div>
-                                    <div class="total"> ${{item.total}}</div>
-                                </div>
+                <div class="almacenCart" v-if="cartHas.almacen == true">
+                    <div class="frutas">Almacen
+                        <div class="subtitle">Todos estos productos son agroecológicos también</div>
+                    </div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
+                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <div class="itemName">
+                            <div class="name">{{item.name}}</div>
+                            <div class="itemTotal">
+                                <div class="amount">${{ item.price }} * {{item.amount}}</div>
+                                <div class="equals">=</div>
+                                <div class="total"> ${{item.total}}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="cartTotal">Total = ${{cartTotal}}</div>
                 </div>
+            </div>
+            <div class="cartTotal">Total = ${{cartTotal}}</div>
+            <div class="schedule">
+                <div class="title">
+                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
+                </div>
+                <img src="images/qr.jpg" alt="" class="logoMainIcon">
             </div>
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
-                <div class="required">* Por favor llene los campos requeridos</div>
+                <div class="required">* Por favor complete los campos requeridos</div>
                 <input class="requiredInput" type="text" placeholder="Nombre" v-model="userData.name" required>
                 <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required>
-                <!-- <input class="requiredInput" type="text" placeholder="Retiro por Colegio Marin" v-model="userData.address" required> -->
                 <input type="email" placeholder="Correo" v-model="userData.email" required>
+                <input class="requiredInput" type="text" placeholder="Direccion" v-model="userData.address"
+                    :disabled="userData.delivery == false" v-bind:class="{disabled:userData.delivery == false}">
                 <div class="delivery">
-                    <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled"> <br>
-                        <div class="small"></div>
+                    <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a domicilio <br>
+                        <div class="small">* El costo de envio se informa en la entrega</div>
                     </label>
-                    
+                    <input id="delivery" type="checkbox" v-model="userData.delivery">
                 </div>
             </form>
-            <div class="confirm" v-on:click="saveSale(cart)" v-show="saleComplete == false">Realizar Pedido</div>
-            <div class="confirmSale" v-show="saleComplete == true">
-                Su pedido se ha realizado con exito!
-                <a class="reload" href="/">Realizar otro pedido</a>
+            <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
+            <div class="confirmSale" v-show="confirmModal == true"
+                v-bind:class="{ activateModal: confirmModal == true }" style="opacity: 0;">
+                <div class="modal">
+                    <div class="modalItem" v-show="saleComplete === false && fieldsMissing === true">
+                        <div class="closeModal" @click="confirmModal = false">X</div>
+                        <div class="title error">Por favor complete los <br> campos requeridos.</div>
+                    </div>
+                    <div class="modalItem" v-show="saleComplete === false && fieldsMissing === false">
+                        <div class="closeModal" @click="confirmModal = false">X</div>
+                        <div class="title">Confirmar pedido?</div>
+                        <div class="confirmButton" v-on:click="saveSale(cart)">Confirmar</div>
+                    </div>
+                    <div class="modalItem" v-show="saleComplete === true">
+                        <div class="closeModal" @click="confirmModal = false">X</div>
+                        <div class="title">
+                            <h2 style="font-size: 24px;"><img src="images/logoMainIcon.jpg" alt="" height="50px"
+                                    title="" style="position: relative;top: 14px;right: 10px;">
+                                Gracias! :)
+                            </h2>
+                            <br /><br />
+                            Su pedido se ha realizado con exito.
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- <div class="schedule">
+                <div class="title">
+                    <img class="btc" src="images/btc.jpg" alt=""> PAGA CON BITCOIN!
+                    <br>
+                    <strong style="color:#333;">1DdkCoDbAjPLgdkvQRizmLi438M16piqFB</strong>
+                </div>
+            </div> -->
+            <!-- <div id="replybox"></div> -->
+
+            <a class="top-link hide" id="js-top">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
+                    <path d="M12 6H0l6-6z" /></svg>
+            </a>
             <div class="footer">
-                <img src="images/ACA EL LOGO.png" alt="" class="footerLogo">
+                <img src="images/" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="images/insta.png" alt="" class="fb">
-                        <img src="images/.png" alt="" class="insta">
+                        <img src="images/fb.png" alt="" class="fb">
+                        <img src="images/insta.png" alt="" class="insta">
+                        Seguinos en Instagram /elconjuntoorg
                     </div>
                     <div class="contact">
-                        <img src="images/phone.png" alt="" class="phone"> 011 telefono 
-
+                        <img src="images/phone.png" alt="" class="phone">
+                        Dudas y consultas llamanos: 15 6222 0308
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-    <script src="https://cdn.getreplybox.com/js/embed.js"></script>
-    <script src="products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+    <!-- <script src="https://cdn.getreplybox.com/js/embed.js"></script> -->
     <script src="main.js"></script>
-    <script>
-
-        window.replybox = {
-            site: 'X12n3MaR8w',
-        };
-
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAKajq835OuZXDij4kZfUT7PjRXzNpVd-U",
-            authDomain: "vrde-club.firebaseapp.com",
-            databaseURL: "https://vrde-club.firebaseio.com",
-            projectId: "vrde-club",
-            storageBucket: "vrde-club.appspot.com",
-            messagingSenderId: "835566805443"
-        };
-
-        firebase.initializeApp(config);
-
-        var database = firebase.database();
-
-
-    </script>
 </body>
+
+</html>
