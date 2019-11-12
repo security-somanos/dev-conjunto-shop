@@ -133,9 +133,8 @@
                 <input class="requiredInput" type="text" placeholder="Direccion" v-model="userData.address"
                     :disabled="userData.delivery == false" v-bind:class="{disabled:userData.delivery == false}">
                 <div class="delivery">
-                    <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a
-                        tu casa <br>
-                        <div class="small">* Consulte costo de envio</div>
+                    <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a domicilio <br>
+                        <div class="small">* El costo de envio se informa en la entrega</div>
                     </label>
                     <input id="delivery" type="checkbox" v-model="userData.delivery">
                 </div>
