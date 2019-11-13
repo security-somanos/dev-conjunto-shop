@@ -141,7 +141,7 @@ var app = new Vue({
             var sale = [{
                 date: today,
                 name: this.userData.name,
-                address: this.userData.address,
+                address: "Jardin 1 VL",
                 phone: this.userData.phone,
                 email: this.userData.email,
                 delivery: this.userData.delivery,
