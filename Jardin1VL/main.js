@@ -134,8 +134,10 @@ var app = new Vue({
         changeLocation(event) {
             if(event.target.value === "0"){
                 this.userData.delivery = false;
+                this.userData.address = "Jardin N 1 Vte Lopez";
             } else {
                 this.userData.delivery = true;
+                this.userData.address = "";
             }
             this.deliveryMethod = true; 
         },
@@ -278,3 +280,6 @@ document.getElementById("js-top").onclick = function (e) {
     e.preventDefault();
     scrollToTop();
 };
+
+
+

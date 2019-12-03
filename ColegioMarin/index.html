@@ -35,20 +35,19 @@
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
-                    Todos nuestros productos son AGROECOLÓGICOS u ORGÁNICOS.
-                    <br />
-                    Consultanos por el cajoncito en PROMO de la semana !!
+                    Bienvenides a la COMPRA COMUNITARIA AGROECOLOGICA del Colegio Marin
                     <br />
                     <br />
-                    HORARIOS DE ATENCIÓN EN LA LUCILA, ANCHORENA 684
-                    <br />
-                    VIERNES y SÁBADOS de 10 a 20 hrs. (Con todas las variedades, vamos al campo el Jueves!)
-                    <br />
-                    LUNES a JUEVES de 11 a 20 hrs. (Puede que no esté disponible todo lo publicado, consultar)
+                    Los pedidos se cierran a las 18 hrs de los MIERCOLES
                     <br />
                     <br />
-                    HACEMOS ENVÍOS A DOMICILIO VIERNES Y SÁBADOS ♥ Consultar costos
+                    Realizaremos la entrega los VIERNES en el Colegio Marin horario a confirmar cuando se sepa avisen asi se que pongo aca hola jaj
                     <br />
+                    <br />
+                    Formas de pago: Tenés tiempo de abonar tu pedido hasta las 20 Hrs de los días Miércoles   
+                    <br>* con Mercado Pago escaneando el QR que aparece mas abajo 
+                    <br>* o acercándonos el efectivo a: Anchorena 684, La Lucila.
+                    <br /><br />
                     Consultas: 15 6222 0308
 
                 </div>
@@ -135,11 +134,11 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                     @change="changeLocation($event)">
                     <option value="3" disabled selected>Escoger forma de entrega</option>
-                    <option value="0">Retirar en Anchorena 684, La Lucila</option>
-                    <option value="1">Envio a Domicilio</option>
+                    <option value="0">Entrega Viernes en el Colegio Marin</option>
+                    <!-- <option value="1">Retiro Por Anchorena 684, La Lucila</option> -->
                 </select>
             </div>
-            <input class="requiredInput" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
+            <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
             <div class="deliveryLabel"  v-if="userData.delivery">
                 Costo de flete aprox = 20% de el total del pedido. Ayudanos a reducir el precio del envio compartiendo este link!
             </div>
@@ -162,11 +161,11 @@
                         <div class="title">
                             <div v-if="userData.delivery == false">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el local Viernes o Sabados de 10 a 20 hrs.
+                                Nos vemos el Viernes en el Colegio Marin.
                             </div>
                             <div v-if="userData.delivery == true">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
-                                Nos estaremos comunicando con vos para coordinar la entrega.
+                                Podes retirar tu pedido Por Anchorena 684, La Lucila Viernes o Sabado de 10 a 20
                             </div>
                         </div>
                     </div>

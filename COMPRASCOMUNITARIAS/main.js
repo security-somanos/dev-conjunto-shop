@@ -29,12 +29,13 @@ var app = new Vue({
         saleComplete: false,
         fieldsMissing: false,
         confirmModal: false,
+        deliveryMethod: false,
         userData: {
             name: '',
             address: '',
             phone: '',
             email: '',
-            delivery: false
+            delivery: false        
         },
         active: {
             'verdura': { status: true },
@@ -70,6 +71,7 @@ var app = new Vue({
             this.productList = products;
         },
         getTotal: function () {
+
             var self = this;
             this.cartTotal = 0;
             this.cartItems = 0;
@@ -118,7 +120,7 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '') {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
             else if (this.userData.delivery == true && this.userData.address == '') {
@@ -129,7 +131,17 @@ var app = new Vue({
             }
             this.confirmModal = true;
         },
-        saveSale: function (cart) {
+        changeLocation(event) {
+            if(event.target.value === "0"){
+                this.userData.delivery = false;
+                this.userData.address = "Retira por el local";
+            } else {
+                this.userData.delivery = true;
+                this.userData.address = "";
+            }
+            this.deliveryMethod = true; 
+        },
+        saveSale(cart) {
             // send to firebase
             var today = new Date().toLocaleDateString('es-GB', {
                 day: 'numeric',
@@ -267,7 +279,7 @@ const scrollTopProducts = () => {
 document.getElementById("js-top").onclick = function (e) {
     e.preventDefault();
     scrollToTop();
-}
+};
 
 
 
