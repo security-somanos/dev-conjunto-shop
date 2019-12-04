@@ -1,43 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>El Conjunto</title>
+    <title>El Conjunto.org</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="site">
+        <div class="darkscreen hide" id="darkscreen">
+            <div class="modal nodos">
+                <div class="close" onclick="closeModal()">X</div>
+                <div class="title">- Compras Comunitarias Minoristas -</div>
+                <div class="sub">La manera de acceder de forma minorista es retirando tu pedido por alguno de los siguientes NODOS</div>
+                <div class="section">
+                    <div class="item">
+                        <a href="/amigues" class="nodeLink"></a>
+                        <div class="text"><strong>FRACTAL URBANO</strong></br></br>Anchorena 684 </br>La Lucila</div>
+                    </div>
+                    <div class="item">
+                        <a href="/puraespacio" class="nodeLink"></a>
+                        <div class="text"><strong>PURA ESPACIO</strong></br></br>Primera Junta 1029</br> San Isidro</div>
+                    </div>
+                    <div class="item">
+                        <a href="/jardin1vl" class="nodeLink"></a>
+                        <div class="text"><strong>JARDIN Nº 1</strong></br></br>Caseros 257</br>Vte. Lopez</div>
+                    </div>
+                    <div class="item">
+                        <a href="/senderos" class="nodeLink"></a>
+                        <div class="text">
+                            <strong>SENDEROS</strong></br></br>Buchardo 2552 Martinez
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="header">
             <div class="title font-effect-anaglyph">- El Conjunto -</div>
-            <div class="sub">Somos una red independiente que surgio con la mision de transformar. A traves de <strong>Trabajo en Comunidad</strong> queremos construir un camino hacia la <strong>Soberania Alimentaria</strong></div>
+            <div class="sub">Somos una red independiente que surgio con la mision de transformar. A traves de
+                <strong>Trabajo en Comunidad</strong> queremos construir un camino hacia la <strong>Soberania
+                    Alimentaria</strong></div>
             <a href="http://vrde.club" class="action">SUMATE</a>
         </div>
         <div class="new">
-            <div class="title">Novedades</div>
-            <div class="sub">Estamos realizando <strong>Compras Comunitarias a Campos Agroecologicos</strong> donde nos agrupamos para dividir los costos logisticos, cuantos mas seamos menos nos va a costar consumir alimentos de calidad</div>
-            <a  href="/comprascomunitarias" class="action">
-                Compras Comunitarias
-            </a>
+            <div class="sub">
+                <div class="title">Compras Comunitarias <br><strong class="logoFont">- Agroecologicas -</strong></div>
+                <div class="text">
+                    Estamos realizando <strong>Compras Comunitarias a Campos Agroecologicos</strong>. Nos agrupamos para dividir los costos logisticos y lograr acceder a alimentacion de calidad al menor costo posible. 
+                </div>
+                <div class="actions">
+                    <a href="/comprascomunitarias" class="action">
+                         Mayoristas 
+                    </a>
+                    <div onclick="openModal()" class="action">
+                        Minoristas 
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="gallery">
             <div class="item">
-                <img class="vrde"src="images/vrde.png" alt="">
-                <a class="link"  target="_blank" href="http://vrde.club"></a>
+                <div class="title">Tienda Minorista</div>
+                <img class="vrde" src="images/vrde.png" alt="">
+                <a class="link" target="_blank" href="http://vrde.club"></a>
             </div>
             <div class="item fractal">
-                <a  target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScWp8V6ZOmtpWeT2ZMyzKCC1uLiI7Iztwn5yEG1XZIzdsi9cw/viewform?usp=sf_link" class="link"></a>  
+                <a target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScWp8V6ZOmtpWeT2ZMyzKCC1uLiI7Iztwn5yEG1XZIzdsi9cw/viewform?usp=sf_link"
+                    class="link"></a>
                 <div class="title">Talleres</div>
             </div>
             <div class="item urban">
-                <a class="link" target="_blank" href="https://www.youtube.com/channel/UCYShyXcdgGNFkbo_aR801bQ/featured"></a>
+                <a class="link" target="_blank"
+                    href="https://www.youtube.com/channel/UCYShyXcdgGNFkbo_aR801bQ/featured"></a>
                 <div class="title">Radio Fractal</div>
             </div>
-                <div class="item cocina">
-                <a class="link"  target="_blank" href="http://FORMULARIO PARA COCINEROS"></a>
+            <div class="item cocina">
+                <a class="link" target="_blank" href="http://FORMULARIO PARA COCINEROS"></a>
                 <div class="title">Cocina Comunitaria</div>
             </div>
         </div>
@@ -54,4 +98,5 @@
         </div>
     </div>
 </body>
+<script src="main.js"></script>
 </html>
