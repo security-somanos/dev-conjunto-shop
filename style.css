@@ -218,19 +218,23 @@ box-shadow: 0px 3px 6px #33333329;
      /* Chrome10-25,Safari5.1-6 */
      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
      /* IE6-9 */
-    color: white;
+    color: #333;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e2633+1,3f4c6b+100 */
      /* Old browsers */
      /* FF3.6-15 */
      /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  rgb(4, 5, 8) 1%,rgb(83, 99, 138) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* background: linear-gradient(135deg,  rgb(4, 5, 8) 1%,rgb(83, 99, 138) 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
      /* IE6-9 fallback on horizontal gradient */
-    box-shadow: 0px 0px 18px 30px rgba(0,0,0,.06);
+    /* box-shadow: 0px 0px 18px 30px rgba(0,0,0,.06); */
 }
 .site .new .title{
     font-size: 39px;
     line-height: 44px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 .site .new .text{
     margin: 0;
@@ -245,7 +249,8 @@ box-shadow: 0px 3px 6px #33333329;
 
 .site .new .logoFont {
 	    font-family: 'Amatic SC';
-	    line-height: 0px;
+	    opacity: 0.5;
+	    font-size: 40px;
 }
 
 .site .new .newImg {
@@ -272,9 +277,11 @@ justify-content: space-evenly;
 align-items: center;
 	
 flex-direction: column;
+	
+margin-top: 30px;
 }
 .site .new .action{
-    background-color: #0000008a;
+    background-color: rgb(0, 204, 101);
     padding: 15px 24px;
     color: #fff;
     font-size: 30px;
@@ -305,8 +312,9 @@ flex-direction: column;
     background: white;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 40px;
-    box-shadow: 10px -22px 20px rgba(0,0,0,.06);
+    padding: 20px;
+    margin-bottom: 40px;
+    /* box-shadow: 10px -22px 20px rgba(0,0,0,.06); */
 }
 .site .gallery .link {
     display: block;
