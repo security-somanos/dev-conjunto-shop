@@ -26,6 +26,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     /* border-radius: 20px; */
 }
 
+.avisoTitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 html {
     box-sizing: border-box;
 }
