@@ -133,8 +133,8 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                     @change="changeLocation($event)">
                     <option value="3" disabled selected>Escoger forma de entrega</option>
-                    <option value="0">Retirar en Anchorena 684, La Lucila</option>
-                    <option value="1">Envio a Domicilio</option>
+                    <option value="0">Retirar en el House I</option>
+                    <option value="1">Envio a Domicilio dentro del barrio</option>
                 </select>
             </div>
             <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
@@ -160,7 +160,7 @@
                         <div class="title">
                             <div v-if="userData.delivery == false">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el local Viernes o Sabados de 10 a 20 hrs.
+                                Podes retirarlo por el House los Martes de 10 a 20 hrs.
                             </div>
                             <div v-if="userData.delivery == true">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
