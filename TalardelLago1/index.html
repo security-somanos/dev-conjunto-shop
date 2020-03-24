@@ -148,7 +148,7 @@
             </div>
             <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
             <div class="deliveryLabel"  v-if="userData.delivery">
-                Para recibir los pedidos en la puerta de tu casa, hay un plus por envio de $100.
+                Para recibir los pedidos en la puerta de tu casa, hay un plus por envio.
             </div>
             </form>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
