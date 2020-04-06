@@ -128,9 +128,10 @@ body {
 .main .filter.fixed .button {
     width: 50px;
     color:#fff0;
-    background-color:white;
+    background-color:#103f79;
     font-size: 0px;
     border-radius: 0px;
+    border-left-color:#0f1e5a;
 }
 
 .main .filter.fixed .button:nth-child(2) {
@@ -459,6 +460,7 @@ line-height: 18px;
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
+    color: #f3b229;
 }
 .cartTitle .cartIcon{
     height: 70px;
@@ -472,24 +474,24 @@ line-height: 18px;
 .frutaCart, .almacenCart {
     padding: 10px;
     padding-top: 20px;
-    background: #fff;
+    background: #0056b3;
     color: #333;
     padding-bottom: 20px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
 }
 
 .frutaCart .frutas, .almacenCart .frutas {
     padding: 10px;
-    color: #00cc65;
+    color: #f3b229;
     font-size: 25px;
 }
 
 .almacenCart .subtitle {
-    color: #00cc65;
+    color: #f3b229;
     font-size: 14px;
     padding-top: 10px;
     color: #3d4852;
@@ -497,8 +499,8 @@ line-height: 18px;
 }
 
 .frutaCart .frutaCart .subtitle {
-    background: #333;
-    color: #00cc65;
+    background: #0056b3;
+    color: #f3b229;
     font-size: 14px;
     padding-top: 10px;
     color: #ffffff99;
