@@ -42,6 +42,7 @@ html {
 
 body {
     line-height: 1;
+    background-color: #103f79;
 }
 
 ol, ul {
@@ -296,6 +297,8 @@ a.button.active {}
     max-width: 644px;
     margin: 0px 10px;
     border-radius: 10px;
+    background-color: #0056b3;
+    
 }
 
 .userForm {
@@ -321,7 +324,7 @@ a.button.active {}
     font-size: 16px;
     margin: 5px 0px;
     min-width: 210px;
-    background-color: #f7f7f7ba;
+    background-color: #0056b3;
     flex: 1;
     color: #808080;
     position: relative;
