@@ -13,7 +13,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .aviso {
     padding: 20px;
-    color: #636363;
+    color: #f3b229;
     font-size: 12px;
     font-family: Ubuntu;
     line-height: 14px;
@@ -162,7 +162,7 @@ width: 30px;
 }
 
 .netlify-identity-signup, .netlify-identity-login {
-    color: #333;
+    color: #f3b229;
     text-decoration: none;
     font-family: Ubuntu;
 }
@@ -254,7 +254,7 @@ width: 30px;
 
 .filter .button {
     padding: 13px;
-    color: #808080;
+    color: #f3b229;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -283,7 +283,7 @@ width: 30px;
 
 .filter .button.active {
     color: white;
-    background-color: #00cc65 !important;
+    background-color: #0056b3 !important;
 }
 
 a.button.active {}
