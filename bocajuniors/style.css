@@ -826,11 +826,12 @@ line-height: 18px;
     width: 220px;
     display: flex;
     text-align: center;
-    background-color: #00cc65;
+    background-color: #103f79;
+    border-left-color: #0f1e5a;
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     margin: 20px 0px;
     font-size: 20px;
     border-radius: 10px;
@@ -843,16 +844,16 @@ line-height: 18px;
     margin-bottom: 0px;
     display: flex;
     text-align: center;
-    background-color: #00cc65;
+    background-color: #103f79;
     justify-content: center;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     font-size: 18px;
     text-decoration: none;
 }
 
 .main .cart .confirmSale {
-    background: white;
+    background: #103f79;
     max-width: 100%;
     padding: 30px;
     width: 100%;
@@ -860,7 +861,7 @@ line-height: 18px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #838587;
+    color: #f3b229;
 }
 
 .main .cart .confirmSale .reload {
@@ -869,10 +870,11 @@ line-height: 18px;
     display: flex;
     text-align: center;
     background-color: #00cc65;
+    border-left-color: #0f1e5a;
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     margin: 20px 0px;
     font-size: 20px;
     text-decoration: none;
@@ -895,20 +897,20 @@ line-height: 18px;
 .modal .modalItem {
     width: 400px;
     height: 160px;
-    background-color: white;
+    background-color: #103f79;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.29);
     position: relative;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
     border-radius: 10px;
 }
 
 .modal .modalItem .title {
     font-size: 15px;
-    color: #333;
+    color: #f3b229;
     padding: 0px 20px;
     text-align: center;
     position: relative;
