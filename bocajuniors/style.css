@@ -730,18 +730,18 @@ line-height: 18px;
 .main .cart .verduraCart {
     padding: 10px;
     padding-top: 20px;
-    color: #333;
+    color: #f3b229;
     padding-bottom: 20px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
 }
 
 .main .cart .verduraCart .verduras {
     padding: 10px;
-    color: #00cc65;
+    color: #f3b229;
     font-size: 25px;
 }
 
@@ -753,7 +753,7 @@ line-height: 18px;
     left: 15px;
     top: 1px;
     margin-right: 20px;
-    color: #ffffff99;
+    color: #f3b229;
 }
 
 .main .cart .item {
@@ -778,6 +778,7 @@ line-height: 18px;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
     margin-top: 0px;
+    color: #f3b229;
 }
 
 .main .cart .item .img {
@@ -806,7 +807,7 @@ line-height: 18px;
 }
 
 .main .cart .item .total {
-    color: #00cc70;
+    color: #f3b229;
 }
 
 .btc {
@@ -815,7 +816,7 @@ line-height: 18px;
 
 .main .cart .cartTotal {
     font-size: 25px;
-    color: #00cc65;
+    color: #f3b229;
     flex: 1 100%;
     text-align: center;
     margin-top: 20px;
@@ -844,7 +845,7 @@ line-height: 18px;
     margin-bottom: 0px;
     display: flex;
     text-align: center;
-    background-color: #103f79;
+    background-color: #0056b3;
     justify-content: center;
     cursor: pointer;
     color: #f3b229;
