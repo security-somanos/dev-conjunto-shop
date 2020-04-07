@@ -89,7 +89,7 @@ body {
 }
 
 .main .search {
-    background-color: #333333;
+    background-color: #0056b3;
     height: 20px;
     padding: 15px;
     display: flex;
@@ -131,7 +131,7 @@ body {
     background-color:#103f79;
     font-size: 0px;
     border-radius: 0px;
-    border-left-color:#0f1e5a;
+    border-left-color:#0056b3;
 }
 
 .main .filter.fixed .button:nth-child(2) {
