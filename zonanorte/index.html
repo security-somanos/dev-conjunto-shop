@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="products" id="products">
+        <!--   <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`images/${item.image}`" class="productImage">
                 <div class="title">
@@ -148,14 +148,13 @@
                     <option value="0">Retirar en Anchorena 684, La Lucila</option>
                     <option value="1">Envio a Domicilio</option>
                 </select>
-            </div>
+            </div>  
             <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
             <div class="deliveryLabel"  v-if="userData.delivery">
                 <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
                VICENTE LOPEZ<br>
                La Lucila = $100 <br>
                Olivos    = $100 <br>
-               Florida   = $150 <br>
                Munro     = $200 <br>
                SAN ISIDRO <br>
                Martinez   = $150 <br>
@@ -193,7 +192,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
+           --> <div class="footer">
                 <img src="images/logoMainIconOnly.png" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
