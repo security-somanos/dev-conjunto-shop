@@ -132,18 +132,19 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if(event.target.value === "1"){
+            if (event.target.value === "0"){
                 this.userData.delivery = false;
                 this.userData.address = "Retira por La Lucila";
-            }  
-            else if(event.target.value === "2"){
+            } 
+            else if (event.target.value === "2"){
                 this.userData.delivery = false;
-                this.userData.address = "Retira por Avalom";
+                this.userData.address = "Retira por La Lucila";
             }
-            else (event.target.value === "0"){
+            
+            else {
                 this.userData.delivery = true;
                 this.userData.address = "";
-                this.deliveryMethod = true; 
+                 
             }
             this.deliveryMethod = true; 
         },
