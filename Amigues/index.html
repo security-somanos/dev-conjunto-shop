@@ -145,7 +145,7 @@
                         <option value="0">Envio a Domicilio</option> 
                     </select>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery = false" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery">
                           <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
