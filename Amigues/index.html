@@ -140,12 +140,12 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
                         <option value="3" disabled selected>Escoger forma de entrega</option>
-                        <option value="0">Retirar en Anchorena 684, La Lucila</option>
+                        <option value="1">Retirar en Anchorena 684, La Lucila</option>
                         <option value="2">Retirar en H. de la Quintana 1540, Florida.</option>
-                        <option value="1">Envio a Domicilio</option> 
+                        <option value="0">Envio a Domicilio</option> 
                     </select>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == false" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery">
                           <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
@@ -178,12 +178,12 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == 0">
+                            <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles desde las 14:00 hasta las 18:00
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
                             </div>
-                            <div v-if="userData.delivery == 1">
+                            <div v-if="userData.delivery == 0">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Nos estaremos comunicando con vos para coordinar la entrega.        
                             </div>
