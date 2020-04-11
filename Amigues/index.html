@@ -141,6 +141,7 @@
                         @change="changeLocation($event)">
                         <option value="3" disabled selected>Escoger forma de entrega</option>
                         <option value="0">Retirar en Anchorena 684, La Lucila</option>
+                        <option value="2">Retirar en H. de la Quintana 1540, Florida.</option>
                         <option value="1">Envio a Domicilio</option> 
                     </select>
                 </div>
@@ -179,12 +180,18 @@
                         <div class="title">
                             <div v-if="userData.delivery == 0">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo a partir del Miércoles desde las 14:00 hasta las 18:00
+                                Podes retirarlo el día Miércoles desde las 14:00 hasta las 18:00
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
                             </div>
                             <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Nos estaremos comunicando con vos para coordinar la entrega.        
+                            </div>
+                            <div v-if="userData.delivery == 2">
+                                Gracias! Su pedido se ha realizado con exito. <br>
+                                Podes retirarlo el día Miércoles de la semana que viene
+                                desde las 14:00 hasta las 18:00
+                                por el Centro de Yoga Avalom, H. de la Quintana 1540, Florida.
                             </div>
                         </div>
                     </div>
