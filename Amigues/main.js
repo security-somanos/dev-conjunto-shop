@@ -136,7 +136,7 @@ var app = new Vue({
                 this.userData.delivery = false;
                 this.userData.address = "Retira por La Lucila";
             }  
-            else(event.target.value === "2"){
+            else if(event.target.value === "2"){
                 this.userData.delivery = false;
                 this.userData.address = "Retira por Avalom";
             }
