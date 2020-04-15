@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Compra comunitaria agroecologica Mayorista</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/ico" href="images/logo.png" />
+    <link rel="shortcut icon" type="image/ico" href="../images/shop/logo.png" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
     <style>
@@ -23,7 +23,7 @@ a.two:hover {font-size:150%;}
             <div data-netlify-identity-menu></div>
         </div> -->
         <div class="header">
-            <img src="images/logo.png" alt="" class="logo">
+            <img src="../images/shop/logo.png" alt="" class="logo">
             <div class="contain">
                 <div class="search">
                     <div class="searchLabel">Bienvenides!</div>
@@ -32,18 +32,18 @@ a.two:hover {font-size:150%;}
                 </div>
                 <div class="filter">
                     <a class="button" v-bind:class="{active : active['verdura'].status}"
-                        @click="setVisibility('verdura');"><img class="filterIcon" src="images/carrot.png">Verduras</a>
+                        @click="setVisibility('verdura');"><img class="filterIcon" src="../images/shop/carrot.png">Verduras</a>
                     <a class="button" v-bind:class="{active : active['fruta'].status}"
-                        @click="setVisibility('fruta');"><img class="filterIcon" src="images/apple.png">Frutas</a>
+                        @click="setVisibility('fruta');"><img class="filterIcon" src="../images/shop/apple.png">Frutas</a>
                     <a class="button" v-bind:class="{active : active['almacen'].status}"
-                        @click="setVisibility('almacen');"><img class="filterIcon" src="images/milk.png">Almacén</a>
+                        @click="setVisibility('almacen');"><img class="filterIcon" src="../images/shop/milk.png">Almacén</a>
                 </div>
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
                     Bienvenides a la COMPRA COMUNITARIA MAYORISTA AGROECOLÓGICA 
                     <br> <br>
-                    Debido a la alta demanda de alimentos, decidimos solo tomar pedidos minoristas. <br><br>
+                    Debido a la alta demanda de alimentos, decidimos por el momento solo tomar pedidos minoristas. <br><br>
                    
                     Para retirar o recibir los miercoles de la semana proxima (hace tu pedido anticipado)<br>
                     <p><b><a class="two" href="https://www.elconjunto.org/amigues/" target="_blank">Compra Comunitaria Minorista</a></b></p>
@@ -72,7 +72,7 @@ a.two:hover {font-size:150%;}
         </div>
        <!-- <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
-                <img :src="`images/${item.image}`" class="productImage">
+                <img :src="`../images/shop/${item.image}`" class="productImage">
                 <div class="title">
                     {{item.name}} = ${{ item.price }}
                 </div>
@@ -87,13 +87,13 @@ a.two:hover {font-size:150%;}
         <div class="cart">
             <div class="head">
                 <div class="cartTitle">
-                    <img src="images/scale.png" alt="" class="cartIcon">
+                    <img src="../images/shop/scale.png" alt="" class="cartIcon">
                     <div class="title">Carrito</div>
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shop/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -107,7 +107,7 @@ a.two:hover {font-size:150%;}
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shop/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -123,7 +123,7 @@ a.two:hover {font-size:150%;}
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shop/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -140,7 +140,7 @@ a.two:hover {font-size:150%;}
                 <div class="title">
                     ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
                 </div>  
-                <img src="images/qr.jpg" alt="" class="logoMainIcon">
+                <img src="../images/shop/qr.jpg" alt="" class="logoMainIcon">
             </div> 
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
@@ -190,7 +190,7 @@ a.two:hover {font-size:150%;}
             </div>
             <!-- <div class="schedule">
                 <div class="title">
-                    <img class="btc" src="images/btc.jpg" alt=""> PAGA CON BITCOIN!
+                    <img class="btc" src="../images/shop/btc.jpg" alt=""> PAGA CON BITCOIN!
                     <br>
                     <strong style="color:#333;">1DdkCoDbAjPLgdkvQRizmLi438M16piqFB</strong>
                 </div>
@@ -202,15 +202,15 @@ a.two:hover {font-size:150%;}
                     <path d="M12 6H0l6-6z" /></svg>
             </a>
             <div class="footer">
-                <img src="images/" alt="" class="footerLogo">
+                <img src="../images/shop/" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="images/fb.png" alt="" class="fb">
-                        <img src="images/insta.png" alt="" class="insta">
+                        <img src="../images/shop/fb.png" alt="" class="fb">
+                        <img src="../images/shop/insta.png" alt="" class="insta">
                         Seguinos en Instagram /elconjuntoorg
                     </div>
                     <div class="contact">
-                        <img src="images/phone.png" alt="" class="phone">
+                        <img src="../images/shop/phone.png" alt="" class="phone">
                         Dudas y consultas llamanos: 11 3113 8955
                     </div>
                 </div>
