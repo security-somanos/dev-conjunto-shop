@@ -608,6 +608,7 @@ line-height: 18px;
     overflow: hidden;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
     border-radius: 14px;
+    transition: transform .2s;
 }
 
 .main .products .item .productImage {
@@ -616,8 +617,14 @@ line-height: 18px;
     max-width: 100%;
     background: #e6e6e6;
     object-fit: cover;
+
     /* border-radius: 12px; */
 }
+ .item:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
+    }
 
 .main .products .item .title {
     color: #ffffff;
