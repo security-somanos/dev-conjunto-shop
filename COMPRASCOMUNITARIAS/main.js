@@ -35,7 +35,8 @@ var app = new Vue({
             address: '',
             phone: '',
             email: '',
-            delivery: false        
+            delivery: false,
+            obs: '',
         },
         active: {
             'verdura': { status: true },
@@ -156,6 +157,7 @@ var app = new Vue({
                 phone: this.userData.phone,
                 email: this.userData.email,
                 delivery: this.userData.delivery,
+                obs: this.userData.obs
                 total: this.cartTotal,
                 items: []
             }];
