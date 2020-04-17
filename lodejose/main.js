@@ -34,7 +34,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
+            email: 'Lo de Jose',
             delivery: false        
         },
         active: {
