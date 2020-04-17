@@ -16,6 +16,7 @@
         <!-- <div class="top-bar">
             <div data-netlify-identity-menu></div>
         </div> -->
+        <div class="totalFloat" id="totalFloat">${{cartTotal}}</div>
         <div class="header">
             <img src="../images/shops/logo.png" alt="" class="logo">
             <div class="contain">
@@ -75,13 +76,13 @@
         <div class="cart">
             <div class="head">
                 <div class="cartTitle">
-                    <img src="images/scale.png" alt="" class="cartIcon">
+                    <img src="../images/shops/scale.png" alt="" class="cartIcon">
                     <div class="title">Carrito</div>
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -95,7 +96,7 @@
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -111,7 +112,7 @@
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -128,7 +129,7 @@
                 <div class="title">
                     ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
                 </div>
-                <img src="images/qrconjunto.jpeg" alt="" class="logoMainIcon">
+                <img src="../images/shops/qrconjunto.jpeg" alt="" class="logoMainIcon">
             </div>
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
