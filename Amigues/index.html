@@ -140,15 +140,15 @@
                 <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
-                        <option value="3" disabled selected>Escoger forma de entrega</option>
+                        <option value="0" disabled selected>Escoger forma de entrega</option>
                         <option value="1">Retirar en Anchorena 684, La Lucila</option>
-                        <option value="2">Retirar en H. de la Quintana 1540, Florida.</option>
-                        <option value="0">Envio a Domicilio</option> 
+                      <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
+                        <option value="3">Envio a Domicilio</option>
                     </select>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
-                <div class="deliveryLabel" v-if="userData.delivery">
+                <div class="deliveryLabel" v-if="userData.delivery == 3">
                           <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
          <h4 style="font-size: 16px;" >Vicente López:</h4><br>
                La Lucila = $100 <br>
@@ -190,7 +190,7 @@
                                 desde las 14:00 hasta las 18:00
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
                             </div>
-                            <div v-if="userData.delivery == 0">
+                            <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Miercoles de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.        

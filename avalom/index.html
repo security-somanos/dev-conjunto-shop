@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nodo La Lucila</title>
+    <title>Nodo Florida</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico" href="../images/shops/logo.png" />
     <link rel="stylesheet" href="style.css">
@@ -37,11 +37,12 @@
             <div class="headerDisplay">
                 <div class="aviso">
                     
-                    <div class="avisoTitle">Compra Comunitaria La Lucila</div>
+                    <div class="avisoTitle">Compra Comunitaria Florida</div>
                     
-                   Te damos la bienvenida a la compra comunitaria de La Lucila.
+                   Te damos la bienvenida a la compra comunitaria de Florida.
                    <br><br> 
-                   Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios. 
+                   Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con los productores, <br>
+                    eliminando así intermediarios innecesarios.
                    <br><br>
                     Lo revolucionario de este tipo de compra comunitaria está en 
                     que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen, 
@@ -51,7 +52,7 @@
                     <br><br>
              Recordá que:<br>
  		         • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-              	 • Vas a poder retirarlo a partir del Miércoles desde las 12:00 hasta las 20:00.<br>
+              	 • Vas a poder retirarlo a partir del Miércoles de la semana que viene, desde las 12:00 hasta las 18:00.<br>
                  • La disponibilidad del campo esta sujeta a factores climaticos o de estación.
                     (de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
@@ -140,15 +141,15 @@
                 <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
-                        <option value="3" disabled selected>Escoger forma de entrega</option>
-                        <option value="1">Retirar en Anchorena 684, La Lucila</option>
+                        <option value="0" disabled selected>Escoger forma de entrega</option>
+                       <!-- <option value="1">Retirar en Anchorena 684, La Lucila</option> -->
                         <option value="2">Retirar en H. de la Quintana 1540, Florida.</option>
-                        <option value="0">Envio a Domicilio</option> 
+                        <option value="3">Envio a Domicilio</option>
                     </select>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
-                <div class="deliveryLabel" v-if="userData.delivery">
+                <div class="deliveryLabel" v-if="userData.delivery == 3">
                           <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
          <h4 style="font-size: 16px;" >Vicente López:</h4><br>
                La Lucila = $100 <br>
@@ -184,18 +185,18 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == 1">
+                            <div v-if="userData.delivery === 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene <br>
                                 desde las 14:00 hasta las 18:00
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
                             </div>
-                            <div v-if="userData.delivery == 0">
+                            <div v-if="userData.delivery === 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Miercoles de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.        
                             </div>
-                            <div v-if="userData.delivery == 2">
+                            <div v-if="userData.delivery === 2">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene
                                 desde las 14:00 hasta las 18:00

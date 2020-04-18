@@ -35,7 +35,7 @@ var app = new Vue({
             address: '',
             phone: '',
             email: 'Avalom',
-            delivery: false        
+            delivery: 0,
         },
         active: {
             'verdura': { status: true },
@@ -123,7 +123,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == true && this.userData.address == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -133,16 +133,16 @@ var app = new Vue({
         },
         changeLocation(event) {
             if (event.target.value === "1"){
-                this.userData.delivery = false;
+                this.userData.delivery = 1;
                 this.userData.address = "Retira por La Lucila";
             } 
             else if (event.target.value === "2"){
-                this.userData.delivery = false;
+                this.userData.delivery = 2;
                 this.userData.address = "Retira por Avalom";
             }
             
             else {
-                this.userData.delivery = true;
+                this.userData.delivery = 3;
                 this.userData.address = "";
                  
             }
