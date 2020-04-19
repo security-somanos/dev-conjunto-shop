@@ -41,7 +41,7 @@
                     
                    Te damos la bienvenida a la compra comunitaria de Caballito y Flores.
                    <br><br> 
-                   Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios. 
+                   Buscamos acortar distancias entre el campo y la ciudad, dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.
                    <br><br>
                     Lo revolucionario de este tipo de compra comunitaria está en 
                     que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen, 
@@ -51,7 +51,7 @@
                     <br><br>
              Recordá que:<br>
  		         • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-              	 • Vas a poder retirarlo a partir del Miércoles desde las 12:00 hasta las 20:00.<br>
+              	 • Vas a poder recibirlo en tu casa el dia Jueves de la semana que viene. <br>
                  • La disponibilidad del campo esta sujeta a factores climaticos o de estación.
                     (de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
@@ -150,8 +150,8 @@
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
                           <h1 style="font-size: 20px;" >Costos por Zona</h1> <br>
-         <h4 style="font-size: 16px;" >Caballito : $150 </h4><br>
-                    <h4 style="font-size: 16px;" >Flores : $200 </h4><br><br>
+         <h4 style="font-size: 16px;" >Flores : $150 </h4><br>
+                    <h4 style="font-size: 16px;" >Caballito : $200 </h4><br><br>
                 </div>
             </form>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
@@ -178,7 +178,7 @@
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
+                                Preparate para recibirlo el Jueves de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.        
                             </div>
                             <div v-if="userData.delivery == 2">
