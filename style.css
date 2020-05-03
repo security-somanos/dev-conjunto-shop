@@ -122,6 +122,7 @@ box-shadow: 0px 3px 6px #33333329;
     font-family: 'Amatic SC';
     font-size: 40px;
     margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
 }
 .site .darkscreen .modal .sub{
@@ -140,15 +141,19 @@ box-shadow: 0px 3px 6px #33333329;
 .site .darkscreen .modal .section .itemn {
     background-color: #333;
     color: white;
-    font-size: 12px;
+    font-size: 15px;
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 5px;
-    padding: 10px;
+    margin: 5px 30px 5px 30px;
+    padding: 10px 22px;
     display: flex;
     justify-content: center;
     text-align: center;
+}
+.itemn:hover {
+    outline: 7px double ;
+    outline-color: black;
 }
 .site .darkscreen .modal .section .itemn .node{
     display: block;
@@ -164,26 +169,26 @@ box-shadow: 0px 3px 6px #33333329;
     left: 0;
     display: block;
 }
-.site .darkscreen .modal .section .itemn .text{
+.site .darkscreen .modal .section .itemn .texto{
     line-height: 4px;
-    margin: 10px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
 }
-.site .darkscreen .modal .section .itemn .text p{
+.site .darkscreen .modal .section .itemn .texto p{
     height: 20px;
     line-height: 16px;
     position: relative;
     top: 6px;
     margin-bottom: 6px;
 }
-.site .darkscreen .modal .section .itemn .text strong{
+.site .darkscreen .modal .section .itemn .texto strong{
     color: #007bcf;
 }
 
-.site .darkscreen .modal .section .itemn .text .titlen{
+.site .darkscreen .modal .section .itemn .texto .titlen{
     color: #007bcf;
     line-height: 11px;
 }
-.site .darkscreen .modal .section .itemn .text  .subn p{
+.site .darkscreen .modal .section .itemn .texto .subn p{
     line-height: 16px;
 }
 
