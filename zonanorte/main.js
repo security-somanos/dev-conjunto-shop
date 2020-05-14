@@ -35,7 +35,7 @@ var app = new Vue({
             address: '',
             phone: '',
             email: '',
-            delivery: false        
+            delivery: 0
         },
         active: {
             'verdura': { status: true },
@@ -93,7 +93,7 @@ var app = new Vue({
                 }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
-                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
+                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2));
 
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
@@ -113,8 +113,10 @@ var app = new Vue({
             this.getTotal();
         },
         updateValue: function (item) {
-            if (item.amount == '' || parseFloat(item.amount) == NaN) { item.amount = 0 }
-            else (item.amount = parseFloat(item.amount))
+            if (item.amount == '' || parseFloat(item.amount) == NaN) {
+                item.amount = 0
+            }
+            else (item.amount = parseFloat(item.amount));
             item.total = item.amount * item.price;
             this.getTotal();
         },
@@ -123,7 +125,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == true && this.userData.address == '') {
+            else if (this.userData.delivery == 1 && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -132,11 +134,18 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if(event.target.value === "0"){
-                this.userData.delivery = false;
-                this.userData.address = "Retira por el Local";
-            } else {
-                this.userData.delivery = true;
+            if(event.target.value === "3")
+            {
+                this.userData.delivery = 3;
+                this.userData.address = "Retira Sábado por el Local";
+            }
+            else if(event.target.value === "2")
+            {
+            this.userData.delivery = 2;
+            this.userData.address = "Retira en el día";
+            }
+            else {
+                this.userData.delivery = 1;
                 this.userData.address = "";
             }
             this.deliveryMethod = true; 
@@ -246,7 +255,7 @@ var app = new Vue({
 
 
 //Scroll top on pageload
-window.addEventListener('scroll', function (evt) {
+window.addEventListener('scroll', function () {
     var distance_from_top = document.documentElement.scrollTop;
     var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {

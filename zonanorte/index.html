@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html lang="es" >
 
 <head>
     <meta charset="utf-8" />
@@ -24,11 +24,14 @@
                 </div>
                 <div class="filter">
                     <a class="button" v-bind:class="{active : active['verdura'].status}"
-                        @click="setVisibility('verdura');"><img class="filterIcon" src="../images/shops/carrot.png">Verduras</a>
+                        @click="setVisibility('verdura');">
+                        <img class="filterIcon" src="../images/shops/carrot.png">Verduras</a>
                     <a class="button" v-bind:class="{active : active['fruta'].status}"
-                        @click="setVisibility('fruta');"><img class="filterIcon" src="../images/shops/apple.png">Frutas</a>
+                        @click="setVisibility('fruta');">
+                        <img class="filterIcon" src="../images/shops/apple.png">Frutas</a>
                     <a class="button" v-bind:class="{active : active['almacen'].status}"
-                        @click="setVisibility('almacen');"><img class="filterIcon" src="../images/shops/milk.png">Almacén</a>
+                        @click="setVisibility('almacen');">
+                        <img class="filterIcon" src="../images/shops/milk.png">Almacén</a>
                 </div>
             </div>
             <div class="headerDisplay">
@@ -139,13 +142,14 @@
                 <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                     @change="changeLocation($event)">
-                    <option value="3" disabled selected>Escoger forma de entrega</option>
-                    <option value="0">Retirar en Anchorena 684, La Lucila</option>
-                    <option value="1">Envio a Domicilio</option>
+                    <option value="0" disabled selected>Escoger forma de entrega</option>
+                        <option value="3">Retiro el Sábado (Anchorena)</option>
+                    <option value="2">Retiro en el día (Anchorena)</option>
+                    <option value="1">Envío a Domicilio</option>
                 </select>
             </div>  
-            <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text" placeholder="Direccion" v-model="userData.address">
-            <div class="deliveryLabel"  v-if="userData.delivery">
+            <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text" placeholder="Direccion" v-model="userData.address">
+            <div class="deliveryLabel"  v-if="userData.delivery == 1">
                 <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
                VICENTE LOPEZ<br>
                La Lucila = $100 <br>
@@ -158,6 +162,16 @@
                Beccar     = $300  <br>
                Tigre      = $400  <br> 
             </div>
+                <div class="deliveryLabel"  v-if="userData.delivery == 2">
+                    <h1 style="font-size: 20px;" >Horarios para retirar:</h1> <br>
+                    Martes a Viernes<br>
+                    de 10hs a 15hs <br>
+                </div>
+                <div class="deliveryLabel"  v-if="userData.delivery == 3">
+                    <h1 style="font-size: 20px;" >Horarios para retirar:</h1> <br>
+                    <b>Sábado</b><br>
+                    de 10hs a 18hs <br>
+                </div>
             </form>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
@@ -175,11 +189,15 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == false">
+                            <div v-if="userData.delivery == 3">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el local Sabados de 12 a 20 hrs.
+                                Podes retirarlo por el local Sábados de 10hs a 20 hs.
                             </div>
-                            <div v-if="userData.delivery == true">
+                            <div v-if="userData.delivery == 2">
+                                Gracias!  Su pedido se ha realizado con exito. <br>
+                                Podes retirarlo por el local, de Martes a Viernes entre las 10hs y las 15hs.
+                            </div>
+                            <div v-if="userData.delivery == 1">
                                 Gracias!  Su pedido se ha realizado con exito. <br>
                                 Nos estaremos comunicando con vos para coordinar la entrega.
                             </div>
