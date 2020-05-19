@@ -27,34 +27,36 @@
                 </div>
                 <div class="filter">
                     <a class="button" v-bind:class="{active : active['verdura'].status}"
-                        @click="setVisibility('verdura');"><img class="filterIcon" src="../images/shops/carrot.png">Verduras</a>
+                        @click="setVisibility('verdura');"><img class="filterIcon"
+                            src="../images/shops/carrot.png">Verduras</a>
                     <a class="button" v-bind:class="{active : active['fruta'].status}"
-                        @click="setVisibility('fruta');"><img class="filterIcon" src="../images/shops/apple.png">Frutas</a>
+                        @click="setVisibility('fruta');"><img class="filterIcon"
+                            src="../images/shops/apple.png">Frutas</a>
                     <a class="button" v-bind:class="{active : active['almacen'].status}"
-                        @click="setVisibility('almacen');"><img class="filterIcon" src="../images/shops/milk.png">Almacén</a>
+                        @click="setVisibility('almacen');"><img class="filterIcon"
+                            src="../images/shops/milk.png">Almacén</a>
                 </div>
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
-                    
                     <div class="avisoTitle">Compra Comunitaria La Lucila</div>
-                    
-                   Te damos la bienvenida a la compra comunitaria de La Lucila.
-                   <br><br> 
-                   Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios. 
-                   <br><br>
-                    Lo revolucionario de este tipo de compra comunitaria está en 
-                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen, 
+                    Te damos la bienvenida a la compra comunitaria de La Lucila.
+                    <br><br>
+                    Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con
+                    los productores, eliminando así intermediarios innecesarios.
+                    <br><br>
+                    Lo revolucionario de este tipo de compra comunitaria está en
+                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen,
                     así reducimos los costos de los alimentos y su logística (transporte del campo a la ciudad).
                     <br><br>
                     Si somos más, pagamos menos.
                     <br><br>
-             Recordá que:<br>
- 		         • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-              	 • Vas a poder retirarlo a partir del Miércoles desde las 12:00 hasta las 20:00.<br>
-                 • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
-                 <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
-                 <br>(de todas formas siempre vamos a buscar la manera de compensarte)
+                    Recordá que:<br>
+                    • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
+                    • Vas a poder retirarlo a partir del Miércoles desde las 12:00 hasta las 20:00.<br>
+                    • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
+                    <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
+                    <br>(de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
                     ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6955 3325 .
                 </div>
@@ -65,6 +67,8 @@
                 <img :src="`../images/shops/${item.image}`" class="productImage">
                 <div class="title">
                     {{item.name}} = ${{ item.price }}
+                    <br>
+                    <!-- <strong>Stock : {{ item.stock }}</strong> -->
                 </div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
@@ -143,30 +147,30 @@
                         @change="changeLocation($event)">
                         <option value="0" disabled selected>Escoger forma de entrega</option>
                         <option value="1">Retirar en Anchorena 684, La Lucila</option>
-                      <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
+                        <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
                         <option value="3">Envio a Domicilio</option>
                     </select>
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
-                          <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
-         <h4 style="font-size: 16px;" >Vicente López:</h4><br>
-               La Lucila = $100 <br>
-               Olivos    = $120 <br>
-               Florida   = $150 <br>
-               Munro     = $200 <br><br>
-         <h4 style="font-size: 16px;" >San Isidro:</h4> <br><br>
-               Martinez   = $150 <br>
-               Acassuso   = $200 <br>
-               San Isidro = $250 <br>
-               Beccar     = $300  <br>
-               Tigre      = $400  <br> <br>
-         <h4 style="font-size: 16px;" >San Fernando:</h4> <br><br>
-               San Fernando = $350 <br> 
-               Victoria     = $400 <br> 
-               Virreyes     = $450 <br> 
-               Tigre        = $500 <br> 
+                    <h1 style="font-size: 20px;">Costo promedio</h1> <br>
+                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
+                    La Lucila = $100 <br>
+                    Olivos = $120 <br>
+                    Florida = $150 <br>
+                    Munro = $200 <br><br>
+                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
+                    Martinez = $150 <br>
+                    Acassuso = $200 <br>
+                    San Isidro = $250 <br>
+                    Beccar = $300 <br>
+                    Tigre = $400 <br> <br>
+                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
+                    San Fernando = $350 <br>
+                    Victoria = $400 <br>
+                    Virreyes = $450 <br>
+                    Tigre = $500 <br>
                 </div>
             </form>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
@@ -189,12 +193,12 @@
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene <br>
                                 desde las 14:00 hasta las 18:00
-                                por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
+                                por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684.
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Miercoles de la semana que viene. <br>
-                                Nos vamos a comunicar con vos para coordinar la entrega.        
+                                Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
                             <div v-if="userData.delivery == 2">
                                 Gracias! Su pedido se ha realizado con exito. <br>
