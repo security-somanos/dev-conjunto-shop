@@ -14,6 +14,7 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+
 const productsRef = database.ref('products');
 
 var app = new Vue({
@@ -51,17 +52,20 @@ var app = new Vue({
     mixins: [Vue2Filters.mixin],
     created: function () {
         productsRef.on('value', snap => {
-            let products = [];
+            let products = []
             snap.forEach(item => {
+                // if (item.child('stock').val() > 0) {
+                // };
                 products.push({
                     active: item.child('active').val(),
                     name: item.child('name').val(),
                     type: item.child('type').val(),
                     price: item.child('price').val(),
+                    stock: item.child('stock').val(),
                     image: item.child('image').val(),
+                    key: item.key,
                     amount: 0
-                }
-                );
+                })
             });
             this.setProducts(products);
         });
@@ -100,8 +104,11 @@ var app = new Vue({
             }
         },
         addItem: function (item) {
-            item.amount++;
-            item.total = item.amount * item.price;
+            if (item.amount < item.stock) {
+                item.amount++;
+                item.total = item.amount * item.price;
+            }
+
             this.getTotal();
         },
         removeItem: function (item) {
@@ -132,21 +139,21 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if (event.target.value === "1"){
+            if (event.target.value === "1") {
                 this.userData.delivery = 1;
                 this.userData.address = "Retira por La Lucila";
-            } 
+            }
             /* else if (event.target.value === "2"){
                 this.userData.delivery = 2;
                 this.userData.address = "Retira por Avalom";
             } */
-            
+
             else {
                 this.userData.delivery = 3;
                 this.userData.address = "";
-                 
+
             }
-            this.deliveryMethod = true; 
+            this.deliveryMethod = true;
         },
         saveSale(cart) {
             // send to firebase
@@ -195,6 +202,17 @@ var app = new Vue({
                     self.saleComplete = true;
                 }
             });
+
+            for (var item in this.cart) {
+                for (var i in this.productList) {
+                    if (this.productList[i].key == this.cart[item].key) {
+                        let key = this.cart[item].key.toString();
+                        let stockDiff = this.productList[i].stock -= this.cart[item].amount;
+                        console.log(key, stockDiff)
+                        productsRef.child(key).update({ stock: stockDiff });
+                    }
+                }
+            }
         },
 
         //toggle category buttons
@@ -251,10 +269,6 @@ var app = new Vue({
     }
 })
 
-// window.replybox = {
-//     site: 'q8jBQaoBa2',
-// };
-
 //Scroll top on pageload
 window.addEventListener('scroll', function (evt) {
     var distance_from_top = document.documentElement.scrollTop
@@ -267,7 +281,7 @@ window.addEventListener('scroll', function (evt) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementsByClassName("filter")[0].classList.add("fixed");
     }
-    if(cartDiv.top < 200){
+    if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");
     } else {
         document.getElementById('totalFloat').classList.remove("hide");
@@ -281,11 +295,11 @@ const scrollToTop = () => {
         window.scrollTo(0, c - c / 10);
     }
 };
+
 const scrollTopProducts = () => {
     let p = document.getElementById("products");
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
-
 
 document.getElementById("js-top").onclick = function (e) {
     e.preventDefault();
