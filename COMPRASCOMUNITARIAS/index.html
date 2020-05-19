@@ -37,6 +37,8 @@ a.two:hover {font-size:150%;}
                         @click="setVisibility('fruta');"><img class="filterIcon" src="../images/shops/apple.png">Frutas</a>
                     <a class="button" v-bind:class="{active : active['almacen'].status}"
                         @click="setVisibility('almacen');"><img class="filterIcon" src="../images/shops/milk.png">Almacén</a>
+                    <a class="button" v-bind:class="{active : active['medicina'].status}"
+                       @click="setVisibility('medicina');"><img class="filterIcon" src="../images/shops/carrot.png">Medicina</a>
                 </div>
             </div>
             <div class="headerDisplay">
@@ -91,7 +93,7 @@ a.two:hover {font-size:150%;}
                     <div class="title">Carrito</div>
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
-                    <div class="verduras">Verduras</div>
+                    <div class="titleCart">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
                         <img :src="`../images/shops/${item.image}`" alt="" class="img">
                         <div class="itemName">
@@ -105,7 +107,7 @@ a.two:hover {font-size:150%;}
                     </div>
                 </div>
                 <div class="frutaCart" v-if="cartHas.fruta == true">
-                    <div class="frutas">Frutas</div>
+                    <div class="titleCart">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
                         <img :src="`../images/shops/${item.image}`" alt="" class="img">
                         <div class="itemName">
@@ -119,7 +121,7 @@ a.two:hover {font-size:150%;}
                     </div>
                 </div>
                 <div class="almacenCart" v-if="cartHas.almacen == true">
-                    <div class="frutas">Almacen
+                    <div class="titleCart">Almacen
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">

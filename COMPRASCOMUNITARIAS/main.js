@@ -35,17 +35,19 @@ var app = new Vue({
             address: '',
             phone: '',
             email: '',
-            delivery: false        
+            delivery: false
         },
         active: {
             'verdura': { status: true },
             'fruta': { status: false },
-            'almacen': { status: false }
+            'almacen': { status: false },
+            'medicina': { status:false}
         },
         cartHas: {
             verdura: false,
             fruta: false,
-            almacen: false
+            almacen: false,
+            medicina: false
         }
     },
     mixins: [Vue2Filters.mixin],
@@ -91,6 +93,10 @@ var app = new Vue({
                 if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
                 }
+                if (this.cart[item].type == "medicina") {
+                    this.cartHas.medicina = true;
+                }
+
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
@@ -232,7 +238,8 @@ var app = new Vue({
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
-                        'almacen': { status: false }
+                        'almacen': { status: false },
+                        'medicina': { status: false}
                     }
                 }
             };

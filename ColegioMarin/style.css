@@ -473,7 +473,7 @@ line-height: 18px;
     border-left: 2px solid #00cc65;
 }
 
-.frutaCart .frutas, .almacenCart .frutas {
+.frutaCart .titleCart, .almacenCart .titleCart {
     padding: 10px;
     color: #00cc65;
     font-size: 25px;
@@ -728,7 +728,7 @@ line-height: 18px;
     border-left: 2px solid #00cc65;
 }
 
-.main .cart .verduraCart .verduras {
+.main .cart .verduraCart .titleCart {
     padding: 10px;
     color: #00cc65;
     font-size: 25px;

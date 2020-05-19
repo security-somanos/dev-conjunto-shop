@@ -82,13 +82,13 @@ var app = new Vue({
 
             for (var item in this.cart) {
 
-                if (this.cart[item].type == 'fruta') {
+                if (this.cart[item].type === 'fruta') {
                     this.cartHas.fruta = true;
                 }
-                if (this.cart[item].type == 'verdura') {
+                if (this.cart[item].type === 'verdura') {
                     this.cartHas.verdura = true;
                 }
-                if (this.cart[item].type == "almacen") {
+                if (this.cart[item].type === "almacen") {
                     this.cartHas.almacen = true;
                 }
 
@@ -113,7 +113,7 @@ var app = new Vue({
             this.getTotal();
         },
         updateValue: function (item) {
-            if (item.amount == '' || parseFloat(item.amount) == NaN) {
+            if (item.amount === '' || parseFloat(item.amount) == NaN) {
                 item.amount = 0
             }
             else (item.amount = parseFloat(item.amount));
@@ -122,10 +122,10 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
+            if (this.userData.name === '' || this.userData.phone === '' || this.deliveryMethod === false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 1 && this.userData.address == '') {
+            else if (this.userData.delivery === 1 && this.userData.address === '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -224,7 +224,7 @@ var app = new Vue({
             var newList = this.productList.sort().filter(function (item) {
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
-            if (self.search != '') {
+            if (self.search !== '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
                 }
@@ -237,7 +237,7 @@ var app = new Vue({
             input.onkeyup = function () {
                 var key = event.keyCode || event.charCode;
 
-                if (key == 8 || key == 46 && self.search == '') {
+                if (key === 8 || key === 46 && self.search === '') {
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
@@ -247,7 +247,7 @@ var app = new Vue({
             };
 
             return newList.filter(function (item) {
-                return self.active[item.type].status == true;
+                return self.active[item.type].status === true;
             }).sort();
         }
     }
