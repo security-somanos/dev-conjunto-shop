@@ -102,11 +102,8 @@ var app = new Vue({
             }
         },
         addItem: function (item) {
-            if (item.amount < item.stock) {
-                item.amount++;
-                item.total = item.amount * item.price;
-            }
-
+            item.amount++;
+            item.total = item.amount * item.price;
             this.getTotal();
         },
         removeItem: function (item) {
