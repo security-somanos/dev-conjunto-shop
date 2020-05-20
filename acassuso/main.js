@@ -54,8 +54,6 @@ var app = new Vue({
         productsRef.on('value', snap => {
             let products = []
             snap.forEach(item => {
-                // if (item.child('stock').val() > 0) {
-                // };
                 products.push({
                     active: item.child('active').val(),
                     name: item.child('name').val(),
