@@ -2,13 +2,14 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCwgdBtHXEyUVLe9yP_la8IrN0qG2SYeFM",
-    authDomain: "vrde-admin.firebaseapp.com",
-    databaseURL: "https://vrde-admin.firebaseio.com",
-    projectId: "vrde-admin",
-    storageBucket: "",
-    messagingSenderId: "549162612019",
-    appId: "1:549162612019:web:8eaa67dae5a1304c43fa46"
+    apiKey: "AIzaSyAqVGqLDtv_VGQgFfZgh8E0lZqLx2LQ6j4",
+    authDomain: "fractalshop-8ed45.firebaseapp.com",
+    databaseURL: "https://fractalshop-8ed45.firebaseio.com",
+    projectId: "fractalshop-8ed45",
+    storageBucket: "fractalshop-8ed45.appspot.com",
+    messagingSenderId: "623699073114",
+    appId: "1:623699073114:web:3c0c1dddbc9f51b9222063",
+    measurementId: "G-DK6WF07QKE"
 };
 
 firebase.initializeApp(config);
@@ -34,8 +35,8 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: '',
-            delivery: 0
+            email: 'Amigues',
+            delivery: 0,
         },
         active: {
             'verdura': { status: true },
@@ -82,18 +83,18 @@ var app = new Vue({
 
             for (var item in this.cart) {
 
-                if (this.cart[item].type === 'fruta') {
+                if (this.cart[item].type == 'fruta') {
                     this.cartHas.fruta = true;
                 }
-                if (this.cart[item].type === 'verdura') {
+                if (this.cart[item].type == 'verdura') {
                     this.cartHas.verdura = true;
                 }
-                if (this.cart[item].type === "almacen") {
+                if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
                 }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
-                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2));
+                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
 
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
@@ -113,19 +114,17 @@ var app = new Vue({
             this.getTotal();
         },
         updateValue: function (item) {
-            if (item.amount === '' || parseFloat(item.amount) == NaN) {
-                item.amount = 0
-            }
-            else (item.amount = parseFloat(item.amount));
+            if (item.amount == '' || parseFloat(item.amount) == NaN) { item.amount = 0 }
+            else (item.amount = parseFloat(item.amount))
             item.total = item.amount * item.price;
             this.getTotal();
         },
         formValidate() {
             // form validation
-            if (this.userData.name === '' || this.userData.phone === '' || this.deliveryMethod === false) {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery === 1 && this.userData.address === '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -134,19 +133,19 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if(event.target.value === "3")
-            {
-                this.userData.delivery = 3;
-                this.userData.address = "Retira Sábado por el Local";
-            }
-            else if(event.target.value === "2")
-            {
-            this.userData.delivery = 2;
-            this.userData.address = "Retira en el día";
-            }
-            else {
+            if (event.target.value === "1"){
                 this.userData.delivery = 1;
+                this.userData.address = "Retira por La Lucila";
+            } 
+            /* else if (event.target.value === "2"){
+                this.userData.delivery = 2;
+                this.userData.address = "Retira por Avalom";
+            } */
+            
+            else {
+                this.userData.delivery = 3;
                 this.userData.address = "";
+                 
             }
             this.deliveryMethod = true; 
         },
@@ -182,7 +181,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/').push(sale, function (error) {
+            database.ref('salesCuartoCreciente/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -190,7 +189,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/').push(sale, function (error) {
+            database.ref('salesCuartoCrecienteArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -224,7 +223,7 @@ var app = new Vue({
             var newList = this.productList.sort().filter(function (item) {
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
-            if (self.search !== '') {
+            if (self.search != '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
                 }
@@ -237,7 +236,7 @@ var app = new Vue({
             input.onkeyup = function () {
                 var key = event.keyCode || event.charCode;
 
-                if (key === 8 || key === 46 && self.search === '') {
+                if (key == 8 || key == 46 && self.search == '') {
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
@@ -247,17 +246,19 @@ var app = new Vue({
             };
 
             return newList.filter(function (item) {
-                return self.active[item.type].status === true;
+                return self.active[item.type].status == true;
             }).sort();
         }
     }
 })
 
+// window.replybox = {
+//     site: 'q8jBQaoBa2',
+// };
 
 //Scroll top on pageload
-window.addEventListener('scroll', function () {
-    var distance_from_top = document.documentElement.scrollTop;
-    var cartDiv = document.getElementById('cart').getBoundingClientRect();
+window.addEventListener('scroll', function (evt) {
+    var distance_from_top = document.documentElement.scrollTop
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
@@ -287,5 +288,7 @@ const scrollTopProducts = () => {
 };
 
 
-
-
+document.getElementById("js-top").onclick = function (e) {
+    e.preventDefault();
+    scrollToTop();
+};

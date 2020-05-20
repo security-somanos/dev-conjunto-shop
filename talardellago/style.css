@@ -452,13 +452,30 @@ line-height: 18px;
     padding-bottom: 20px;
 }
 .cartTitle .cartIcon{
-    height: 70px;
+    height: 70px;a
 }
 .cartTitle .title{
     text-align: center;
     font-size: 30px;
 }
 
+.main .cart .verduraCart {
+    padding: 10px;
+    padding-top: 20px;
+    color: #333;
+    padding-bottom: 20px;
+    width: 95%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
+}
+
+.main .cart .titleCart {
+    padding: 10px;
+    color: #00cc65;
+    font-size: 25px;
+}
 
 .frutaCart, .almacenCart {
     padding: 10px;
@@ -471,12 +488,6 @@ line-height: 18px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #33333329;
     border-left: 2px solid #00cc65;
-}
-
-.frutaCart .frutas, .almacenCart .frutas {
-    padding: 10px;
-    color: #00cc65;
-    font-size: 25px;
 }
 
 .almacenCart .subtitle {
@@ -716,23 +727,7 @@ line-height: 18px;
     line-height: 20px;
 }
 
-.main .cart .verduraCart {
-    padding: 10px;
-    padding-top: 20px;
-    color: #333;
-    padding-bottom: 20px;
-    width: 95%;
-    max-width: 800px;
-    margin-bottom: 20px;
-    box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
-}
 
-.main .cart .verduraCart .verduras {
-    padding: 10px;
-    color: #00cc65;
-    font-size: 25px;
-}
 
 .main .cart .price {
     margin-bottom: 10px;

@@ -13,7 +13,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .aviso {
     padding: 20px;
-    color: #636363;
+    color: #f3b229;
     font-size: 12px;
     font-family: Ubuntu;
     line-height: 14px;
@@ -31,37 +31,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     text-align: center;
     margin-bottom: 20px;
 }
-.totalFloat {
-
-    position: fixed;
-
-    bottom: 20px;
-
-    left: 20px;
-
-    color: black;
-
-    padding: 20px;
-
-    font-size: 20px;
-
-    box-shadow: 0px 3px 6px #33333329;
-
-    border-left: 2px solid #00cc65;
-
-    font-family: Ubuntu;
-
-    border-radius: 15px;
-
-    background-color: white;
-
-    z-index: 1;
-}
-
-
-.totalFloat.hide {
-    display:none;
-}
 
 html {
     box-sizing: border-box;
@@ -73,6 +42,7 @@ html {
 
 body {
     line-height: 1;
+    background-color: #103f79;
 }
 
 ol, ul {
@@ -119,7 +89,7 @@ body {
 }
 
 .main .search {
-    background-color: #333333;
+    background-color: #0056b3;
     height: 20px;
     padding: 15px;
     display: flex;
@@ -158,9 +128,10 @@ body {
 .main .filter.fixed .button {
     width: 50px;
     color:#fff0;
-    background-color:white;
+    background-color:#103f79;
     font-size: 0px;
     border-radius: 0px;
+    border-left-color:#0056b3;
 }
 
 .main .filter.fixed .button:nth-child(2) {
@@ -192,7 +163,7 @@ width: 30px;
 }
 
 .netlify-identity-signup, .netlify-identity-login {
-    color: #333;
+    color: #f3b229;
     text-decoration: none;
     font-family: Ubuntu;
 }
@@ -284,7 +255,7 @@ width: 30px;
 
 .filter .button {
     padding: 13px;
-    color: #808080;
+    color: #f3b229;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -296,7 +267,7 @@ width: 30px;
     font-weight: 100;
     font-size: 1em;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
     border-radius: 10px;
 }
 
@@ -313,7 +284,7 @@ width: 30px;
 
 .filter .button.active {
     color: white;
-    background-color: #00cc65 !important;
+    background-color: #0f1e5a !important;
 }
 
 a.button.active {}
@@ -323,10 +294,12 @@ a.button.active {}
     margin-top: 15px;
     margin-bottom: 15px;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a ;
     max-width: 644px;
     margin: 0px 10px;
     border-radius: 10px;
+    background-color: #0056b3;
+    
 }
 
 .userForm {
@@ -352,7 +325,7 @@ a.button.active {}
     font-size: 16px;
     margin: 5px 0px;
     min-width: 210px;
-    background-color: #f7f7f7ba;
+    background-color: #0056b3;
     flex: 1;
     color: #808080;
     position: relative;
@@ -487,6 +460,7 @@ line-height: 18px;
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
+    color: #f3b229;
 }
 .cartTitle .cartIcon{
     height: 70px;
@@ -500,24 +474,24 @@ line-height: 18px;
 .frutaCart, .almacenCart {
     padding: 10px;
     padding-top: 20px;
-    background: #fff;
+    background: #0056b3;
     color: #333;
     padding-bottom: 20px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
 }
 
 .frutaCart .titleCart, .almacenCart .titleCart {
     padding: 10px;
-    color: #00cc65;
+    color: #f3b229;
     font-size: 25px;
 }
 
 .almacenCart .subtitle {
-    color: #00cc65;
+    color: #f3b229;
     font-size: 14px;
     padding-top: 10px;
     color: #3d4852;
@@ -525,8 +499,8 @@ line-height: 18px;
 }
 
 .frutaCart .frutaCart .subtitle {
-    background: #333;
-    color: #00cc65;
+    background: #0056b3;
+    color: #f3b229;
     font-size: 14px;
     padding-top: 10px;
     color: #ffffff99;
@@ -756,18 +730,18 @@ line-height: 18px;
 .main .cart .verduraCart {
     padding: 10px;
     padding-top: 20px;
-    color: #333;
+    color: #f3b229;
     padding-bottom: 20px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
 }
 
 .main .cart .verduraCart .titleCart {
     padding: 10px;
-    color: #00cc65;
+    color: #f3b229;
     font-size: 25px;
 }
 
@@ -779,7 +753,7 @@ line-height: 18px;
     left: 15px;
     top: 1px;
     margin-right: 20px;
-    color: #ffffff99;
+    color: #f3b229;
 }
 
 .main .cart .item {
@@ -804,6 +778,7 @@ line-height: 18px;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
     margin-top: 0px;
+    color: #f3b229;
 }
 
 .main .cart .item .img {
@@ -832,7 +807,7 @@ line-height: 18px;
 }
 
 .main .cart .item .total {
-    color: #00cc70;
+    color: #f3b229;
 }
 
 .btc {
@@ -841,7 +816,7 @@ line-height: 18px;
 
 .main .cart .cartTotal {
     font-size: 25px;
-    color: #00cc65;
+    color: #f3b229;
     flex: 1 100%;
     text-align: center;
     margin-top: 20px;
@@ -852,11 +827,12 @@ line-height: 18px;
     width: 220px;
     display: flex;
     text-align: center;
-    background-color: #00cc65;
+    background-color: #103f79;
+    border-left-color: #0f1e5a;
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     margin: 20px 0px;
     font-size: 20px;
     border-radius: 10px;
@@ -869,16 +845,16 @@ line-height: 18px;
     margin-bottom: 0px;
     display: flex;
     text-align: center;
-    background-color: #00cc65;
+    background-color: #0056b3;
     justify-content: center;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     font-size: 18px;
     text-decoration: none;
 }
 
 .main .cart .confirmSale {
-    background: white;
+    background: #103f79;
     max-width: 100%;
     padding: 30px;
     width: 100%;
@@ -886,7 +862,7 @@ line-height: 18px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #838587;
+    color: #f3b229;
 }
 
 .main .cart .confirmSale .reload {
@@ -895,10 +871,11 @@ line-height: 18px;
     display: flex;
     text-align: center;
     background-color: #00cc65;
+    border-left-color: #0f1e5a;
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    color: white;
+    color: #f3b229;
     margin: 20px 0px;
     font-size: 20px;
     text-decoration: none;
@@ -921,20 +898,20 @@ line-height: 18px;
 .modal .modalItem {
     width: 400px;
     height: 160px;
-    background-color: white;
+    background-color: #103f79;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.29);
     position: relative;
-    border-left: 2px solid #00cc65;
+    border-left: 2px solid #0f1e5a;
     border-radius: 10px;
 }
 
 .modal .modalItem .title {
     font-size: 15px;
-    color: #333;
+    color: #f3b229;
     padding: 0px 20px;
     text-align: center;
     position: relative;
