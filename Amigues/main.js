@@ -2,13 +2,14 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCdklOqU0EcjNEWy8Cvv1KVIKyYAL-SsU0",
-    authDomain: "admina-8e76b.firebaseapp.com",
-    databaseURL: "https://admina-8e76b.firebaseio.com",
-    projectId: "admina-8e76b",
-    storageBucket: "admina-8e76b.appspot.com",
-    messagingSenderId: "526293543996",
-    appId: "1:526293543996:web:49fa7d8135faa957212739"
+    apiKey: "AIzaSyBvYdUi3Ydfl1_HCDNjiOQdjqtyrFIcM2U",
+    authDomain: "el-conjunto.firebaseapp.com",
+    databaseURL: "https://el-conjunto.firebaseio.com",
+    projectId: "el-conjunto",
+    storageBucket: "el-conjunto.appspot.com",
+    messagingSenderId: "506296486519",
+    appId: "1:506296486519:web:4a7e691e275ee14047d472",
+    measurementId: "G-0JT0Z4J3TT"
 };
 
 firebase.initializeApp(config);
@@ -185,15 +186,16 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/').push(sale, function (error) {
+            database.ref('salesElConjunto/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
                     self.saleComplete = true;
+                    setTimeout(function(){location.reload()}, 10000);
                 }
             });
 
-            database.ref('salesArchive/').push(sale, function (error) {
+            database.ref('salesElConjuntoArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -268,6 +270,9 @@ var app = new Vue({
 })
 
 //Scroll top on pageload
+
+history.scrollRestoration = 'manual';
+
 window.addEventListener('scroll', function (evt) {
     var distance_from_top = document.documentElement.scrollTop
     if (distance_from_top < 250) {
