@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const productsRef = database.ref('products');
+const productsRef = database.ref('productsElConjunto');
 
 var app = new Vue({
     el: '#app',
@@ -55,6 +55,8 @@ var app = new Vue({
         productsRef.on('value', snap => {
             let products = []
             snap.forEach(item => {
+                // if (item.child('stock').val() > 0) {
+                // };
                 products.push({
                     active: item.child('active').val(),
                     name: item.child('name').val(),
@@ -191,7 +193,6 @@ var app = new Vue({
                     console.log(error)
                 } else {
                     self.saleComplete = true;
-                    setTimeout(function(){location.reload()}, 10000);
                 }
             });
 
@@ -270,9 +271,6 @@ var app = new Vue({
 })
 
 //Scroll top on pageload
-
-history.scrollRestoration = 'manual';
-
 window.addEventListener('scroll', function (evt) {
     var distance_from_top = document.documentElement.scrollTop
     if (distance_from_top < 250) {
