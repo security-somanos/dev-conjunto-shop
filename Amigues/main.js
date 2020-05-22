@@ -269,8 +269,11 @@ var app = new Vue({
     }
 })
 
-window.addEventListener('scroll', function (evt) {
-    var distance_from_top = document.documentElement.scrollTop
+
+//Scroll top on pageload
+window.addEventListener('scroll', function () {
+    var distance_from_top = document.documentElement.scrollTop;
+    var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
