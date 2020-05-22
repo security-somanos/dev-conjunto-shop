@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const productsRef = database.ref('productsElConjunto');
+const productsRef = database.ref('productsVrde');
 
 var app = new Vue({
     el: '#app',
@@ -36,7 +36,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
+            email: 'Vrde',
             delivery: 0,
         },
         active: {
@@ -138,17 +138,18 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if (event.target.value === "1") {
-                this.userData.delivery = 1;
-                this.userData.address = "Retira por La Lucila";
-            }
-            /* else if (event.target.value === "2"){
-                this.userData.delivery = 2;
-                this.userData.address = "Retira por Avalom";
-            } */
-
-            else {
+            if(event.target.value === "3")
+            {
                 this.userData.delivery = 3;
+                this.userData.address = "Retira Sábado por el Local";
+            }
+            else if(event.target.value === "2")
+            {
+            this.userData.delivery = 2;
+            this.userData.address = "Retira en el día";
+            }
+            else {
+                this.userData.delivery = 1;
                 this.userData.address = "";
 
             }
@@ -186,7 +187,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesElConjunto/').push(sale, function (error) {
+            database.ref('salesVrde/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -195,7 +196,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesElConjuntoArchive/').push(sale, function (error) {
+            database.ref('salesVrdeArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -269,8 +270,11 @@ var app = new Vue({
     }
 })
 
-window.addEventListener('scroll', function (evt) {
-    var distance_from_top = document.documentElement.scrollTop
+
+//Scroll top on pageload
+window.addEventListener('scroll', function () {
+    var distance_from_top = document.documentElement.scrollTop;
+    var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
