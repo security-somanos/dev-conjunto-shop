@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" >
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pura Espacio - Compras comunitarias agroecologicas</title>
+    <title>Pura Espacio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/ico" href="images/logo.png" />
+    <link rel="shortcut icon" type="image/ico" href="https://storage.cloud.google.com/el-conjunto.appspot.com/logoPuraIcon.ico" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
 </head>
@@ -16,8 +16,9 @@
         <!-- <div class="top-bar">
             <div data-netlify-identity-menu></div>
         </div> -->
+        <div class="totalFloat" id="totalFloat">${{cartTotal}}</div>
         <div class="header">
-            <img src="images/logo.png" alt="" class="logo">
+            <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/logoPura.png" alt="" class="logo">
             <div class="contain">
                 <div class="search">
                     <div class="searchLabel">Bienvenides!</div>
@@ -26,37 +27,41 @@
                 </div>
                 <div class="filter">
                     <a class="button" v-bind:class="{active : active['verdura'].status}"
-                        @click="setVisibility('verdura');"><img class="filterIcon" src="images/carrot.png">Verduras</a>
+                        @click="setVisibility('verdura');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
                     <a class="button" v-bind:class="{active : active['fruta'].status}"
-                        @click="setVisibility('fruta');"><img class="filterIcon" src="images/apple.png">Frutas</a>
+                        @click="setVisibility('fruta');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/apple.png">Frutas</a>
                     <a class="button" v-bind:class="{active : active['almacen'].status}"
-                        @click="setVisibility('almacen');"><img class="filterIcon" src="images/milk.png">Almacén</a>
+                        @click="setVisibility('almacen');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
                 </div>
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
-                    Bienvenides a la COMPRA COMUNITARIA AGROECOLÓGICA de PURA Espacio
-                    <br> <br>
-                    Los pedidos se toman hasta las 12 Hrs de los MIERCOLES
-                    <br>Las entregas se realizan los JUEVES de 15 a 18 hrs por el local: Primera Junta 1029, San Isidro
-                    <br> <br>
-                    Formas de pago: Tenés tiempo de abonar tu pedido hasta las 20 Hrs de los días Miércoles   
-                    <br>* con Mercado Pago escaneando el QR que aparece mas abajo 
-                    <br>* o acercándonos el efectivo a: Anchorena 684, La Lucila.                
-                    <br>- PAGÁ CONTRAENTREGA CON UN 10% DE RECARGO - (Nosotros pagaríamos por vos)
-                    <br> <br>
-                    Costo de envío: Hoy es aproximadamente es un 21% extra 
-                    <br>(Se paga a contraentrega porque varía depende cuantes usuaries se hayan sumado)
-                    <br> <br>
-                    Contacto: 011 15 6222 0308.
+                    <div class="avisoTitle">Pura Espacio</div>
+                    Todos nuestros productos son AGROECOLÓGICOS u ORGÁNICOS,<br /> libres de agrotóxicos nocivos para tu salud
+                    <br />
+                    <br />
+                    Ahora podés realizar tu pedido y retirarlo en 24Hrs!!
+                    (De Martes a Sábados de 10 a 15 hrs.)
+                    <br />Lo buscás por: Primera Junta 1029, Bajo de San Isidro.
+                    <br />
+                    <br />
+                    Envíos a domicilio: Todos los sábados a partir de las 16 hrs.
+                    <br /> Esperanos con tu bolsa para recibir el pedido, y el dinero en sobre ♥
+                    <br />
+                    <br />
+                    <br /> Consultas: 11 4409 0792
                 </div>
             </div>
         </div>
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
-                <img :src="`images/${item.image}`" class="productImage">
+                <img :src="`${item.image}`" class="productImage">
                 <div class="title">
-                    {{item.name}} = ${{ item.price }}
+                    {{ item.name }} = ${{ item.price }}
+                    <br>
                 </div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
@@ -66,16 +71,16 @@
                 </div>
             </div>
         </div>
-        <div class="cart">
+        <div class="cart" id="cart">
             <div class="head">
                 <div class="cartTitle">
-                    <img src="images/scale.png" alt="" class="cartIcon">
+                    <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/scale.png" alt="" class="cartIcon">
                     <div class="title">Carrito</div>
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -89,7 +94,7 @@
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -105,7 +110,7 @@
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
-                        <img :src="`images/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -122,22 +127,38 @@
                 <div class="title">
                     ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
                 </div>
-                <img src="images/qr.jpg" alt="" class="logoMainIcon">
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt="" class="logoMainIcon">
             </div>
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
                 <div class="required">* Por favor complete los campos requeridos</div>
                 <input class="requiredInput" type="text" placeholder="Nombre" v-model="userData.name" required>
-                <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required>
-                <input type="email" placeholder="Correo" v-model="userData.email" required>
-                <!-- <input class="requiredInput" type="text" placeholder="Direccion" v-model="userData.address"
-                    :disabled="userData.delivery == false" v-bind:class="{disabled:userData.delivery == false}">
+                <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required
+                    min-length="8">
                 <div class="delivery">
-                    <label for="delivery" value="Retiro en local" class="label" @click="disabled = !disabled">Entrega a domicilio <br>
-                        <div class="small">* El costo de envio se informa en la entrega</div>
-                    </label>
-                    <input id="delivery" type="checkbox" v-model="userData.delivery">
-                </div> -->
+                    <select name="delivery" id="delivery" required="required" class="requiredInput"
+                    @change="changeLocation($event)">
+                    <option value="0" disabled selected>Escoger forma de entrega</option>
+                        <option value="3">Retiro el Sábado (Anchorena)</option>
+                    <option value="2">Retiro en el día (Anchorena)</option>
+                    <option value="1">Envío a Domicilio</option>
+                </select>
+            </div>
+            <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text" placeholder="Direccion" v-model="userData.address">
+            <div class="deliveryLabel"  v-if="userData.delivery == 1">
+                <h1 style="font-size: 20px;" >Costo promedio</h1> <br>
+          A confirmar
+            </div>
+                <div class="deliveryLabel"  v-if="userData.delivery == 2">
+                    <h1 style="font-size: 20px;" >Horarios para retirar:</h1> <br>
+                    Martes a Viernes<br>
+                    de 10hs a 15hs <br>
+                </div>
+                <div class="deliveryLabel"  v-if="userData.delivery == 3">
+                    <h1 style="font-size: 20px;" >Horarios para retirar:</h1> <br>
+                    <b>Sábado</b><br>
+                    de 10hs a 18hs <br>
+                </div>
             </form>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
@@ -155,40 +176,33 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <h2 style="font-size: 24px;"><img src="images/logoMainIcon.jpg" alt="" height="50px"
-                                    title="" style="position: relative;top: 14px;right: 10px;">
-                                Gracias! :)
-                            </h2>
-                            <br /><br />
-                            Su pedido se ha realizado con exito.
+                            <div v-if="userData.delivery == 3">
+                                Gracias!  Su pedido se ha realizado con exito. <br>
+                                Podes retirarlo por el local Sábados de 10hs a 20 hs.
+                            </div>
+                            <div v-if="userData.delivery == 2">
+                                Gracias!  Su pedido se ha realizado con exito. <br>
+                                Podes retirarlo por el local, de Martes a Viernes entre las 10hs y las 15hs.
+                            </div>
+                            <div v-if="userData.delivery == 1">
+                                Gracias!  Su pedido se ha realizado con exito. <br>
+                                Nos estaremos comunicando con vos para coordinar la entrega.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="schedule">
-                <div class="title">
-                    <img class="btc" src="images/btc.jpg" alt=""> PAGA CON BITCOIN!
-                    <br>
-                    <strong style="color:#333;">1DdkCoDbAjPLgdkvQRizmLi438M16piqFB</strong>
-                </div>
-            </div> -->
-            <!-- <div id="replybox"></div> -->
-
-            <a class="top-link hide" id="js-top">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
-                    <path d="M12 6H0l6-6z" /></svg>
-            </a>
-            <div class="footer">
-                <img src="images/" alt="" class="footerLogo">
+           <div class="footer">
+                <img src="../images/shops/logoMainIconOnly.png" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="images/fb.png" alt="" class="fb">
-                        <img src="images/insta.png" alt="" class="insta">
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/fb.png" alt="" class="fb">
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/insta.png" alt="" class="insta">
                         Seguinos en Instagram /elconjuntoorg
                     </div>
                     <div class="contact">
-                        <img src="images/phone.png" alt="" class="phone">
-                        Dudas y consultas llamanos: 15 6222 0308
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/phone.png" alt="" class="phone">
+                        Dudas y consultas llamanos: 11 4409 0792
                     </div>
                 </div>
             </div>
