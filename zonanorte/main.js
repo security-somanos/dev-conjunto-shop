@@ -15,7 +15,6 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
 const productsRef = database.ref('productsVrde');
 
 var app = new Vue({
@@ -36,8 +35,8 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Vrde',
-            delivery: 0,
+            email: '',
+            delivery: 0
         },
         active: {
             'verdura': { status: true },
@@ -53,18 +52,17 @@ var app = new Vue({
     mixins: [Vue2Filters.mixin],
     created: function () {
         productsRef.on('value', snap => {
-            let products = []
+            let products = [];
             snap.forEach(item => {
                 products.push({
                     active: item.child('active').val(),
                     name: item.child('name').val(),
                     type: item.child('type').val(),
                     price: item.child('price').val(),
-                    stock: item.child('stock').val(),
                     image: item.child('image').val(),
-                    key: item.key,
                     amount: 0
-                })
+                }
+                );
             });
             this.setProducts(products);
         });
@@ -85,29 +83,26 @@ var app = new Vue({
 
             for (var item in this.cart) {
 
-                if (this.cart[item].type == 'fruta') {
+                if (this.cart[item].type === 'fruta') {
                     this.cartHas.fruta = true;
                 }
-                if (this.cart[item].type == 'verdura') {
+                if (this.cart[item].type === 'verdura') {
                     this.cartHas.verdura = true;
                 }
-                if (this.cart[item].type == "almacen") {
+                if (this.cart[item].type === "almacen") {
                     this.cartHas.almacen = true;
                 }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
-                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
+                this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2));
 
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
             }
         },
         addItem: function (item) {
-            if (item.amount < item.stock) {
-                item.amount++;
-                item.total = item.amount * item.price;
-            }
-
+            item.amount++;
+            item.total = item.amount * item.price;
             this.getTotal();
         },
         removeItem: function (item) {
@@ -119,17 +114,19 @@ var app = new Vue({
             this.getTotal();
         },
         updateValue: function (item) {
-            if (item.amount == '' || parseFloat(item.amount) == NaN) { item.amount = 0 }
-            else (item.amount = parseFloat(item.amount))
+            if (item.amount === '' || parseFloat(item.amount) == NaN) {
+                item.amount = 0
+            }
+            else (item.amount = parseFloat(item.amount));
             item.total = item.amount * item.price;
             this.getTotal();
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
+            if (this.userData.name === '' || this.userData.phone === '' || this.deliveryMethod === false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '') {
+            else if (this.userData.delivery === 1 && this.userData.address === '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -151,9 +148,8 @@ var app = new Vue({
             else {
                 this.userData.delivery = 1;
                 this.userData.address = "";
-
             }
-            this.deliveryMethod = true;
+            this.deliveryMethod = true; 
         },
         saveSale(cart) {
             // send to firebase
@@ -192,7 +188,6 @@ var app = new Vue({
                     console.log(error)
                 } else {
                     self.saleComplete = true;
-                    setTimeout(function(){location.reload()}, 10000);
                 }
             });
 
@@ -203,17 +198,6 @@ var app = new Vue({
                     self.saleComplete = true;
                 }
             });
-
-            for (var item in this.cart) {
-                for (var i in this.productList) {
-                    if (this.productList[i].key == this.cart[item].key) {
-                        let key = this.cart[item].key.toString();
-                        let stockDiff = this.productList[i].stock -= this.cart[item].amount;
-                        console.log(key, stockDiff)
-                        productsRef.child(key).update({ stock: stockDiff });
-                    }
-                }
-            }
         },
 
         //toggle category buttons
@@ -241,7 +225,7 @@ var app = new Vue({
             var newList = this.productList.sort().filter(function (item) {
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
-            if (self.search != '') {
+            if (self.search !== '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
                 }
@@ -254,7 +238,7 @@ var app = new Vue({
             input.onkeyup = function () {
                 var key = event.keyCode || event.charCode;
 
-                if (key == 8 || key == 46 && self.search == '') {
+                if (key === 8 || key === 46 && self.search === '') {
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
@@ -264,7 +248,7 @@ var app = new Vue({
             };
 
             return newList.filter(function (item) {
-                return self.active[item.type].status == true;
+                return self.active[item.type].status === true;
             }).sort();
         }
     }
@@ -284,7 +268,7 @@ window.addEventListener('scroll', function () {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementsByClassName("filter")[0].classList.add("fixed");
     }
-    if (cartDiv.top < 200) {
+    if(cartDiv.top < 200){
         document.getElementById('totalFloat').classList.add("hide");
     } else {
         document.getElementById('totalFloat').classList.remove("hide");
@@ -298,13 +282,11 @@ const scrollToTop = () => {
         window.scrollTo(0, c - c / 10);
     }
 };
-
 const scrollTopProducts = () => {
     let p = document.getElementById("products");
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
 
-document.getElementById("js-top").onclick = function (e) {
-    e.preventDefault();
-    scrollToTop();
-};
+
+
+

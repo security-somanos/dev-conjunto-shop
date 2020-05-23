@@ -1,4 +1,4 @@
-    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,6 +19,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin: 0 10px;
     font-weight: lighter;
     /* border-radius: 20px; */
+    max-width: 510px;
 }
 
 .totalFloat {
@@ -63,7 +64,6 @@ html {
 
 body {
     line-height: 1;
-    background-color: #afedb2;
 }
 
 ol, ul {
@@ -255,6 +255,8 @@ width: 30px;
         height: 110px;
         position: relative;
         margin: 0 15px 0 0;
+        margin: 0 auto;
+        top: 18px;
     }
 
     .main .header .contain {
@@ -265,9 +267,11 @@ width: 30px;
         position: relative;
         flex-wrap: wrap;
         max-width: 438px;
-        margin: 10px;
+        margin: 0 auto;
+        margin-top: 40px;
+        position: relative;
         height: 105px;
-        width: 100%;
+        top: 10px;
 }
 
 .filter {
@@ -294,7 +298,7 @@ width: 30px;
         box-shadow: 0 3px 6px #33333329;
         border-left: 2px solid #00cc65;
         border-radius: 10px;
-        background-color: #d5f4e6
+        background-color: #f0f0f0;
 }
 
 .filter .button .filterIcon {
@@ -317,13 +321,15 @@ a.button.active {}
 
 .headerDisplay {
     width: 100%;
-    box-shadow: 0 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    /* box-shadow: 0 3px 6px #33333329; */
+    /* border-left: 2px solid #00cc65; */
     max-width: 644px;
-    margin: auto;
-    margin-bottom: 34px;
+    margin: 0 10px;
     border-radius: 10px;
-    background-color: #d5f4e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .userForm {
