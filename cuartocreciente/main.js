@@ -2,20 +2,20 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyAqVGqLDtv_VGQgFfZgh8E0lZqLx2LQ6j4",
-    authDomain: "fractalshop-8ed45.firebaseapp.com",
-    databaseURL: "https://fractalshop-8ed45.firebaseio.com",
-    projectId: "fractalshop-8ed45",
-    storageBucket: "fractalshop-8ed45.appspot.com",
-    messagingSenderId: "623699073114",
-    appId: "1:623699073114:web:3c0c1dddbc9f51b9222063",
-    measurementId: "G-DK6WF07QKE"
+    apiKey: "AIzaSyBvYdUi3Ydfl1_HCDNjiOQdjqtyrFIcM2U",
+    authDomain: "el-conjunto.firebaseapp.com",
+    databaseURL: "https://el-conjunto.firebaseio.com",
+    projectId: "el-conjunto",
+    storageBucket: "el-conjunto.appspot.com",
+    messagingSenderId: "506296486519",
+    appId: "1:506296486519:web:4a7e691e275ee14047d472",
+    measurementId: "G-0JT0Z4J3TT"
 };
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
-const productsRef = database.ref('products');
+const productsRef = database.ref('productsCuartoCreciente');
 
 var app = new Vue({
     el: '#app',

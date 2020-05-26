@@ -1,0 +1,952 @@
+{
+  "-LtU-EOnVKv6ipizuNp_" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/anco.jpg",
+    "name" : "Anco (kg)",
+    "price" : "75",
+    "stock" : 986.5,
+    "type" : "verdura"
+  },
+  "-LtU-EOnVKv6ipizuNpb" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/banana.jpg",
+    "name" : "Banana (kg)",
+    "price" : "115",
+    "stock" : 981.2,
+    "type" : "fruta"
+  },
+  "-LtU-EOoKn6zPic0sre3" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/brocoli.jpg",
+    "name" : "Brocoli (u)",
+    "price" : "85",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOoKn6zPic0sre6" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/espinaca.jpg",
+    "name" : "Espinaca (Paq)",
+    "price" : "75",
+    "stock" : 973,
+    "type" : "verdura"
+  },
+  "-LtU-EOpou4yXhT7adWR" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/hinojo.jpg",
+    "name" : "Hinojo (u)",
+    "price" : "40",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOpou4yXhT7adWS" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/kalemorado.jpg",
+    "name" : "Kale Morado Rizado (Paq)",
+    "price" : "75",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOpou4yXhT7adWT" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/kale.jpg",
+    "name" : "Kale Verde (Paq)",
+    "price" : "75",
+    "stock" : 995,
+    "type" : "verdura"
+  },
+  "-LtU-EOpou4yXhT7adWU" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/lechugacrespa.jpg",
+    "name" : "Lechuga Crespa (1/2kg)",
+    "price" : "70",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOq4zM_wzh6UhgF" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/limon.jpg",
+    "name" : "Limón (kg)",
+    "price" : "85",
+    "stock" : 981.5,
+    "type" : "fruta"
+  },
+  "-LtU-EOq4zM_wzh6UhgH" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/mandarina.jpg",
+    "name" : "Mandarina (kg)",
+    "price" : "85",
+    "stock" : 975.2,
+    "type" : "fruta"
+  },
+  "-LtU-EOq4zM_wzh6UhgI" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/naranja.jpg",
+    "name" : "Naranja (kg)",
+    "price" : "85",
+    "stock" : 972.5,
+    "type" : "fruta"
+  },
+  "-LtU-EOrRVtetRsGtTSv" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/palta.jpg",
+    "name" : "Palta Promo x 2",
+    "price" : "140",
+    "stock" : 986.9,
+    "type" : "fruta"
+  },
+  "-LtU-EOrRVtetRsGtTSw" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/pomelo.jpg",
+    "name" : "Pomelo (kg)",
+    "price" : "110",
+    "stock" : 996.5,
+    "type" : "fruta"
+  },
+  "-LtU-EOrRVtetRsGtTSx" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/Pera.jpg",
+    "name" : "Pera (kg)",
+    "price" : "85",
+    "stock" : 990,
+    "type" : "fruta"
+  },
+  "-LtU-EOsZ2uYALB_Rxf_" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/perejil.jpg",
+    "name" : "Perejil (Paq)",
+    "price" : "60",
+    "stock" : 992,
+    "type" : "verdura"
+  },
+  "-LtU-EOsZ2uYALB_Rxfa" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/puerro.jpg",
+    "name" : "Puerro (Paq)",
+    "price" : "70",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOsZ2uYALB_Rxfb" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/rabanito.jpg",
+    "name" : "Rabanito (Paq)",
+    "price" : "60",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOsZ2uYALB_Rxfc" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/radicheta.jpg",
+    "name" : "Radicheta (Paq)",
+    "price" : "65",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-LtU-EOtt1D1bXnGWPPG" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/repollo.jpg",
+    "name" : "Repollo (kg)",
+    "price" : "85",
+    "stock" : 990,
+    "type" : "verdura"
+  },
+  "-LtU-EOtt1D1bXnGWPPH" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/remolacha.jpg",
+    "name" : "Remolacha (Paq)",
+    "price" : "75",
+    "stock" : 994,
+    "type" : "verdura"
+  },
+  "-LtU-EOua5NJ6KCqwVkO" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/rucula.jpg",
+    "name" : "Rucula (Paq)",
+    "price" : "65",
+    "stock" : 989,
+    "type" : "verdura"
+  },
+  "-LtU-EOua5NJ6KCqwVkP" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/sal.jpg",
+    "name" : "Sal Gruesa \"Kachy\" (kg)",
+    "price" : "60",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-LtU-EOua5NJ6KCqwVkQ" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/verdeo.jpg",
+    "name" : "Verdeo (Paq)",
+    "price" : "65",
+    "stock" : 987,
+    "type" : "verdura"
+  },
+  "-LtU-EOua5NJ6KCqwVkR" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/zanahoria.jpg",
+    "name" : "Zanahoria (kg)",
+    "price" : "70",
+    "stock" : 992,
+    "type" : "verdura"
+  },
+  "-LtU-EOua5NJ6KCqwVkS" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/jengibre.jpg",
+    "name" : "Jengibre (250g)",
+    "price" : "120",
+    "stock" : 996,
+    "type" : "almacen"
+  },
+  "-LtU-EOve2DfLdvRHzbf" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/Curcuma1.jpg",
+    "name" : "Cúrcuma (250g)",
+    "price" : "100",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-LtU-EOve2DfLdvRHzbg" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/portobello.jpg",
+    "name" : ".Portobello (250g)",
+    "price" : "160",
+    "stock" : 993,
+    "type" : "almacen"
+  },
+  "-LtU-EOve2DfLdvRHzbh" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/champi.jpg",
+    "name" : ".Champinon (250g)",
+    "price" : "160",
+    "stock" : 992,
+    "type" : "almacen"
+  },
+  "-LtU-EOve2DfLdvRHzbi" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/girgolas.jpg",
+    "name" : ".Girgolas (250g)",
+    "price" : "180",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-LtU-EOwHEwGAdU4Wnzb" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/mijo.jpg",
+    "name" : "_Mijo (1/2kg)",
+    "price" : "100",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-LtU-EOwHEwGAdU4Wnzc" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : true,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/lenteja.jpg",
+    "name" : "Zanahoria (kg)",
+    "price" : "90",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-LtU-EOxTsz8DV0aJR_5" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/porotomung.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto Mung (1/2kg)",
+    "price" : "90",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-LtU-EOxTsz8DV0aJR_6" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/porotocolorado.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto Colorado (1/2kg)",
+    "price" : "90",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-LtU-EOxTsz8DV0aJR_7" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/porotonegro.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto Negro (1/2kg)",
+    "price" : "90",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-LtU-EOyy-w4WulQrntG" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/arrozyamani.jpg",
+    "name" : "Arroz YamanI Integral (kg)",
+    "price" : "170",
+    "stock" : 996,
+    "type" : "almacen"
+  },
+  "-LtU-EOyy-w4WulQrntH" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/huevos.jpg",
+    "name" : "Huevos Maple (x30)",
+    "price" : "390",
+    "stock" : "24",
+    "type" : "almacen"
+  },
+  "-LtU-EOyy-w4WulQrntI" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/mieldelta1kg.jpg",
+    "name" : "Miel Pura del delta (kg)",
+    "price" : "300",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-LtU-EOyy-w4WulQrntJ" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/mieldeltamediokg.jpg",
+    "name" : "Miel Pura del delta (1/2kg)",
+    "price" : "200",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-LtU-EP-dIH9hi2o_5X5" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/aceiteoliva.jpg",
+    "name" : "Aceite de Oliva \"Simone\" (1L)",
+    "price" : "550",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-LtU-EP2CsMWiLdn8b14" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/porotoadzuki.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto Adzuki (kg)",
+    "price" : "160",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-LtU-EP3rv8Nr9HF9yAU" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/soja.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto de Soja (1/2kg)",
+    "price" : "60",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-LtU-EP3rv8Nr9HF9yAV" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/alubia.jpg",
+    "name" : "\"Salve la Tierra\" - Poroto Alubia (1/2kg)",
+    "price" : "90",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-Lu3KPq57KpVL-CxWOTt" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : true,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/zapallito.jpg",
+    "name" : "Zapallito (kg)",
+    "price" : "90",
+    "stock" : 984.65,
+    "type" : "verdura"
+  },
+  "-Lu3KXXNario80VjHZHO" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/zuchinni.jpg",
+    "name" : "Zuchini (kg)",
+    "price" : "85",
+    "stock" : 980.5,
+    "type" : "verdura"
+  },
+  "-Lvq7-SLQASauDU2E8sF" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/tomate.jpg",
+    "name" : "Tomate (Kg)",
+    "price" : "100",
+    "stock" : 965.5,
+    "type" : "fruta"
+  },
+  "-Lvq7PQ_gXw2o0W5wJhq" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/tomatecherry.jpg",
+    "name" : "Tomate Cherry (500g)",
+    "price" : "85",
+    "stock" : 983,
+    "type" : "fruta"
+  },
+  "-Lx-0qD5fB4VjK_hB7-l" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/papa.jpg",
+    "name" : "Papa (kg)",
+    "price" : "75",
+    "stock" : 965.2,
+    "type" : "verdura"
+  },
+  "-M0oRSdUFQO379HjhmVr" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/batata.jpg",
+    "name" : "Batata  (kg)",
+    "price" : "80",
+    "stock" : 997,
+    "type" : "verdura"
+  },
+  "-M0omudFFYGEkvz36KA0" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/cebolla.jpg",
+    "name" : "Cebolla Blanca (kg)",
+    "price" : "75",
+    "stock" : 979,
+    "type" : "verdura"
+  },
+  "-M0omweIv_zrnx6bNxDK" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/cebollamorada.jpg",
+    "name" : "Cebolla Morada (kg)",
+    "price" : "75",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M0os8n4kUbOcJinwkbU" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/lechuga.jpg",
+    "name" : "Lechuga Crespa (1/2kg)",
+    "price" : "70",
+    "stock" : 997,
+    "type" : "verdura"
+  },
+  "-M18xjgq7cTNabHUr8hA" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/acelga.jpg",
+    "name" : "Acelga (Paq)",
+    "price" : "65",
+    "stock" : 996,
+    "type" : "verdura"
+  },
+  "-M18y1c-FBh7M5LLBE61" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/ajo.jpg",
+    "name" : "Ajo (100g)",
+    "price" : "50",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M18zU6xGapytlxb3JUm" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/caboutie.jpg",
+    "name" : "Caboutia (kg)",
+    "price" : "60",
+    "stock" : 998,
+    "type" : "verdura"
+  },
+  "-M1Bv9KyQRohu8Aq90Zt" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/pepino.jpg",
+    "name" : "Pepino (kg)",
+    "price" : "100",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M1LxLyTtFY1JNo5ZXf5" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/mango.jpg",
+    "name" : "Mango (kg)",
+    "price" : "170",
+    "stock" : 1000,
+    "type" : "fruta"
+  },
+  "-M1LyJN_vlwlElndwnut" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/albahaca.jpg",
+    "name" : "Albahaca (c/u)",
+    "price" : "65",
+    "stock" : 994,
+    "type" : "verdura"
+  },
+  "-M2-bhcVf4GrgEzKTPxc" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/lima.jpg",
+    "name" : "Lima (kg)",
+    "price" : "110",
+    "stock" : 1000,
+    "type" : "fruta"
+  },
+  "-M2-gLZfEkAuQBwN7uHu" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/boniato.jpg",
+    "name" : "Batata Zanahoria (kg)",
+    "price" : "90",
+    "stock" : 980,
+    "type" : "verdura"
+  },
+  "-M2DzHbFu4VwW0GmXKEA" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/morronverdealmibar.jpg",
+    "name" : "Morrón Verde (kg)",
+    "price" : "80",
+    "stock" : 992,
+    "type" : "verdura"
+  },
+  "-M2DzOj4GpLETozIx_Cm" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/morronrojo.jpg",
+    "name" : "Morrón Rojo (kg)",
+    "price" : "110",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M2E17bRuSNndv1AdysG" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/lechugamantecosa.jpg",
+    "name" : "Lechuga Mantecosa (1/2kg)",
+    "price" : "70",
+    "stock" : 992,
+    "type" : "verdura"
+  },
+  "-M33sxjiMcrQ2VA7tctn" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/manzana.jpg",
+    "name" : "Manzana Roja Gala (kg)",
+    "price" : "85",
+    "stock" : 975,
+    "type" : "fruta"
+  },
+  "-M33t15tXGXY_6mT9yYH" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/manzanaverde.jpg",
+    "name" : "Manzana Verde Granny (kg)",
+    "price" : "90",
+    "stock" : 994,
+    "type" : "fruta"
+  },
+  "-M349-ARlJjf6ZIIxOjE" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/harinaintegraldonpaisa.jpg",
+    "name" : "Harina Integral \"Don Paisa\" (kg)",
+    "price" : "120",
+    "stock" : 996,
+    "type" : "almacen"
+  },
+  "-M3497B-GsPLcVNKBqr3" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/Rebozadordonpaisa.jpg",
+    "name" : "Rebozador \"Don Paisa\" (kg)",
+    "price" : "150",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-M34Cv5slIMRMlUzsxea" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/pandearrozmaines.jpg",
+    "name" : "Pan de Arroz \"Maines\" (c/u)",
+    "price" : "200",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M34p5CWSHco_VABvGaA" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/berenjena.jpg",
+    "name" : "Berenjena (Kg)",
+    "price" : "80",
+    "stock" : "1000",
+    "type" : "verdura"
+  },
+  "-M3520h5hcg2VEpmMwkz" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/morronamarillo.jpg",
+    "name" : "Morron Amarillo (kg)",
+    "price" : "110",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M42Jy1okO_02Xpa06O-" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/PanIntegralcin2.jpg",
+    "name" : "Pan Integral de Molde (uni)",
+    "price" : "150",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-M4KsX_uRaK-Pyxsxfi7" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/nabo.jpg",
+    "name" : "Nabo ",
+    "price" : "70",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M4KtX2DZzwa1gq8tjcC" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/taihang.jpg",
+    "name" : "Yerba \"Taihang\" (500g)",
+    "price" : "200",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-M4KvNHmuO1yJoT_p2nj" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/kiwi.jpg",
+    "name" : "Kiwi (kg)",
+    "price" : "280",
+    "stock" : 999,
+    "type" : "fruta"
+  },
+  "-M60n7OsAcbL5yt4-JMu" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/batata2.jpg",
+    "name" : ".PROMO Batata (3 kgs)",
+    "price" : "225",
+    "stock" : 999,
+    "type" : "verdura"
+  },
+  "-M60pH3FHcAB2Pp9MYQk" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/anco2.jpg",
+    "name" : ".PROMO Anco (3 kgs)",
+    "price" : "200",
+    "stock" : 996,
+    "type" : "verdura"
+  },
+  "-M6TMLh-8jSYZ31w3NH0" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/budinbananacin.jpg",
+    "name" : "Budín Integral Vegano de Banana (c/u)",
+    "price" : "200",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M6TMWc2MwgnKof3fMM2" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/budinmanzanacin.jpg",
+    "name" : "Budín Integral Vegano de Manzana (c/u)",
+    "price" : "200",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M6TPHq1gteN37xqmxZa" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/SalfinaKachy.jpg",
+    "name" : "Sal Fina \"Kachy\" (1/2kg)",
+    "price" : "45",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M6fdNtsoMmnn9n-tTnQ" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/lecheagro.jpg",
+    "name" : "Leche Agroecologica (1L)",
+    "price" : "150",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M6fdXHOmpcGIkr2erYn" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/Yogurtagro.jpg",
+    "name" : "Yogurt Natural Agroecologico (1L)",
+    "price" : "230",
+    "stock" : 999,
+    "type" : "almacen"
+  },
+  "-M6k5JBH8bESchNGSLAl" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/acelga.jpg",
+    "name" : ".PROMO Acelga (3 Paqs)",
+    "price" : "170",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M6kPOKRsFp5rnNgyz2C" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/PolentaDelcampo.jpg",
+    "name" : "Polenta \"Del Campo\" (500g)",
+    "price" : "75",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M6txPiKqRofRIT7ONx-" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/cajoncitoburns2.jpg",
+    "name" : ".Cajoncito Mix - Frutas & Verduras - (8kg)",
+    "price" : "650",
+    "stock" : 994,
+    "type" : "verdura"
+  },
+  "-M7E2JIMPXKidi6eQe0I" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/Hakusai.jpg",
+    "name" : "Hakusai 'Repollo Chino' (c/u) ",
+    "price" : "85",
+    "stock" : 991,
+    "type" : "verdura"
+  },
+  "-M7EEkwuBMjuYL1iPNPc" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/promocabu.jpg",
+    "name" : ".PROMO Caboutia (3 kgs)",
+    "price" : "150",
+    "stock" : 998,
+    "type" : "verdura"
+  },
+  "-M7OVAqcyG7djIDs_mGZ" : {
+    "active" : false,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/maizblanco.jpg",
+    "name" : "Maiz Blanco (u)",
+    "price" : "60",
+    "stock" : 1000,
+    "type" : "verdura"
+  },
+  "-M7OZkpvNpqr30WinM8n" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/sesamo.jpg",
+    "name" : "\"Salve la Tierra\" - Sesamo (1/2kg)",
+    "price" : "125",
+    "stock" : 998,
+    "type" : "almacen"
+  },
+  "-M7UFnZDwYjwkPn_pZ2I" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/budinperajuan.jpg",
+    "name" : "Budín Integral de Pera (c/u)",
+    "price" : "200",
+    "stock" : 1000,
+    "type" : "almacen"
+  },
+  "-M7Urie82n6yHY_-9rei" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/apio.jpg",
+    "name" : "Apio (u)",
+    "price" : "80",
+    "stock" : 988,
+    "type" : "verdura"
+  },
+  "-M7V-KbYi9u21ZZhDsu1" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/pomelothai.jpg",
+    "name" : "Toronja (Unidades gigantes dimensiones desconocidas)",
+    "price" : "85",
+    "stock" : 997,
+    "type" : "fruta"
+  },
+  "-M81X2TmBzxEEHxNqvsE" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/arrozsaki.jpeg",
+    "name" : "Arroz Moti Integral Org. \"Sasaki\" (kg)",
+    "price" : "230",
+    "stock" : "100",
+    "type" : "almacen"
+  },
+  "-M81a4VdHE1z0HfCVkSP" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/cabernetterritorio.jpg",
+    "name" : "Vino Cabernet \"Territorio\" (750cc)",
+    "price" : "290",
+    "stock" : "10",
+    "type" : "almacen"
+  },
+  "-M81awhFDeFXBQrBT6FC" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/torrontescolome.jpg",
+    "name" : "Vino Torrontés \"Territorio\" (750cc)",
+    "price" : "390",
+    "stock" : "10",
+    "type" : "almacen"
+  },
+  "-M81bJyt-GQbe7cuxU0K" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/torrontesterritorio.jpg",
+    "name" : "Vino Torrontés \"Territorio\" (750cc)",
+    "price" : "250",
+    "stock" : "10",
+    "type" : "almacen"
+  },
+  "-M8HNBVRPxxwC5uTAYpB" : {
+    "active" : true,
+    "amount" : 0,
+    "edit" : false,
+    "image" : "https://storage.cloud.google.com/el-conjunto.appspot.com/productsImages/avena.jpg",
+    "name" : "\"Salve la Tierra\" - Avena Arrollada Gruesa (1/2 kg)",
+    "price" : "100",
+    "stock" : "1000",
+    "type" : "almacen"
+  }
+}
