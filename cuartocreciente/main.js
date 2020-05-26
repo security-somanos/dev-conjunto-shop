@@ -15,7 +15,7 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-const productsRef = database.ref('productsCuartoCreciente');
+const productsRef = database.ref('productsElConjunto');
 
 var app = new Vue({
     el: '#app',
