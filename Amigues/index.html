@@ -89,7 +89,7 @@
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
+                    <div class="item" v-for="item in cart" v-if="item.type == 'verdura'" >
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
+                    <div class="item" v-for="item in cart" v-if="item.type == 'fruta'" >
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -119,7 +119,7 @@
                     <div class="frutas">Almacen
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
+                    <div class="item" v-for="item in cart" v-if="item.type == 'almacen'" >
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
