@@ -223,7 +223,7 @@ var app = new Vue({
         filteredItems: function () {
             var self = this;
             var newList = this.productList.sort().filter(function (item) {
-                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active == true && item.stock > 0;
+                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
             if (self.search !== '') {
                 for (var t in this.active) {
