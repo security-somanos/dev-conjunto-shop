@@ -60,6 +60,7 @@ var app = new Vue({
                     type: item.child('type').val(),
                     price: item.child('price').val(),
                     image: item.child('image').val(),
+                    stock: item.child('stock').val(),
                     amount: 0
                 }
                 );
@@ -223,7 +224,8 @@ var app = new Vue({
         filteredItems: function () {
             var self = this;
             var newList = this.productList.sort().filter(function (item) {
-                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
+                console.log(item, item.stock, item.active)
+                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
             });
             if (self.search !== '') {
                 for (var t in this.active) {
@@ -262,7 +264,6 @@ window.addEventListener('scroll', function () {
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
-        document.getElementById("js-top").classList.add("hide");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
