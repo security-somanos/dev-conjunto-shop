@@ -1,0 +1,25 @@
+
+                <div class="aviso">
+                    Te damos la bienvenida a la Compra Comunitaria de La Comarca.
+                    <br><br>           
+                    Buscamos acortar distancias entre el campo y el barrio,
+                    dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.
+                    <br><br>
+                     Lo revolucionario de este tipo de compra comunitaria está en 
+                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen, 
+                    así reducimos los costos de los alimentos y su logística (transporte del campo a la ciudad).
+                    <br><br>  
+                    Si somos más, pagamos menos.
+                    <br><br>
+                    Recordá que:<br>
+ 		         • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
+              	 • Vamos a entregar por el barrio los dias Martes, horario a confirmar. <br>
+                 • La disponibilidad de los productos esta sujeta al campo y este a factores climáticos o de estación.
+                    (de todas formas, siempre buscamos la manera de compensarte)         
+                    <br /><br />
+                    Formas de pago:    
+                    <br>* con Mercado Pago: escaneando el QR que aparece mas abajo.
+                    <br>* en efectivo: en el momento que recibís tu pedido. 
+                    <br />
+                    Consultas: 11 6955 3325
+                </div>
