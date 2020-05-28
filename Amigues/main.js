@@ -103,13 +103,8 @@ var app = new Vue({
             }
         },
         addItem: function (item) {
-            console.log(item.stock)
-            if (item.amount < item.stock) {
-                console.log(item.amount < item.stock)
-                item.amount++;
-                item.total = item.amount * item.price;
-            }
-
+            item.amount++;
+            item.total = item.amount * item.price;
             this.getTotal();
         },
         removeItem: function (item) {
@@ -193,7 +188,7 @@ var app = new Vue({
                     console.log(error)
                 } else {
                     self.saleComplete = true;
-                    setTimeout(function(){location.reload()}, 10000);
+                    setTimeout(function () { location.reload() }, 10000);
                 }
             });
 
@@ -240,7 +235,7 @@ var app = new Vue({
         filteredItems: function () {
             var self = this;
             var newList = this.productList.sort().filter(function (item) {
-                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
+                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
             if (self.search != '') {
                 for (var t in this.active) {
