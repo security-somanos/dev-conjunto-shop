@@ -271,6 +271,7 @@ const scrollToTop = () => {
         window.scrollTo(0, c - c / 10);
     }
 };
+
 const scrollTopProducts = () => {
     let p = document.getElementById("products");
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
