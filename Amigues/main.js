@@ -201,6 +201,7 @@ var app = new Vue({
             });
 
             for (var item in this.cart) {
+                console.log(item)
                 for (var i in this.productList) {
                     if (this.productList[i].key == this.cart[item].key) {
                         let key = this.cart[item].key.toString();

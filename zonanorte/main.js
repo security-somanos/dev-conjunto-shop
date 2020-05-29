@@ -61,6 +61,7 @@ var app = new Vue({
                     price: item.child('price').val(),
                     image: item.child('image').val(),
                     stock: item.child('stock').val(),
+                    key: item.key,
                     amount: 0
                 }
                 );
@@ -205,16 +206,17 @@ var app = new Vue({
                 }
             });
 
-            for (var item in this.cart) {
-                for (var i in this.productList) {
-                    if (this.productList[i].key == this.cart[item].key) {
-                        let key = this.cart[item].key.toString();
-                        let stockDiff = this.productList[i].stock -= this.cart[item].amount;
-                        console.log(key, stockDiff)
-                        productsRef.child(key).update({ stock: stockDiff });
-                    }
-                }
-            }
+            // for (var item in this.cart) {
+            //     console.log(cart[item])
+            //     for (var i in this.productList) {
+            //         if (this.productList[i].key == this.cart[item].key) {
+            //             let key = this.cart[item].key.toString();
+            //             let stockDiff = this.productList[i].stock -= this.cart[item].amount;
+            //             console.log(key, stockDiff)
+            //             productsRef.child(key).update({ stock: stockDiff });
+            //         }
+            //     }
+            // }
         },
 
         //toggle category buttons
@@ -240,7 +242,8 @@ var app = new Vue({
         filteredItems: function () {
             var self = this;
             var newList = this.productList.sort().filter(function (item) {
-                return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
+                console.log(item)
+                return item.name && item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
             });
             if (self.search !== '') {
                 for (var t in this.active) {
