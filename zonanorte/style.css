@@ -104,6 +104,22 @@ body {
     display: none !important;
 }
 
+.agotado {
+    
+width: 100%;
+    
+text-align: center;
+    
+padding: 10px;
+    
+background-color: #f94e45;
+    
+color: white;
+    
+font-size: 14px;
+
+}
+
 .main {
     align-content: center;
     justify-content: center;

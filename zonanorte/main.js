@@ -61,6 +61,7 @@ var app = new Vue({
                     price: item.child('price').val(),
                     image: item.child('image').val(),
                     stock: item.child('stock').val(),
+                    outOfStock: false,
                     key: item.key,
                     amount: 0
                 }
@@ -104,31 +105,40 @@ var app = new Vue({
         },
         addItem: function (item) {
             if (item.stock > item.amount) {
+                console.log("Add", item)
+                item.outOfStock = false;
                 item.amount++;
                 item.total = item.amount * item.price;
                 this.getTotal();
+            } else {
+                item.outOfStock = true;
             }
-            console.log(productsRef, "add", item)
         },
         removeItem: function (item) {
             this.getTotal();
             if (item.amount > 0 && item.stock > 0) {
                 item.amount--;
+                console.log("Remove", item)
+                item.outOfStock = false;
+            } else {
+                item.outOfStock = true;
             }
             item.total = item.amount * item.price;
             this.getTotal();
-            console.log(productsRef, "remove", item) 
         },
         updateValue: function (item) {
+            console.log("Update", item)
             if (item.amount === '' || parseFloat(item.amount) == NaN) {
                 item.amount = 0
             }
             if (item.stock - item.amount >= 0) {
                 (item.amount = parseFloat(item.amount));
                 item.total = item.amount * item.price;
+                item.outOfStock = false;
+            } else {
+                item.outOfStock = true;
             }
             this.getTotal();
-            console.log(productsRef, "Update", item)
         },
         formValidate() {
             // form validation
@@ -206,17 +216,16 @@ var app = new Vue({
                 }
             });
 
-            // for (var item in this.cart) {
-            //     console.log(cart[item])
-            //     for (var i in this.productList) {
-            //         if (this.productList[i].key == this.cart[item].key) {
-            //             let key = this.cart[item].key.toString();
-            //             let stockDiff = this.productList[i].stock -= this.cart[item].amount;
-            //             console.log(key, stockDiff)
-            //             productsRef.child(key).update({ stock: stockDiff });
-            //         }
-            //     }
-            // }
+            for (var item in this.cart) {
+                for (var i in this.productList) {
+                    if (this.productList[i].key == this.cart[item].key) {
+                        let key = this.cart[item].key.toString();
+                        let stockDiff = this.productList[i].stock -= this.cart[item].amount;
+                        console.log("Hello", key, stockDiff)
+                        productsRef.child(key).update({ stock: stockDiff });
+                    }
+                }
+            }
         },
 
         //toggle category buttons

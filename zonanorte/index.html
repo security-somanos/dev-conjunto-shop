@@ -72,8 +72,9 @@
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`${item.image}`" class="productImage">
                 <div class="title">
-                    {{item.name}} = ${{ item.price }} 
+                    {{item.name}} - ${{ item.price }}
                 </div>
+                <div class="agotado" v-if="item.outOfStock === true">Agotado</div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
                     <input type="number" step="any" class="amount" v-on:input="updateValue(item)"
