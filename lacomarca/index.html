@@ -63,7 +63,7 @@
         </div>
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
-                <img :src="`../images/shops/${item.image}`" class="productImage">
+                <img :src="`${item.image}`" class="productImage">
                 <div class="title">
                     {{item.name}} = ${{ item.price }}
                 </div>
@@ -84,7 +84,7 @@
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
-                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -98,7 +98,7 @@
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
-                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -114,7 +114,7 @@
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
-                        <img :src="`../images/shops/${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
