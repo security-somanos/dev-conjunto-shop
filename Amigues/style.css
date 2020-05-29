@@ -22,33 +22,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     max-width: 490px;
     /* min-width: 100%; */
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .totalFloat {
-    
-position: fixed;
-    
-bottom: 20px;
-    
-left: 20px;
-    
-color: black;
-    
-padding: 20px;
-    
-font-size: 20px;
-    
-box-shadow: 0 3px 6px #33333329;
-    
-border-left: 2px solid #00cc65;
-    
-font-family: Ubuntu, sans-serif;
-    
-border-radius: 15px;
-    
-background-color: white;
-    
-z-index: 1;
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    color: black;
+
+    padding: 20px;
+
+    font-size: 20px;
+
+    box-shadow: 0px 3px 6px #33333329;
+
+    border-left: 2px solid #00cc65;
+
+    font-family: Ubuntu, sans-serif;
+
+    border-radius: 15px;
+
+    background-color: white;
+
+    z-index: 1;
 }
 
 

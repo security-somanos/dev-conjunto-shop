@@ -262,6 +262,11 @@ window.addEventListener('scroll', function (evt) {
         document.getElementsByClassName("filter")[0].classList.add("fixed");
         document.getElementById("js-top").classList.remove("hide");
     }
+    if (cartDiv.top < 200) {
+        document.getElementById('totalFloat').classList.add("hide");
+    } else {
+        document.getElementById('totalFloat').classList.remove("hide");
+    }
 });
 
 const scrollToTop = () => {

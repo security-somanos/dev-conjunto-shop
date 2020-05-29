@@ -2,19 +2,20 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCdklOqU0EcjNEWy8Cvv1KVIKyYAL-SsU0",
-    authDomain: "admina-8e76b.firebaseapp.com",
-    databaseURL: "https://admina-8e76b.firebaseio.com",
-    projectId: "admina-8e76b",
-    storageBucket: "admina-8e76b.appspot.com",
-    messagingSenderId: "526293543996",
-    appId: "1:526293543996:web:49fa7d8135faa957212739"
+    apiKey: "AIzaSyBvYdUi3Ydfl1_HCDNjiOQdjqtyrFIcM2U",
+    authDomain: "el-conjunto.firebaseapp.com",
+    databaseURL: "https://el-conjunto.firebaseio.com",
+    projectId: "el-conjunto",
+    storageBucket: "el-conjunto.appspot.com",
+    messagingSenderId: "506296486519",
+    appId: "1:506296486519:web:4a7e691e275ee14047d472",
+    measurementId: "G-0JT0Z4J3TT"
 };
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
-const productsRef = database.ref('products');
+const productsRef = database.ref('productsElConjunto');
 
 var app = new Vue({
     el: '#app',
@@ -35,7 +36,7 @@ var app = new Vue({
             address: '',
             phone: '',
             email: 'Lo de Jose',
-            delivery: 0,
+            delivery: false,
         },
         active: {
             'verdura': { status: true },
@@ -58,7 +59,9 @@ var app = new Vue({
                     name: item.child('name').val(),
                     type: item.child('type').val(),
                     price: item.child('price').val(),
+                    stock: item.child('stock').val(),
                     image: item.child('image').val(),
+                    key: item.key,
                     amount: 0
                 }
                 );
@@ -123,7 +126,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '') {
+            else if (this.userData.delivery == true && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -132,19 +135,18 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-           if (event.target.value === "1"){
-                this.userData.delivery = 1;
+            if (event.target.value === "1") {
+                this.userData.delivery = false;
                 this.userData.address = "Retira por La Lucila";
-            } 
-            else if (event.target.value === "2"){
-                this.userData.delivery = 2;
-                this.userData.address = "Retira por Avalom";
             }
+            /* else if (event.target.value === "2"){
+                this.userData.delivery = false;
+                this.userData.address = "Retira por Avalom";
+            }*/
             
-            else {event.target.value === "3"
-                this.userData.delivery = 3;
+            else {
+                this.userData.delivery = true;
                 this.userData.address = "";
-                 
             }
             this.deliveryMethod = true; 
         },
@@ -180,7 +182,16 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/').push(sale, function (error) {
+            database.ref('salesLoDeJose/').push(sale, function (error) {
+                if (error) {
+                    console.log(error)
+                } else {
+                    self.saleComplete = true;
+                    setTimeout(function () { location.reload() }, 10000);
+                }
+            });
+
+            database.ref('salesLoDeJoseArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -188,13 +199,17 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/').push(sale, function (error) {
-                if (error) {
-                    console.log(error)
-                } else {
-                    self.saleComplete = true;
+            for (var item in this.cart) {
+                console.log(item)
+                for (var i in this.productList) {
+                    if (this.productList[i].key == this.cart[item].key) {
+                        let key = this.cart[item].key.toString();
+                        let stockDiff = this.productList[i].stock -= this.cart[item].amount;
+                        console.log(key, stockDiff)
+                        productsRef.child(key).update({ stock: stockDiff });
+                    }
                 }
-            });
+            }
         },
 
         //toggle category buttons
@@ -251,13 +266,11 @@ var app = new Vue({
     }
 })
 
-// window.replybox = {
-//     site: 'q8jBQaoBa2',
-// };
 
 //Scroll top on pageload
-window.addEventListener('scroll', function (evt) {
-    var distance_from_top = document.documentElement.scrollTop
+window.addEventListener('scroll', function () {
+    var distance_from_top = document.documentElement.scrollTop;
+    var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
@@ -266,8 +279,10 @@ window.addEventListener('scroll', function (evt) {
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementsByClassName("filter")[0].classList.add("fixed");
+        document.getElementById("js-top").classList.remove("hide");
+
     }
-    if(cartDiv.top < 200){
+    if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");
     } else {
         document.getElementById('totalFloat').classList.remove("hide");
@@ -281,11 +296,11 @@ const scrollToTop = () => {
         window.scrollTo(0, c - c / 10);
     }
 };
+
 const scrollTopProducts = () => {
     let p = document.getElementById("products");
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
-
 
 document.getElementById("js-top").onclick = function (e) {
     e.preventDefault();

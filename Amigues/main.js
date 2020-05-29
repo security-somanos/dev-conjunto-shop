@@ -53,7 +53,7 @@ var app = new Vue({
     mixins: [Vue2Filters.mixin],
     created: function () {
         productsRef.on('value', snap => {
-            let products = []
+            let products = [],
             snap.forEach(item => {
                 products.push({
                     active: item.child('active').val(),
@@ -180,7 +180,7 @@ var app = new Vue({
                     precio: cart[item].price,
                     pago: cart[item].total
                 })
-            }
+                }
 
             var self = this;
             database.ref('salesElConjunto/').push(sale, function (error) {

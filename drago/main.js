@@ -36,7 +36,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
+            email: 'Drago',
             delivery: 0,
         },
         active: {
@@ -183,7 +183,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesElConjunto/').push(sale, function (error) {
+            database.ref('salesDrago/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -192,7 +192,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesElConjuntoArchive/').push(sale, function (error) {
+            database.ref('salesDragoArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

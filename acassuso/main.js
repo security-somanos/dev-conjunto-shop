@@ -2,20 +2,20 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCdklOqU0EcjNEWy8Cvv1KVIKyYAL-SsU0",
-    authDomain: "admina-8e76b.firebaseapp.com",
-    databaseURL: "https://admina-8e76b.firebaseio.com",
-    projectId: "admina-8e76b",
-    storageBucket: "admina-8e76b.appspot.com",
-    messagingSenderId: "526293543996",
-    appId: "1:526293543996:web:49fa7d8135faa957212739"
+    apiKey: "AIzaSyBvYdUi3Ydfl1_HCDNjiOQdjqtyrFIcM2U",
+    authDomain: "el-conjunto.firebaseapp.com",
+    databaseURL: "https://el-conjunto.firebaseio.com",
+    projectId: "el-conjunto",
+    storageBucket: "el-conjunto.appspot.com",
+    messagingSenderId: "506296486519",
+    appId: "1:506296486519:web:4a7e691e275ee14047d472",
+    measurementId: "G-0JT0Z4J3TT"
 };
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
-const productsRef = database.ref('products');
+const productsRef = database.ref('productsElConjunto');
 
 var app = new Vue({
     el: '#app',
@@ -35,8 +35,8 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
-            delivery: 0,
+            email: 'Acasssuso',
+            delivery: false
         },
         active: {
             'verdura': { status: true },
@@ -52,7 +52,7 @@ var app = new Vue({
     mixins: [Vue2Filters.mixin],
     created: function () {
         productsRef.on('value', snap => {
-            let products = []
+            let products = [];
             snap.forEach(item => {
                 products.push({
                     active: item.child('active').val(),
@@ -63,7 +63,8 @@ var app = new Vue({
                     image: item.child('image').val(),
                     key: item.key,
                     amount: 0
-                })
+                }
+                );
             });
             this.setProducts(products);
         });
@@ -125,7 +126,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '') {
+            else if (this.userData.delivery == true && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -135,7 +136,7 @@ var app = new Vue({
         },
         changeLocation(event) {
             if (event.target.value === "1") {
-                this.userData.delivery = 1;
+                this.userData.delivery = false;
                 this.userData.address = "Retira por La Lucila";
             }
             /* else if (event.target.value === "2"){
@@ -144,7 +145,7 @@ var app = new Vue({
             } */
 
             else {
-                this.userData.delivery = 3;
+                this.userData.delivery = true;
                 this.userData.address = "";
 
             }
@@ -182,7 +183,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/').push(sale, function (error) {
+            database.ref('salesAcassuso/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -190,7 +191,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/').push(sale, function (error) {
+            database.ref('salesAcassusoArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -275,6 +276,7 @@ window.addEventListener('scroll', function (evt) {
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementsByClassName("filter")[0].classList.add("fixed");
+        document.getElementById("js-top").classList.remove("hide");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");

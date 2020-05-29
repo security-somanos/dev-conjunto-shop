@@ -21,7 +21,7 @@
             <img src="../images/shops/logo.png" alt="" class="logo">
             <div class="contain">
                 <div class="search">
-                    <div class="searchLabel">Bienvenides!</div>
+                    <div class="searchLabel">Bienvenida!</div>
                     <input id="searchInput" v-on:input="scrollTopProducts()" type="text" v-model="search"
                         placeholder="Que buscas?">
                 </div>
@@ -61,7 +61,7 @@
         </div>
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
-                <img :src="``${item.image}`" class="productImage">
+                <img :src="`${item.image}`" class="productImage">
                 <div class="title">
                     {{item.name}} = ${{ item.price }}
                 </div>
@@ -82,7 +82,7 @@
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
-                        <img :src="``${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -96,7 +96,7 @@
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
-                        <img :src="``${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -112,7 +112,7 @@
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
-                        <img :src="``${item.image}`" alt="" class="img">
+                        <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
                             <div class="itemTotal">
@@ -125,18 +125,11 @@
                 </div>
             </div>
             <div class="cartTotal">Total = ${{cartTotal}}</div>
-            <div class="schedule">
-                <div class="title">
-                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
-                </div>
-                <img src="../images/shops/qrconjunto.jpeg" alt="" class="logoMainIcon">
-            </div>
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
                 <div class="required">* Por favor complete los campos requeridos</div>
                 <input class="requiredInput" type="text" placeholder="Nombre" v-model="userData.name" required>
-                <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required
-                    min-length="8">
+                <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required min-length="8">
                 <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
@@ -154,6 +147,13 @@
                     <h4 style="font-size: 16px;" >Caballito : $200 </h4><br><br>
                 </div>
             </form>
+            <div class="schedule">
+                <div class="title">
+                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
+                </div>
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt=""
+                    class="logoMainIcon">
+            </div>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
                 v-bind:class="{ activateModal: confirmModal == true }" style="opacity: 0;">
@@ -170,18 +170,18 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == 1">
+                            <div v-if="userData.delivery == false">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene <br>
                                 desde las 14:00 hasta las 18:00
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684. 
                             </div>
-                            <div v-if="userData.delivery == 3">
+                            <div v-if="userData.delivery == true">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Jueves de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.        
                             </div>
-                            <div v-if="userData.delivery == 2">
+                            <div v-if="userData.delivery == false">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene
                                 desde las 14:00 hasta las 18:00
@@ -205,7 +205,7 @@
                     <path d="M12 6H0l6-6z" /></svg>
             </a>
             <div class="footer">
-                <img src="images/" alt="" class="footerLogo">
+                <img src="../images/shops/" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
                         <img src="../images/shops/fb.png" alt="" class="fb">

@@ -2,9 +2,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -14,20 +13,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .aviso {
     padding: 20px;
     color: #636363;
-    font-size: 12px;
-    font-family: Ubuntu;
-    line-height: 14px;
-    margin: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 13px;
+    font-family: Ubuntu, sans-serif;
+    line-height: 18px;
+    margin: 0 10px;
     font-weight: lighter;
-    font-size: 0.81em;
-    line-height: 1.4;
     /* border-radius: 20px; */
-}
-
-.avisoTitle {
-    font-size: 20px;
+    max-width: 490px;
+    /* min-width: 100%; */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -49,7 +42,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     border-left: 2px solid #00cc65;
 
-    font-family: Ubuntu;
+    font-family: Ubuntu, sans-serif;
 
     border-radius: 15px;
 
@@ -84,7 +77,6 @@ blockquote, q {
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
     content: none;
 }
 
@@ -105,7 +97,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 body {
-    margin: 0px;
+    margin: 0;
 }
 
 .text-grey-dark {
@@ -135,20 +127,20 @@ body {
 
 .main .search.fixed {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     max-width: 100%;
     z-index: 1000;
     height: 50px;
     justify-content: flex-start;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .main .filter.fixed {
     position: fixed;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     width: 230px;
     max-width: 100%;
     z-index: 1000;
@@ -159,17 +151,17 @@ body {
     width: 50px;
     color:#fff0;
     background-color:white;
-    font-size: 0px;
-    border-radius: 0px;
+    font-size: 0;
+    border-radius: 0;
 }
 
 .main .filter.fixed .button:nth-child(2) {
-    margin:0px;
+    margin:0;
 }
 
 .main .filter.fixed .filterIcon {
 
-right: 0px;
+right: 0;
 
 height: 30px;
 
@@ -181,8 +173,7 @@ width: 30px;
 .netlify-identity-menu {
     display: flex;
     justify-content: flex-end;
-    margin-right: 20px;
-    font-family: Ubuntu;
+    font-family: Ubuntu, sans-serif;
     max-width: 680px;
     margin: auto;
 }
@@ -205,8 +196,7 @@ width: 30px;
 .search input {
     flex: 1;
     max-width: 200px;
-    padding: 3px;
-    padding-left: 9px;
+    padding: 3px 3px 3px 9px;
     color: #333333;
     border-radius: 5px;
     border: none;
@@ -214,11 +204,11 @@ width: 30px;
 
 .filterProducts {
     max-width: 320px;
-    font-family: Ubuntu;
+    font-family: Ubuntu, sans-serif;
     font-size: 14px;
     padding-bottom: 12px;
     position: relative;
-    bottom: 0px;
+    bottom: 0;
 }
 
 .main .search .searchLabel {
@@ -233,7 +223,6 @@ width: 30px;
     max-width: 110px;
     min-width: 110px;
     font-size: 16px;
-    font-size: 1em;
 }
 
 .main .search img.searchLabel {
@@ -248,29 +237,44 @@ width: 30px;
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin-bottom: 0px;
-    margin-bottom: 12px;
-    margin-top: 10px;
     max-width: 680px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    margin: 10px auto 20px auto;
 }
 
-.main .header .contain {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: flex-end;
-    position: relative;
-    flex-wrap: wrap;
-    max-width: 438px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin: 10px;
-    /* margin-top: 40px; */
-    height: 105px;
-    width: 100%;
+    .main .header .title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+        color: #17ba7bfc;
+        width: 290px;
+        margin-bottom: 10px;
+    }
+
+    .main .header .logo {
+        height: 110px;
+        position: relative;
+        margin: 0 15px 0 0;
+        margin: 0 auto;
+        top: 18px;
+    }
+
+    .main .header .contain {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: flex-end;
+        position: relative;
+        flex-wrap: wrap;
+        max-width: 438px;
+        margin: 0 auto;
+        margin-top: 40px;
+        position: relative;
+        height: 105px;
+        top: 10px;
 }
 
 .filter {
@@ -283,21 +287,21 @@ width: 30px;
 }
 
 .filter .button {
-    padding: 13px;
-    color: #808080;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-    max-width: 146px;
-    margin-bottom: 0px;
-    flex: 1;
-    padding-top: 15px;
-    font-weight: 100;
-    font-size: 1em;
-    box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
-    border-radius: 10px;
+        color: #808080;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        max-width: 146px;
+        margin-bottom: 0;
+        flex: 1;
+        padding: 15px 13px 13px;
+        font-weight: 100;
+        font-size: 1em;
+        box-shadow: 0 3px 6px #33333329;
+        border-left: 2px solid #00cc65;
+        border-radius: 10px;
+        background-color: #f0f0f0;
 }
 
 .filter .button .filterIcon {
@@ -308,7 +312,7 @@ width: 30px;
     right: 2px;
 }
 .filter .button:nth-child(2) {
-    margin: 0px 10px;
+    margin: 0 10px;
 }
 
 .filter .button.active {
@@ -320,13 +324,15 @@ a.button.active {}
 
 .headerDisplay {
     width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0px 3px 6px #33333329;
-    border-left: 2px solid #00cc65;
+    /* box-shadow: 0 3px 6px #33333329; */
+    /* border-left: 2px solid #00cc65; */
     max-width: 644px;
-    margin: 0px 10px;
+    margin: 0 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .userForm {
@@ -347,10 +353,9 @@ a.button.active {}
 }
 
 .userForm input {
-    border-width: 0px;
     padding: 9px;
     font-size: 16px;
-    margin: 5px 0px;
+    margin: 5px 0;
     min-width: 210px;
     background-color: #f7f7f7ba;
     flex: 1;
@@ -359,6 +364,7 @@ a.button.active {}
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
+    height: 40px;
 }
 
 .userForm .required {
@@ -374,7 +380,7 @@ a.button.active {}
 }
 
 .userForm input.disabled {
-    border-width: 0px;
+    border-width: 0;
     padding: 10px;
     font-size: 14px;
     margin: 6px;
@@ -387,10 +393,8 @@ a.button.active {}
 
 .delivery {
     display: flex;
-    flex-direction: row-reverse;
     /* margin-top: 10px; */
     font-size: 16px;
-    display: flex;
     flex-direction: column-reverse;
 }
 
@@ -406,7 +410,7 @@ padding: 9px;
     
 font-size: 16px;
     
-margin: 5px 0px;
+margin: 5px 0;
     
 min-width: 210px;
     
@@ -419,21 +423,14 @@ color: #808080;
 position: relative;
     
 border-radius: 10px;
-    
-border-right: none;
-    
-border-top: none;
-    
-border-bottom: none;
-    
-border: 1px solid rgba(0, 0, 0, 0.15);
-    
-border-left: 2px solid #fe5046;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 2px #fe5046;
 }
 
 .deliveryLabel{
 
-padding: 10px 0px;
+padding: 10px 0;
 
 font-size: 14px;
 
@@ -452,7 +449,7 @@ line-height: 18px;
     position: relative;
     top: 2px;
     color: #808080;
-    padding: 10px 0px;
+    padding: 10px 0;
     font-size: 14px;
     line-height: 18px;
 }
@@ -463,8 +460,8 @@ line-height: 18px;
     position: relative;
     top: 3.5px;
     right: 6px;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     background-color: white;
     box-shadow: none;
 }
@@ -472,13 +469,11 @@ line-height: 18px;
 .discounts {
     margin: 0px;
     display: flex;
-    padding: 20px 20px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 20px 20px 10px;
     min-width: 240px;
     background: #ffffffd4;
     width: 100%;
-    margin-bottom: 14px;
+    margin: 0 0 14px;
     flex-wrap: wrap;
 }
 
@@ -498,15 +493,13 @@ line-height: 18px;
 
 
 .frutaCart, .almacenCart {
-    padding: 10px;
-    padding-top: 20px;
     background: #fff;
     color: #333;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
-    box-shadow: 0px 3px 6px #33333329;
+    box-shadow: 0 3px 6px #33333329;
     border-left: 2px solid #00cc65;
 }
 
@@ -517,7 +510,6 @@ line-height: 18px;
 }
 
 .almacenCart .subtitle {
-    color: #00cc65;
     font-size: 14px;
     padding-top: 10px;
     color: #3d4852;
@@ -526,15 +518,13 @@ line-height: 18px;
 
 .frutaCart .frutaCart .subtitle {
     background: #333;
-    color: #00cc65;
+    color: #3d4852;
     font-size: 14px;
     padding-top: 10px;
-    color: #ffffff99;
 }
 
 .equals {
-    padding-top: 0px;
-    padding: 0px 20px;
+    padding: 0 20px;
     text-align: center;
     align-items: center;
 }
@@ -603,12 +593,12 @@ line-height: 18px;
     margin: 5px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin: 0 5px 10px;
     max-height: 240px;
     overflow: hidden;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
     border-radius: 14px;
+    transition: transform .2s;
 }
 
 .main .products .item .productImage {
@@ -617,13 +607,13 @@ line-height: 18px;
     max-width: 100%;
     background: #e6e6e6;
     object-fit: cover;
+
     /* border-radius: 12px; */
 }
 
 .main .products .item .title {
     color: #ffffff;
-    padding: 7px;
-    padding-left: 10px;
+    padding: 7px 7px 7px 10px;
     font-size: 12px;
     width: 100%;
     line-height: 17px;
@@ -703,14 +693,12 @@ line-height: 18px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 10px;
-    background-position: 0px;
-    margin-top: 0px;
+    background-position: 0;
     position: relative;
     bottom: 4px;
-    padding-top: 0px;
+    padding-top: 0;
     max-width: 700px;
-    margin-top: 40px;
+    margin: 40px 0 10px 0;
 }
 
 .schedule {
@@ -727,18 +715,11 @@ line-height: 18px;
 .schedule .title {
     display: flex;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 13px;
     color: #00cc65;
-    margin-bottom: 5px;
-    max-width: 30100%px;
-    line-height: 24px;
-    margin-top: 5px;
-    display: flex;
+    max-width: 100%;
+    margin: 5px 0 5px 0;
     flex-direction: column;
     position: relative;
-    font-size: 1em;
-    line-height: 1.4;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -747,21 +728,19 @@ line-height: 18px;
     display: flex;
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
-    padding: 0px 2px;
+    padding: 0 2px;
     justify-content: flex-start;
     color: #808080;
     line-height: 20px;
 }
 
 .main .cart .verduraCart {
-    padding: 10px;
-    padding-top: 20px;
     color: #333;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     width: 95%;
     max-width: 800px;
     margin-bottom: 20px;
-    box-shadow: 0px 3px 6px #33333329;
+    box-shadow: 0 3px 6px #33333329;
     border-left: 2px solid #00cc65;
 }
 
@@ -773,7 +752,7 @@ line-height: 18px;
 
 .main .cart .price {
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     font-size: 14px;
     position: relative;
     left: 15px;
@@ -783,12 +762,10 @@ line-height: 18px;
 }
 
 .main .cart .item {
-    margin-bottom: 20px;
-    margin: 13px;
+    margin: 13px 13px 20px 13px;
     border-bottom: 0.2px solid #ececec;
     font-family: 'Ubuntu', sans-serif;
     padding-bottom: 10px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
 }
@@ -803,7 +780,7 @@ line-height: 18px;
     padding-top: 10px;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .main .cart .item .img {
@@ -821,7 +798,7 @@ line-height: 18px;
     display: flex;
     align-items: center;
     line-height: 18px;
-    flex: 1 100%;
+    flex: 1 1 100%;
     font-weight: bold;
 }
 
@@ -857,7 +834,7 @@ line-height: 18px;
     padding: 20px;
     cursor: pointer;
     color: white;
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 20px;
     border-radius: 10px;
 }
@@ -866,7 +843,7 @@ line-height: 18px;
     width: 200px;
     padding: 15px;
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     display: flex;
     text-align: center;
     background-color: #00cc65;
@@ -890,7 +867,6 @@ line-height: 18px;
 }
 
 .main .cart .confirmSale .reload {
-    margin-top: 10px;
     width: 280px;
     display: flex;
     text-align: center;
@@ -899,17 +875,17 @@ line-height: 18px;
     padding: 20px;
     cursor: pointer;
     color: white;
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 20px;
     text-decoration: none;
 }
 
 .modal {
     position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background: #333333b0;
     display: flex;
     justify-content: center;
@@ -935,7 +911,7 @@ line-height: 18px;
 .modal .modalItem .title {
     font-size: 15px;
     color: #333;
-    padding: 0px 20px;
+    padding: 0 20px;
     text-align: center;
     position: relative;
     line-height: 20px;
@@ -999,7 +975,7 @@ line-height: 18px;
 .footer .social .footerLogo {
     width: 160px;
     position: absolute;
-    left: 0px;
+    left: 0;
 }
 
 .footer .social .insta {
@@ -1022,6 +998,7 @@ line-height: 18px;
 }
 
 .footer .social .link {
+    right: 10px;
     margin-bottom: 5px;
     position: relative;
     font-size: 0.8em;
@@ -1086,7 +1063,7 @@ body {
     padding: 1em;
     margin: 50vh auto;
     max-width: 15em;
-    font-family: Helvetica;
+    font-family: Helvetica, Ubuntu, sans-serif;
     font-weight: lighter;
     font-size: 2em;
     line-height: 1.2;
@@ -1194,7 +1171,7 @@ body {
 
 @media (max-width: 380px) {
     .main .filter .button {
-        font-size:0px;
+        font-size:0;
     }
 }
 
@@ -1207,7 +1184,7 @@ body {
         width: 100%;
     }
     .main .filter .button {
-        font-size:0px;
+        font-size:0;
     }
 }
 
@@ -1215,4 +1192,4 @@ body {
     .facet_sidebar {
         display: none;
     }
-}
+}s
