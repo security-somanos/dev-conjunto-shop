@@ -140,16 +140,16 @@ var app = new Vue({
         changeLocation(event) {
             if(event.target.value === "3")
             {
-                this.userData.delivery = 3;
+                this.userData.delivery = false;
                 this.userData.address = "Retira Sábado por el Local";
             }
             else if(event.target.value === "2")
             {
-            this.userData.delivery = 2;
+            this.userData.delivery = false;
             this.userData.address = "Retira en el día";
             }
             else {
-                this.userData.delivery = 1;
+                this.userData.delivery = true;
                 this.userData.address = "";
 
             }
