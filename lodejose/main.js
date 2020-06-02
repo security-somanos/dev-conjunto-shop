@@ -182,7 +182,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesLoDeJose/').push(sale, function (error) {
+            database.ref('salesElConjunto/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

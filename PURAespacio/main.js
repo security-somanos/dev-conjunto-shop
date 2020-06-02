@@ -187,7 +187,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesPura/').push(sale, function (error) {
+            database.ref('salesElConjunto/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
