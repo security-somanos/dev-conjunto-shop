@@ -956,7 +956,7 @@ line-height: 18px;
 .footer .footerLogo {
     height: 64px;
     position: relative;
-    margin-right: 20px;
+    margin-right: 11px;
 }
 
 .footer .social {
@@ -993,7 +993,6 @@ line-height: 18px;
 }
 
 .footer .social .link {
-    right: 10px;
     margin-bottom: 5px;
     position: relative;
     font-size: 0.8em;
