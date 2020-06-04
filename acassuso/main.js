@@ -267,18 +267,16 @@ var app = new Vue({
 })
 
 //Scroll top on pageload
-window.addEventListener('scroll', function (evt) {
+window.addEventListener('scroll', function () {
     var distance_from_top = document.documentElement.scrollTop;
     var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
-        document.getElementById("js-top").classList.add("hide");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementsByClassName("filter")[0].classList.add("fixed");
-        document.getElementById("js-top").classList.remove("hide");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");
@@ -300,7 +298,3 @@ const scrollTopProducts = () => {
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
 
-document.getElementById("js-top").onclick = function (e) {
-    e.preventDefault();
-    scrollToTop();
-};

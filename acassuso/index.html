@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=es>
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div class="cart">
+        <div class="cart" id="cart">
             <div class="head">
                 <div class="cartTitle">
                     <img src="../images/shops/scale.png" alt="" class="cartIcon">
@@ -138,7 +138,7 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
                         <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <option value="1">Retirar en Vivero "Via Verde",Acassuso</option>
+                        <option value="1">Retirar en Vivero "Via Verde", Acassuso</option>
                         <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
                         <option value="3">Envio a Domicilio</option>
                     </select>
@@ -188,22 +188,16 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == false">
+                            <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene <br>
                                 desde las 14:00 hasta las 18:00
                                 por el Vivero Vía Verde, Eduardo Costa 785 (esq. Perú), Acassuso.
                             </div>
-                            <div v-if="userData.delivery == true">
+                            <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Miercoles de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.
-                            </div>
-                            <div v-if="userData.delivery == false">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo el día Miércoles de la semana que viene
-                                desde las 14:00 hasta las 18:00
-                                por el Centro de Yoga Avalom, H. de la Quintana 1540, Florida.
                             </div>
                         </div>
                     </div>
