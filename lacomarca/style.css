@@ -279,8 +279,6 @@ width: 30px;
     background-color: #00cc65 !important;
 }
 
-a.button.active {}
-
 .headerDisplay {
     width: 100%;
     margin-top: 15px;
@@ -568,7 +566,7 @@ line-height: 18px;
     font-size: 10px;
     margin-top: 0px;
     margin-bottom: 10px;
-    max-height: 240px;
+    max-height: 266px;
     overflow: hidden;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
     border-radius: 14px;

@@ -335,8 +335,6 @@ width: 30px;
     background-color: #00cc65 !important;
 }
 
-a.button.active {}
-
 .headerDisplay {
     width: 100%;
     /* box-shadow: 0 3px 6px #33333329; */
@@ -586,7 +584,7 @@ line-height: 18px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
     margin: 0 5px 10px;
-    max-height: 240px;
+    max-height: 266px;
     overflow: hidden;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06);
     border-radius: 14px;
@@ -1186,4 +1184,4 @@ body {
     .facet_sidebar {
         display: none;
     }
-}s
+}
