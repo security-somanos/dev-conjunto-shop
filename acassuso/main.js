@@ -36,7 +36,7 @@ var app = new Vue({
             address: '',
             phone: '',
             email: 'Acasssuso',
-            delivery: false
+            delivery: 0
         },
         active: {
             'verdura': { status: true },
@@ -126,7 +126,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == true && this.userData.address == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -136,8 +136,8 @@ var app = new Vue({
         },
         changeLocation(event) {
             if (event.target.value === "1") {
-                this.userData.delivery = false;
-                this.userData.address = "Retira por La Lucila";
+                this.userData.delivery = 1;
+                this.userData.address = "Retira por Vivero";
             }
             /* else if (event.target.value === "2"){
                 this.userData.delivery = 2;
@@ -145,7 +145,7 @@ var app = new Vue({
             } */
 
             else {
-                this.userData.delivery = true;
+                this.userData.delivery = 3;
                 this.userData.address = "";
 
             }
@@ -188,6 +188,7 @@ var app = new Vue({
                     console.log(error)
                 } else {
                     self.saleComplete = true;
+                    setTimeout(function () { location.reload() }, 10000);
                 }
             });
 
@@ -267,7 +268,8 @@ var app = new Vue({
 
 //Scroll top on pageload
 window.addEventListener('scroll', function (evt) {
-    var distance_from_top = document.documentElement.scrollTop
+    var distance_from_top = document.documentElement.scrollTop;
+    var cartDiv = document.getElementById('cart').getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
