@@ -275,7 +275,6 @@ window.addEventListener('scroll', function () {
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
-        document.getElementById("js-top").classList.add("hide");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
@@ -301,7 +300,3 @@ const scrollTopProducts = () => {
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
 
-document.getElementById("js-top").onclick = function (e) {
-    e.preventDefault();
-    scrollToTop();
-};
