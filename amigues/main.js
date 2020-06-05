@@ -37,7 +37,7 @@ var app = new Vue({
             phone: '',
             email: 'Amigues',
             delivery: 0,
-            pago: "Escojer forma de pago",
+            pago: "Escoger forma de pago",
             preference: "",
         },
         active: {

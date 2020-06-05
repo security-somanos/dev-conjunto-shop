@@ -18,7 +18,9 @@
         </div> -->
         <div class="totalFloat" id="totalFloat">${{cartTotal}}</div>
         <div class="header">
-            <img src="../images/shops/logo.png" alt="" class="logo">
+            <div class="headerDisplay">
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""
+                    class="logo">      
             <div class="contain">
                 <div class="search">
                     <div class="searchLabel">Bienvenides!</div>
@@ -36,6 +38,18 @@
                         @click="setVisibility('almacen');"><img class="filterIcon"
                             src="../images/shops/milk.png">Almacén</a>
                 </div>
+                <div class="filter">
+                    <a class="button" v-bind:class="{active : active['vinos'].status}"
+                        @click="setVisibility('vinos');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
+
+                    <a class="button" v-bind:class="{active : active['medicina'].status}"
+                        @click="setVisibility('medicina');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Medicina</a>
+
+                    <a class="button" v-bind:class="{active : active['comida'].status}"
+                        @click="setVisibility('comida');"><img class="filterIcon"
+                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Comida</a>
             </div>
             <div class="headerDisplay">
                 <div class="aviso">
@@ -217,7 +231,7 @@
                     <path d="M12 6H0l6-6z" /></svg>
             </a>
             <div class="footer">
-                <img src="images/" alt="" class="footerLogo">
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt="" class="footerLogo">
                 <div class="social">
                     <div class="link">
                         <img src="../images/shops/fb.png" alt="" class="fb">
