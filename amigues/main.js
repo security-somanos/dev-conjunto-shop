@@ -31,7 +31,6 @@ var app = new Vue({
         saleComplete: false,
         fieldsMissing: false,
         confirmModal: false,
-        deliveryMethod: false,
         userData: {
             name: '',
             address: '',
@@ -112,8 +111,6 @@ var app = new Vue({
                     this.cartHas.comida = true;
                 }
 
-                console.log(this.cart)
-
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
 
@@ -122,10 +119,8 @@ var app = new Vue({
             }
         },
         addItem: function (item) {
-
             item.amount++;
             item.total = item.amount * item.price;
-            console.log(item)
             this.getTotal();
         },
         removeItem: function (item) {
@@ -160,11 +155,6 @@ var app = new Vue({
                 this.userData.delivery = 1;
                 this.userData.address = "Retira por La Lucila";
             }
-            /* else if (event.target.value === "2"){
-                this.userData.delivery = 2;
-                this.userData.address = "Retira por Avalom";
-            } */
-
             else {
                 this.userData.delivery = 3;
                 this.userData.address = "";
@@ -227,12 +217,10 @@ var app = new Vue({
             });
 
             for (var item in this.cart) {
-                console.log(item)
                 for (var i in this.productList) {
                     if (this.productList[i].key == this.cart[item].key) {
                         let key = this.cart[item].key.toString();
                         let stockDiff = this.productList[i].stock -= this.cart[item].amount;
-                        console.log(key, stockDiff)
                         productsRef.child(key).update({ stock: stockDiff });
                     }
                 }
@@ -265,8 +253,6 @@ var app = new Vue({
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
 
-            console.log(newList);
-            
             if (self.search != '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
