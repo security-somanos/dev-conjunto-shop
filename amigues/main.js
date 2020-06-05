@@ -38,16 +38,23 @@ var app = new Vue({
             phone: '',
             email: 'Amigues',
             delivery: 0,
+            pago: "Escojer forma de pago",
         },
         active: {
             'verdura': { status: true },
             'fruta': { status: false },
-            'almacen': { status: false }
+            'almacen': { status: false },
+            'vinos': { status: false },
+            'medicina': { status: false },
+            'comida': { status: false }
         },
         cartHas: {
             verdura: false,
             fruta: false,
-            almacen: false
+            almacen: false,
+            vinos: false,
+            medicina: false,
+            comida: false
         }
     },
     mixins: [Vue2Filters.mixin],
@@ -94,6 +101,15 @@ var app = new Vue({
                 if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
                 }
+                if (this.cart[item].type == 'vinos') {
+                    this.cartHas.vinos = true;
+                }
+                if (this.cart[item].type == 'medicina') {
+                    this.cartHas.medicina = true;
+                }
+                if (this.cart[item].type == "comida") {
+                    this.cartHas.comida = true;
+                }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
@@ -123,7 +139,7 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
             else if (this.userData.delivery == 3 && this.userData.address == '') {
@@ -151,6 +167,9 @@ var app = new Vue({
             }
             this.deliveryMethod = true;
         },
+        setPaymentType(event) {
+            this.userData.pago = event.target.value;
+        },
         saveSale(cart) {
             // send to firebase
             var today = new Date().toLocaleDateString('es-GB', {
@@ -167,6 +186,7 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
+                pago: this.userData.pago,
                 items: []
             }];
 
