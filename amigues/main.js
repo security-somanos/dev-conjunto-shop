@@ -111,6 +111,8 @@ var app = new Vue({
                     this.cartHas.comida = true;
                 }
 
+                console.log(this.cart)
+
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
 
@@ -119,8 +121,10 @@ var app = new Vue({
             }
         },
         addItem: function (item) {
+
             item.amount++;
             item.total = item.amount * item.price;
+            console.log(item)
             this.getTotal();
         },
         removeItem: function (item) {
@@ -258,6 +262,9 @@ var app = new Vue({
             var newList = this.productList.sort().filter(function (item) {
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
+
+            console.log(newList);
+            
             if (self.search != '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
@@ -275,7 +282,10 @@ var app = new Vue({
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
-                        'almacen': { status: false }
+                        'almacen': { status: false },
+                        'vinos': { status: false },
+                        'medicina': { status: false },
+                        'comida': { status: false }
                     }
                 }
             };
