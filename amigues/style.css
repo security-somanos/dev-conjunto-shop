@@ -396,21 +396,48 @@ width: 30px;
     flex-direction: column-reverse;
 }
 
+.preference {
+margin-top:10px;
+}
+.preference .title{
+    font-size: 13px;
+}
+.preference textarea{
+    width:100%;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+
 select {
-    height: 40px;
-    width: 280px;
-    /* border-width: 0px; */
-    padding: 9px;
-    font-size: 16px;
-    margin: 5px 0;
-    min-width: 210px;
-    background-color: #f7f7f7ba;
-    flex: 1;
-    color: #808080;
-    position: relative;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-left: 2px #fe5046;
+    
+height: 40px;
+    
+width: 280px;
+    
+/* border-width: 0px; */
+    
+padding: 9px;
+    
+font-size: 16px;
+    
+margin: 5px 0;
+    
+min-width: 210px;
+    
+background-color: #f7f7f7ba;
+    
+flex: 1;
+    
+color: #808080;
+    
+position: relative;
+    
+border-radius: 10px;
+    
+border: 1px solid rgba(0, 0, 0, 0.15);
+    
+border-left: 2px #fe5046;
 }
 
 .deliveryLabel{

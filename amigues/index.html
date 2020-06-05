@@ -211,6 +211,13 @@
                         <option value="3">Envio a Domicilio</option>
                     </select>
                 </div>
+                <div class="preference">
+                    <div class="title">Escribinos aqui 3 variedades que te gustaria que enviemos en caso de faltantes.
+                    </div>
+                    <textarea type="text" class="pref" v-model="userData.preference"
+                        placeholder="Ejemplo (apio, anco, tomate)">
+                    </textarea>
+                </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
@@ -235,7 +242,8 @@
             </form>
             <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
                 <div class="title">
-                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
+                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO <br>
+                    Despues asegurate de hacer 'click' en 'Realizar Pedido'
                 </div>
                 <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt=""
                     class="logoMainIcon">

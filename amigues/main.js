@@ -39,6 +39,7 @@ var app = new Vue({
             email: 'Amigues',
             delivery: 0,
             pago: "Escojer forma de pago",
+            preference: "",
         },
         active: {
             'verdura': { status: true },
@@ -191,6 +192,7 @@ var app = new Vue({
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
                 pago: this.userData.pago,
+                preference: this.userData.preference,
                 items: []
             }];
 
