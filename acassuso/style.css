@@ -22,33 +22,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     max-width: 490px;
     /* min-width: 100%; */
     text-align: center;
-    margin-bottom: 20px;
 }
+
 .totalFloat {
-
-    position: fixed;
-
-    bottom: 20px;
-
-    left: 20px;
-
-    color: black;
-
-    padding: 20px;
-
-    font-size: 20px;
-
-    box-shadow: 0px 3px 6px #33333329;
-
-    border-left: 2px solid #00cc65;
-
-    font-family: Ubuntu, sans-serif;
-
-    border-radius: 15px;
-
-    background-color: white;
-
-    z-index: 1;
+    
+position: fixed;
+    
+bottom: 20px;
+    
+left: 20px;
+    
+color: black;
+    
+padding: 20px;
+    
+font-size: 20px;
+    
+box-shadow: 0 3px 6px #33333329;
+    
+border-left: 2px solid #00cc65;
+    
+font-family: Ubuntu, sans-serif;
+    
+border-radius: 15px;
+    
+background-color: white;
+    
+z-index: 1;
 }
 
 
@@ -269,10 +269,10 @@ width: 30px;
         position: relative;
         flex-wrap: wrap;
         max-width: 438px;
-        margin: 40px 0 20px 0;
+        margin: 0 auto;
         margin-top: 40px;
         position: relative;
-        height: 105px;
+        /* height: 105px; */
         top: 10px;
 }
 
@@ -283,6 +283,7 @@ width: 30px;
     font-family: 'Ubuntu', sans-serif;
     height: 45px;
     flex: 1;
+    margin-bottom: 13px;
 }
 
 .filter .button {
@@ -318,7 +319,6 @@ width: 30px;
     color: white;
     background-color: #00cc65 !important;
 }
-
 
 .headerDisplay {
     width: 100%;
@@ -396,9 +396,22 @@ width: 30px;
     flex-direction: column-reverse;
 }
 
-#delivery {
+.preference {
+margin-top:10px;
+}
+.preference .title{
+    font-size: 13px;
+}
+.preference textarea{
+    width:100%;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+
+select {
     
-height: 30px;
+height: 40px;
     
 width: 280px;
     
@@ -421,9 +434,10 @@ color: #808080;
 position: relative;
     
 border-radius: 10px;
-
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-left: 2px #fe5046;
+    
+border: 1px solid rgba(0, 0, 0, 0.15);
+    
+border-left: 2px #fe5046;
 }
 
 .deliveryLabel{
@@ -541,26 +555,7 @@ line-height: 18px;
     width: 240px;
 }
 
-.main .header .title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    color: #17ba7bfc;
-    width: 290px;
-    margin-bottom: 10px;
-}
 
-.main .header .logo {
-    height: 90px;
-    position: relative;
-    margin: 10px;
-    margin-top: 30px;
-    margin: 0px 20px;
-}
 
 .schedule .logoMainIcon {
     width: auto;
@@ -604,7 +599,12 @@ line-height: 18px;
 
     /* border-radius: 12px; */
 }
-
+ /*.item:hover {
+        -ms-transform: scale(1.5); !* IE 9 *!
+        -webkit-transform: scale(1.5); !* Safari 3-8 *!
+        transform: scale(1.5);
+    }
+*/
 .main .products .item .title {
     color: #ffffff;
     padding: 7px 7px 7px 10px;
@@ -994,7 +994,10 @@ line-height: 18px;
     position: relative;
     font-size: 0.8em;
 }
-
+.footer .social .link a {
+ color:white;
+ text-decoration:none;
+}
 .footer .social .web {
     height: 19px;
     margin-right: 6px;

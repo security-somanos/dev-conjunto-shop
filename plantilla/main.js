@@ -35,7 +35,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'La Comarca',
+            email: 'Acassuso',
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
@@ -153,7 +153,7 @@ var app = new Vue({
         changeLocation(event) {
             if (event.target.value === "1") {
                 this.userData.delivery = 1;
-                this.userData.address = "0";
+                this.userData.address = "Retira por Vivero";
             }
             else {
                 this.userData.delivery = 3;
@@ -208,7 +208,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/laComarca').push(sale, function (error) {
+            database.ref('salesArchive/acassuso').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

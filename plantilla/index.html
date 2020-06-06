@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cuarto Creciente</title>
+    <title>Nodo Acassuso</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico"
         href="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.ico" />
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="aviso">
-                    Te damos la bienvenida a la Compra Comunitaria de La Comarca.
+                    Te damos la bienvenida a la compra comunitaria de Acassuso.
                     <br><br>           
                     Buscamos acortar distancias entre el campo y el barrio,
                     dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.
@@ -68,16 +68,17 @@
                     Si somos más, pagamos menos.
                     <br><br>
                     Recordá que:<br>
- 		         • Tenes tiempo de hacer tu pedido hasta el Sabado.<br>
-              	 • Vamos a entregar por el barrio los dias Martes, horario a confirmar. <br>
-                 • La disponibilidad de los productos esta sujeta al campo y este a factores climáticos o de estación.
-                    (de todas formas, siempre buscamos la manera de compensarte)         
-                    <br /><br />
+                    • Tenes tiempo de hacer tu pedido desde el Martes hasta el Sabado a las 18:00.<br>
+                    • Vas a poder retirarlo en Vivero Via Verde (Eduardo Costa 785, esq. Perú) de 15 a 18 horas.<br>
+                    • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
+                    <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
+                    <br>(de todas formas siempre vamos a buscar la manera de compensarte)
+                    <br><br>
                     Formas de pago:    
                     <br>* con Mercado Pago: escaneando el QR que aparece mas abajo.
                     <br>* en efectivo: en el momento que recibís tu pedido. 
                     <br />
-                    Consultas: 11 6955 3325
+                    ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6970 1997
 
                 </div>
             </div>
@@ -209,7 +210,7 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
                         <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <!--  <option value="1">Retirar en Anchorena 684, La Lucila</option>-->
+                        <option value="1">Retirar en Vivero "Via Verde", Acassuso</option>
                         <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
                         <option value="3">Envio a domicilio en el barrio</option>
                     </select>
@@ -224,7 +225,23 @@
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
-                    Para recibir los pedidos en la puerta de tu casa, hay un plus por envio.
+                    <h1 style="font-size: 20px;">Costo promedio</h1> <br>
+                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
+                    La Lucila = $100 <br>
+                    Olivos = $120 <br>
+                    Florida = $150 <br>
+                    Munro = $200 <br><br>
+                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
+                    Martinez = $150 <br>
+                    Acassuso = $200 <br>
+                    San Isidro = $250 <br>
+                    Beccar = $300 <br>
+                    Tigre = $400 <br> <br>
+                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
+                    San Fernando = $350 <br>
+                    Victoria = $400 <br>
+                    Virreyes = $450 <br>
+                    Tigre = $500 <br>
                 </div>
             </form>
             <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
@@ -253,12 +270,15 @@
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
                             <div v-if="userData.delivery == 1">
-                                Gracias!  Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el House los Martes de 10 a 20 hrs.
+                                Gracias! Su pedido se ha realizado con exito. <br>
+                                Podes retirarlo el día Miércoles de la semana que viene <br>
+                                desde las 14:00 hasta las 18:00
+                                por el Vivero Vía Verde, Eduardo Costa 785 (esq. Perú), Acassuso.
                             </div>
                             <div v-if="userData.delivery == 3">
-                                Gracias!  Su pedido se ha realizado con exito. <br>
-                                Nos estaremos comunicando con vos para coordinar la entrega.
+                                Gracias! Su pedido se ha realizado con exito. <br>
+                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
+                                Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
                         </div>
                     </div>
@@ -276,7 +296,7 @@
                     <div class="contact">
                         <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
                             class="phone">
-                            Dudas y consultas llamanos: 11 6955 3325
+                            Dudas y consultas llamanos: 11 6970 1997
                     </div>
                 </div>
             </div>
