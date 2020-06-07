@@ -35,7 +35,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Acassuso',
+            email: 'Lo de Jose',
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
@@ -153,7 +153,7 @@ var app = new Vue({
         changeLocation(event) {
             if (event.target.value === "1") {
                 this.userData.delivery = 1;
-                this.userData.address = "Retira por Vivero";
+                this.userData.address = "0";
             }
             else {
                 this.userData.delivery = 3;
@@ -208,7 +208,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/acassuso').push(sale, function (error) {
+            database.ref('salesArchive/loDeJose').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nodo Acassuso</title>
+    <title>Nodo Lo de Jose</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico"
         href="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.ico" />
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="aviso">
-                    Te damos la bienvenida a la compra comunitaria de Acassuso.
+                    Te damos la bienvenida a la compra comunitaria de Caballito y Flores.
                     <br><br>           
                     Buscamos acortar distancias entre el campo y el barrio,
                     dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.
@@ -68,17 +68,16 @@
                     Si somos más, pagamos menos.
                     <br><br>
                     Recordá que:<br>
-                    • Tenes tiempo de hacer tu pedido desde el Martes hasta el Sabado a las 18:00.<br>
-                    • Vas a poder retirarlo en Vivero Via Verde (Eduardo Costa 785, esq. Perú) de 15 a 18 horas.<br>
-                    • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
-                    <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
-                    <br>(de todas formas siempre vamos a buscar la manera de compensarte)
+                    • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
+                    • Vas a poder recibirlo en tu casa el dia Jueves de la semana que viene. <br>
+                  • La disponibilidad del campo esta sujeta a factores climaticos o de estación.
+                     (de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
                     Formas de pago:    
                     <br>* con Mercado Pago: escaneando el QR que aparece mas abajo.
                     <br>* en efectivo: en el momento que recibís tu pedido. 
                     <br />
-                    ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6970 1997
+                    ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6955 3325 .
 
                 </div>
             </div>
@@ -210,9 +209,10 @@
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
                         <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <option value="1">Retirar en Vivero "Via Verde", Acassuso</option>
-                        <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
-                        <option value="3">Envio a domicilio en el barrio</option>
+                        <!--   <option value="1">Retirar en Anchorena 684, La Lucila</option>
+                           <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
+                        <option value="3">Envio a Domicilio</option>
+                    </select>
                     </select>
                 </div>
                 <div class="preference">
@@ -225,23 +225,9 @@
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
-                    <h1 style="font-size: 20px;">Costo promedio</h1> <br>
-                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
-                    La Lucila = $100 <br>
-                    Olivos = $120 <br>
-                    Florida = $150 <br>
-                    Munro = $200 <br><br>
-                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
-                    Martinez = $150 <br>
-                    Acassuso = $200 <br>
-                    San Isidro = $250 <br>
-                    Beccar = $300 <br>
-                    Tigre = $400 <br> <br>
-                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
-                    San Fernando = $350 <br>
-                    Victoria = $400 <br>
-                    Virreyes = $450 <br>
-                    Tigre = $500 <br>
+                    <h1 style="font-size: 20px;" >Costos por Zona</h1> <br>
+                    <h4 style="font-size: 16px;" >Flores : $150 </h4><br>
+                               <h4 style="font-size: 16px;" >Caballito : $200 </h4><br><br>
                 </div>
             </form>
             <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
@@ -277,8 +263,8 @@
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
-                                Nos vamos a comunicar con vos para coordinar la entrega.
+                                Preparate para recibirlo el Jueves de la semana que viene. <br>
+                                Nos vamos a comunicar con vos para coordinar la entrega.   
                             </div>
                         </div>
                     </div>
@@ -296,7 +282,7 @@
                     <div class="contact">
                         <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
                             class="phone">
-                            Dudas y consultas llamanos: 11 6970 1997
+                            Dudas y consultas llamanos: 11 6955 3325 .
                     </div>
                 </div>
             </div>

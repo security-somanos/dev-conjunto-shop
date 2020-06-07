@@ -157,19 +157,32 @@ itemf:hover, itemf:active {
 }
 
 .site .headerTitle {
-	background-image: url(../images/home/plants.jpeg);
-	/* background-color: black; */
-	background-size: cover;
-	background-position: center;
-	color: black;
-	flex-direction: column;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 30px;
-	padding: 80px;
-	color: #fff;
+	
+background-image: url(../images/home/plants.jpeg);
+	
+/* background-color: black; */
+	
+background-size: cover;
+	
+background-position: center;
+	
+color: black;
+	
+flex-direction: column;
+	
+text-align: center;
+	
+display: flex;
+	
+justify-content: center;
+	
+align-items: center;
+	
+font-size: 30px;
+	
+padding: 80px;
+	
+color: #fff;
 }
 
 
@@ -270,12 +283,12 @@ box-shadow: 0 3px 6px #33333329;
 }
 .site .darkscreen .modal .section .itemn {
     background-color: #333;
+    border-radius: 10px;
     color: white;
-    font-size: 15px;
     position: relative;
     width: 100px;
     height: 100px;
-    margin: 5px 30px 5px 30px;
+    margin: 0 0 5px 15px;
     padding: 10px 22px;
     display: flex;
     justify-content: center;
