@@ -153,7 +153,7 @@ var app = new Vue({
         changeLocation(event) {
             if (event.target.value === "1") {
                 this.userData.delivery = 1;
-                this.userData.address = "Retira por Vivero";
+                this.userData.address = "Retira por Holmberg 2523";
             }
             else {
                 this.userData.delivery = 3;
