@@ -55,12 +55,12 @@ itemf:hover, itemf:active {
 
 .container.foots{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     align-content: center;
     margin-bottom: 60px;
-    margin-top: 60px;
+    margin-top: 60px;   
+    flex-wrap: wrap;
 }
 
 .actions {
