@@ -36,17 +36,25 @@ var app = new Vue({
             address: '',
             phone: '',
             email: '',
-            delivery: 0
+            delivery: 0,
+            pago: "Escoger forma de pago",
+            preference: "",            
         },
         active: {
             'verdura': { status: true },
             'fruta': { status: false },
-            'almacen': { status: false }
+            'almacen': { status: false },
+            'vinos': { status: false },
+            'medicina': { status: false },
+            'comida': { status: false }
         },
         cartHas: {
             verdura: false,
             fruta: false,
-            almacen: false
+            almacen: false,
+            vinos: false,
+            medicina: false,
+            comida: false
         }
     },
     mixins: [Vue2Filters.mixin],
@@ -86,16 +94,24 @@ var app = new Vue({
 
             for (var item in this.cart) {
 
-                if (this.cart[item].type === 'fruta') {
+                if (this.cart[item].type == 'fruta') {
                     this.cartHas.fruta = true;
                 }
-                if (this.cart[item].type === 'verdura') {
+                if (this.cart[item].type == 'verdura') {
                     this.cartHas.verdura = true;
                 }
-                if (this.cart[item].type === "almacen") {
+                if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
                 }
-
+                if (this.cart[item].type == 'vinos') {
+                    this.cartHas.vinos = true;
+                }
+                if (this.cart[item].type == 'medicina') {
+                    this.cartHas.medicina = true;
+                }
+                if (this.cart[item].type == "comida") {
+                    this.cartHas.comida = true;
+                }
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2));
 
@@ -142,10 +158,10 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name === '' || this.userData.phone === '' || this.deliveryMethod === false) {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery === 1 && this.userData.address === '') {
+            else if (this.userData.delivery === 1 && this.userData.address == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -168,6 +184,9 @@ var app = new Vue({
             }
             this.deliveryMethod = true;
         },
+        setPaymentType(event) {
+            this.userData.pago = event.target.value;
+        },
         saveSale(cart) {
             // send to firebase
             var today = new Date().toLocaleDateString('es-GB', {
@@ -184,6 +203,8 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
+                pago: this.userData.pago,
+                preference: this.userData.preference,
                 items: []
             }];
 
@@ -254,7 +275,7 @@ var app = new Vue({
                 console.log(item)
                 return item.name && item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
             });
-            if (self.search !== '') {
+            if (self.search != '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
                 }
@@ -267,17 +288,20 @@ var app = new Vue({
             input.onkeyup = function () {
                 var key = event.keyCode || event.charCode;
 
-                if (key === 8 || key === 46 && self.search === '') {
+                if (key == 8 || key == 46 && self.search == '') {
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
-                        'almacen': { status: false }
+                        'almacen': { status: false },
+                        'vinos': { status: false },
+                        'medicina': { status: false },
+                        'comida': { status: false }
                     }
                 }
             };
 
             return newList.filter(function (item) {
-                return self.active[item.type].status === true;
+                return self.active[item.type].status == true;
             }).sort();
         }
     }
@@ -287,7 +311,7 @@ var app = new Vue({
 //Scroll top on pageload
 window.addEventListener('scroll', function () {
     var distance_from_top = document.documentElement.scrollTop;
-    var cartDiv = document.getElementById('cart').getBoundingClientRect();
+    var cartDiv = document.getElementById("cart").getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
