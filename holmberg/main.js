@@ -14,7 +14,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-var database = firebase.database();
+var database = firebase.database(); 
 
 const productsRef = database.ref('productsElConjunto');
 
@@ -31,23 +31,30 @@ var app = new Vue({
         saleComplete: false,
         fieldsMissing: false,
         confirmModal: false,
-        deliveryMethod: false,
         userData: {
             name: '',
             address: '',
             phone: '',
-            email: 'Drago',
+            email: 'Holmberg',
             delivery: 0,
+            pago: "Escoger forma de pago",
+            preference: "",
         },
         active: {
             'verdura': { status: true },
             'fruta': { status: false },
-            'almacen': { status: false }
+            'almacen': { status: false },
+            'vinos': { status: false },
+            'medicina': { status: false },
+            'comida': { status: false }
         },
         cartHas: {
             verdura: false,
             fruta: false,
-            almacen: false
+            almacen: false,
+            vinos: false,
+            medicina: false,
+            comida: false
         }
     },
     mixins: [Vue2Filters.mixin],
@@ -94,6 +101,15 @@ var app = new Vue({
                 if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
                 }
+                if (this.cart[item].type == 'vinos') {
+                    this.cartHas.vinos = true;
+                }
+                if (this.cart[item].type == 'medicina') {
+                    this.cartHas.medicina = true;
+                }
+                if (this.cart[item].type == "comida") {
+                    this.cartHas.comida = true;
+                }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
@@ -123,7 +139,7 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false) {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
             else if (this.userData.delivery == 3 && this.userData.address == '') {
@@ -137,19 +153,17 @@ var app = new Vue({
         changeLocation(event) {
             if (event.target.value === "1") {
                 this.userData.delivery = 1;
-                this.userData.address = "Retira por La Lucila";
+                this.userData.address = "Retira por Holmberg 2523";
             }
-            /* else if (event.target.value === "2"){
-                this.userData.delivery = 2;
-                this.userData.address = "Retira por Avalom";
-            } */
-
             else {
                 this.userData.delivery = 3;
                 this.userData.address = "";
 
             }
             this.deliveryMethod = true;
+        },
+        setPaymentType(event) {
+            this.userData.pago = event.target.value;
         },
         saveSale(cart) {
             // send to firebase
@@ -167,6 +181,8 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
+                pago: this.userData.pago,
+                preference: this.userData.preference,
                 items: []
             }];
 
@@ -192,7 +208,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesDragoArchive/').push(sale, function (error) {
+            database.ref('salesArchive/lodekari').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -205,7 +221,6 @@ var app = new Vue({
                     if (this.productList[i].key == this.cart[item].key) {
                         let key = this.cart[item].key.toString();
                         let stockDiff = this.productList[i].stock -= this.cart[item].amount;
-                        console.log(key, stockDiff)
                         productsRef.child(key).update({ stock: stockDiff });
                     }
                 }
@@ -237,6 +252,7 @@ var app = new Vue({
             var newList = this.productList.sort().filter(function (item) {
                 return item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false;
             });
+
             if (self.search != '') {
                 for (var t in this.active) {
                     this.active[t].status = false;
@@ -254,7 +270,10 @@ var app = new Vue({
                     self.active = {
                         'verdura': { status: true },
                         'fruta': { status: false },
-                        'almacen': { status: false }
+                        'almacen': { status: false },
+                        'vinos': { status: false },
+                        'medicina': { status: false },
+                        'comida': { status: false }
                     }
                 }
             };
@@ -270,11 +289,10 @@ var app = new Vue({
 //Scroll top on pageload
 window.addEventListener('scroll', function () {
     var distance_from_top = document.documentElement.scrollTop;
-    var cartDiv = document.getElementById('cart').getBoundingClientRect();
+    var cartDiv = document.getElementById("cart").getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementsByClassName("filter")[0].classList.remove("fixed");
-        document.getElementById("js-top").classList.add("hide");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
@@ -300,7 +318,3 @@ const scrollTopProducts = () => {
     scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
 
-document.getElementById("js-top").onclick = function (e) {
-    e.preventDefault();
-    scrollToTop();
-};

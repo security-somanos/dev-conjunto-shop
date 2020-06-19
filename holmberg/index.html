@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nodo La Lucila</title>
+    <title>Nodo Villa Urquiza</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico"
-        href="https://storage.cloud.google.com/el-conjunto.appspot.com/logo.png" />
+        href="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.ico" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
 </head>
@@ -20,7 +20,8 @@
         <div class="totalFloat" id="totalFloat">${{cartTotal}}</div>
         <div class="header">
             <div class="headerDisplay">
-                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/logo.png" alt="" class="logo">
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""
+                    class="logo">
                 <div class="contain">
                     <div class="search">
                         <div class="searchLabel">Bienvenides!</div>
@@ -31,37 +32,53 @@
                         <a class="button" v-bind:class="{active : active['verdura'].status}"
                             @click="setVisibility('verdura');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
+
                         <a class="button" v-bind:class="{active : active['fruta'].status}"
                             @click="setVisibility('fruta');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/apple.png">Frutas</a>
+
                         <a class="button" v-bind:class="{active : active['almacen'].status}"
                             @click="setVisibility('almacen');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
                     </div>
+                    <div class="filter">
+                        <a class="button" v-bind:class="{active : active['vinos'].status}"
+                            @click="setVisibility('vinos');"><img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
+
+                        <a class="button" v-bind:class="{active : active['medicina'].status}"
+                            @click="setVisibility('medicina');"><img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Medicina</a>
+
+                        <a class="button" v-bind:class="{active : active['comida'].status}"
+                            @click="setVisibility('comida');"><img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Comida</a>
+                    </div>
                 </div>
                 <div class="aviso">
-                    <br>
-                    <br>
-                    <div class="avisoTitle">Compra Comunitaria La Lucila</div>
-                    Te damos la bienvenida a la compra comunitaria de La Lucila.
+                    Te damos la bienvenida a la compra comunitaria de Villa Urquiza.
+                    <br><br>           
+                    Buscamos acortar distancias entre el campo y el barrio,
+                    dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.
                     <br><br>
-                    Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con
-                    los productores, eliminando así intermediarios innecesarios.
-                    <br><br>
-                    Lo revolucionario de este tipo de compra comunitaria está en
-                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen,
+                     Lo revolucionario de este tipo de compra comunitaria está en 
+                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen, 
                     así reducimos los costos de los alimentos y su logística (transporte del campo a la ciudad).
-                    <br><br>
+                    <br><br>  
                     Si somos más, pagamos menos.
                     <br><br>
                     Recordá que:<br>
-                    • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-                    • Vas a poder retirarlo a partir del Miércoles desde las 12:00 hasta las 20:00.<br>
-                    • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
+                    • Tenes tiempo de hacer tu pedido desde el Martes hasta el Sabado a las 18:00.<br>
+                    • Vas a poder retirarlo en Lo de Kari el dia Miércoles de 18 a 20 horas.<br>
                     <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
                     <br>(de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
+                    Formas de pago:    
+                    <br>* con Mercado Pago: escaneando el QR que aparece mas abajo.
+                    <br>* en efectivo: en el momento que recibís tu pedido. 
+                    <br />
                     ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6955 3325
+
                 </div>
             </div>
         </div>
@@ -80,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="cart">
+        <div class="cart" id="cart">
             <div class="head">
                 <div class="cartTitle">
                     <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/scale.png" alt=""
@@ -89,7 +106,7 @@
                 </div>
                 <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
                     <div class="verduras">Verduras</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'verdura'" >
+                    <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -103,7 +120,7 @@
                 </div>
                 <div class="frutaCart" v-if="cartHas.fruta == true">
                     <div class="frutas">Frutas</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'fruta'" >
+                    <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -119,7 +136,49 @@
                     <div class="frutas">Almacen
                         <div class="subtitle">Todos estos productos son agroecológicos también</div>
                     </div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'almacen'" >
+                    <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
+                        <img :src="item.image" alt="" class="img">
+                        <div class="itemName">
+                            <div class="name">{{item.name}}</div>
+                            <div class="itemTotal">
+                                <div class="amount">${{ item.price }} * {{item.amount}}</div>
+                                <div class="equals">=</div>
+                                <div class="total"> ${{item.total}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="verduraCart" v-if="cartHas.vinos == true" v-cloak>
+                    <div class="verduras">Vinos</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'vinos'">
+                        <img :src="item.image" alt="" class="img">
+                        <div class="itemName">
+                            <div class="name">{{item.name}}</div>
+                            <div class="itemTotal">
+                                <div class="amount">${{item.price}} * {{item.amount}}</div>
+                                <div class="equals"> = </div>
+                                <div class="total"> ${{item.total}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frutaCart" v-if="cartHas.medicina == true">
+                    <div class="frutas">Medicina</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'medicina'">
+                        <img :src="item.image" alt="" class="img">
+                        <div class="itemName">
+                            <div class="name">{{item.name}}</div>
+                            <div class="itemTotal">
+                                <div class="amount">${{ item.price }} * {{item.amount}}</div>
+                                <div class="equals">=</div>
+                                <div class="total"> ${{item.total}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="almacenCart" v-if="cartHas.comida == true">
+                    <div class="frutas">Comida</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'comida'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -140,13 +199,26 @@
                 <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required
                     min-length="8">
                 <div class="delivery">
+                    <select class="requiredInput" name="pago" id="pago" @change="setPaymentType($event)">
+                        <option value="1" disabled selected>Escoger forma de pago</option>
+                        <option value="Mercado Pago">Mercado Pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                    </select>
+                </div>
+                <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
                         <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <option value="1">Retirar en Anchorena 684, La Lucila</option>
+                        <option value="1">Retirar en Lo de Kari, Villa Urquiza.</option>
                         <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
-                        <option value="3">Envio a Domicilio</option>
                     </select>
+                </div>
+                <div class="preference">
+                    <div class="title">Escribinos aqui 3 variedades que te gustaria que enviemos en caso de faltantes.
+                    </div>
+                    <textarea type="text" class="pref" v-model="userData.preference"
+                        placeholder="Ejemplo (apio, anco, tomate)">
+                    </textarea>
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
@@ -170,12 +242,14 @@
                     Tigre = $500 <br>
                 </div>
             </form>
-            <div class="schedule">
+            <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
                 <div class="title">
-                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO
+                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO <br>
+                    Despues asegurate de hacer 'click' en 'Realizar Pedido'
                 </div>
                 <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt=""
                     class="logoMainIcon">
+                <div class="mailLink">Tambien podes usar este mail - theconjunto@gmail.com</div>
             </div>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
@@ -196,41 +270,31 @@
                             <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Podes retirarlo el día Miércoles de la semana que viene <br>
-                                desde las 14:00 hasta las 18:00
-                                por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684.
+                                desde las 18:00 hasta las 20:00 hs. 
+                                por el Lo de Kari en Holmberg 2523, Villa Urquiza.
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
                                 Preparate para recibirlo el Miercoles de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
-                            <div v-if="userData.delivery == 2">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo el día Miércoles de la semana que viene
-                                desde las 14:00 hasta las 18:00
-                                por el Centro de Yoga Avalom, H. de la Quintana 1540, Florida.
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="top-link hide" id="js-top">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
-                    <path d="M12 6H0l6-6z" /></svg>
-            </a>
             <div class="footer">
-                <img src="images/" alt="" class="footerLogo">
+                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""
+                    class="footerLogo">
                 <div class="social">
                     <div class="link">
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/fb.png" alt="" class="fb">
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/insta.png" alt=""
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/insta.png" alt=""
                             class="insta">
-                        Seguinos en Instagram /elconjuntoorg
+                        <a href="http://instagram.com/vrde_club" target="_blank">Seguinos en Instagram /vrde_club</a>
                     </div>
                     <div class="contact">
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/phone.png" alt=""
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
                             class="phone">
-                        Dudas y consultas llamanos: 11 6955 3325
+                            Dudas y consultas llamanos: 11 6955 3325
                     </div>
                 </div>
             </div>
