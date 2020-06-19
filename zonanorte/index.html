@@ -222,9 +222,9 @@
                         placeholder="Ejemplo (apio, anco, tomate)">
                     </textarea>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text"
                     placeholder="Direccion" v-model="userData.address">
-                <div class="deliveryLabel" v-if="userData.delivery == 3">
+                <div class="deliveryLabel" v-if="userData.delivery == 1">
                     <h1 style="font-size: 20px;">Costo promedio</h1> <br>
                     <h4 style="font-size: 16px;">Vicente López:</h4><br>
                     La Lucila = $100 <br>
