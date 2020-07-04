@@ -69,7 +69,7 @@
                     <br><br>
                     Recordá que:<br>
                     • Tenes tiempo de hacer tu pedido desde el Martes hasta el Sabado a las 18:00.<br>
-                    • Vas a poder retirarlo en Vivero Via Verde (Eduardo Costa 785, esq. Perú) de 14 a 16:30 horas.<br>
+                    • Vas a poder retirarlo en Vivero Via Verde (Eduardo Costa 785, esq. Perú) de 13 a 16:30 horas.<br>
                     • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
                     <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
                     <br>(de todas formas siempre vamos a buscar la manera de compensarte)
@@ -226,22 +226,17 @@
                     placeholder="Direccion" v-model="userData.address">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
                     <h1 style="font-size: 20px;">Costo promedio</h1> <br>
-                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
-                    La Lucila = $100 <br>
-                    Olivos = $120 <br>
-                    Florida = $150 <br>
-                    Munro = $200 <br><br>
                     <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
-                    Martinez = $150 <br>
-                    Acassuso = $200 <br>
-                    San Isidro = $250 <br>
-                    Beccar = $300 <br>
-                    Tigre = $400 <br> <br>
+                    Acassuso = $100 <br>
+                    San Isidro = $150 <br>
+                    Beccar = $150 <br>
                     <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
-                    San Fernando = $350 <br>
-                    Victoria = $400 <br>
-                    Virreyes = $450 <br>
-                    Tigre = $500 <br>
+                    Victoria = $200 <br>
+                    San Fernando = $250 <br>
+                    Virreyes = $300 <br>
+                    Tigre = $300 <br> 
+                    Ricon de Milberg = $350<br>
+                    Bolougne = $400<br>
                 </div>
             </form>
             <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
@@ -271,13 +266,13 @@
                         <div class="title">
                             <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo el día Miércoles de la semana que viene <br>
-                                desde las 14:00 hasta las 16:30
+                                Podes retirarlo el día Martes de la semana que viene <br>
+                                desde las 13:00 hasta las 16:30hs
                                 por el Vivero Vía Verde, Eduardo Costa 785 (esq. Perú), Acassuso.
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
+                                Preparate para recibirlo el Martes de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
                         </div>
