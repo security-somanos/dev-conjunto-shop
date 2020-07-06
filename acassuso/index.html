@@ -224,6 +224,8 @@
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
+                <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 3" type="text"
+                    placeholder="Localidad" v-model="userData.localidad">
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
                     <h1 style="font-size: 20px;">Costo promedio</h1> <br>
                     <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
