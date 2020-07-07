@@ -398,6 +398,7 @@ width: 30px;
 
 .preference {
 margin-top:10px;
+display: grid;
 }
 .preference .title{
     font-size: 13px;
