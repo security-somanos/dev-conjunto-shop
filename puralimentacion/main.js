@@ -35,10 +35,11 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'La Comarca',
+            email: 'Puragroecologia',
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
+            localidad: "",
         },
         active: {
             'verdura': { status: true },
@@ -107,7 +108,7 @@ var app = new Vue({
                 if (this.cart[item].type == 'medicina') {
                     this.cartHas.medicina = true;
                 }
-                if (this.cart[item].type == "comida") {
+                if (this.cart[item].type == 'comida') {
                     this.cartHas.comida = true;
                 }
 
@@ -142,7 +143,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.preference == '' && this.userData.localidad =='') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -151,14 +152,9 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if (event.target.value === "1") {
-                this.userData.delivery = 1;
-                this.userData.address = "0";
-            }
-            else {
-                this.userData.delivery = 3;
+            if (event.target.value >= 1) {
+                this.userData.delivery = true;
                 this.userData.address = "";
-
             }
             this.deliveryMethod = true;
         },
@@ -183,6 +179,7 @@ var app = new Vue({
                 total: this.cartTotal,
                 pago: this.userData.pago,
                 preference: this.userData.preference,
+                localidad: this.userData.localidad,
                 items: []
             }];
 
@@ -199,7 +196,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesElConjunto/').push(sale, function (error) {
+            database.ref('sales/pura').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -208,7 +205,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/laComarca').push(sale, function (error) {
+            database.ref('salesArchive/pura').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

@@ -143,7 +143,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {

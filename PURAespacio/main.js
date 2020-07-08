@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const productsRef = database.ref('productsPura');
+const productsRef = database.ref('productsElConjunto');
 
 var app = new Vue({
     el: '#app',
@@ -28,7 +28,6 @@ var app = new Vue({
         cartTotal: 0,
         cart: [],
         cartItems: 0,
-        nodeShow: "",
         saleComplete: false,
         fieldsMissing: false,
         confirmModal: false,
@@ -36,7 +35,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
+            email: 'Puragroecologia',
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
@@ -144,7 +143,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == ''&& this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {

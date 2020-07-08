@@ -4,7 +4,7 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nodo Pura</title>
+    <title>Puralimentación</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico"
         href="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.ico" />
@@ -31,60 +31,46 @@
                             placeholder="Que buscas?">
                     </div>
                     <div class="filter">
-                        <a class="button" v-bind:class="{active : active['verdura'].status}"
+                        <a class="button" id="lines2" v-bind:class="{active : active['verdura'].status}"
                             @click="setVisibility('verdura');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/sandwich.png">Desayunos & Brunch</a>
 
                         <a class="button" v-bind:class="{active : active['fruta'].status}"
                             @click="setVisibility('fruta');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/apple.png">Frutas</a>
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/comida.png">Viandas</a>
 
-                        <a class="button" v-bind:class="{active : active['almacen'].status}"
-                            @click="setVisibility('almacen');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
+                        
                     </div>
                     <div class="filter">
-                        <a class="button" v-bind:class="{active : active['vinos'].status}"
-                            @click="setVisibility('vinos');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
-
-                        <a class="button" v-bind:class="{active : active['medicina'].status}"
-                            @click="setVisibility('medicina');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Medicina</a>
-<a href="http://"></a>
-                        <a class="button" href="http://" id="lines2"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Viandas Pura</a>
+                        <a class="button" v-bind:class="{active : active['almacen'].status}"
+                        @click="setVisibility('almacen');"><img class="filterIcon"
+                             src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/cake.png">Elaborados</a>
+                             
+                        <a class="button" href="http://www.elconjunto.org/puraespacio" id="lines2"><img class="filterIcon"
+                          src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/carrot.png">Puragroecologia</a>
                     </div>
                 </div>
             </div>
         </div>
-       <div class="boxAviso">
+       <div class="boxAviso"> 
           <div class="aviso">
-                        Te damos la bienvenida a la compra comunitaria de Pura Espacio.
-                        <br><br>
-                        Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con
-                        los productores, eliminando así intermediarios innecesarios.
-                        <br><br>    
-                        Lo revolucionario de este tipo de compra comunitaria está en
-                        que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen,
-                        así reducimos los costos de los alimentos y su logística (transporte del campo a la ciudad).
-                        <br><br>
-                        Si somos más, pagamos menos.
-                        <br><br>
-          </div>
-          <div class="aviso" id="2">    
-                        Recordá que:<br>
-                        • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-                        • Vas a poder retirarlo a partir del Miércoles desde las 13:00 hasta las 16:30.<br>
-                        • También realizamos envíos a domicilio los Miércoles a partir de las 13 hrs.<br>
-                        • La disponibilidad del campo esta sujeta a factores climaticos o de estación.
-                        <br>(de todas formas siempre vamos a buscar la manera de compensarte)
-                        <br><br>
-                        ¿Tenés dudas? <br> 
-                        Comunicate con nosotros por Whatsapp al 11 68857582<br>
-                        Tambien podes encontrar nuestras viandas en <a href="http://www.elconjunto.org/puralimentacion">Puralimentacion.
+              Bienvenides a la de tienda saludable de Pura. <br>
+              Brindamos comidas hechas con amor y alegria. <br><br>
+   
+            Brunch y desayunos todos los dias: <br>
+            • pedidos con 24 hrs de anticipacion <br> 
+            • Entregas desayunos de 9 a 11hs  <br>
+            • Entregas brunch 9 a 17 hs. <br>
+            <br><br>
+            Viandas de martes a viernes: <br> 
+            •  pedidos todos los dias hasta las 12.30hs <br>  
+            •  entregas de martes a viernes de 12.30 a 15.00hs <br>
+            <br>
+                        ¿Tenés dudas? <br>  
+                        Comunicate con nosotros por Whatsapp al 11 6885 7582<br>
+                        Tambien podes encontrarte con la agroecologia en <a href="http://www.elconjunto.org/puraespacio">Puralimentacion.
                         </a>
-        </div>
+                    </div>
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`${item.image}`" class="productImage">
@@ -206,30 +192,47 @@
                         <option value="1" disabled selected>Escoger forma de pago</option>
                         <option value="Mercado Pago">Mercado Pago</option>
                         <option value="Efectivo">Efectivo</option>
+                        <option value="Transferencia Bancaria">Transferencia Bancaria</option>
                     </select>
                 </div>
+                <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
+                    <div class="title">
+                        Nos vamos a estar comunicando con vos para coordinar el pago.<br>
+                    </div>
+                </div>
+                <div class="schedule" v-if="userData.pago == 'Transferencia Bancaria'">
+                    <div class="title">
+                        Nuestro alias es:<br>
+                        CALA.MUSICO.SABLE
+                    </div>
+                </div>            
+
                 <div class="delivery">
                     <select name="delivery" id="delivery" required="required" class="requiredInput"
                         @change="changeLocation($event)">
-                        <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <option value="1">Retirar en Primera Junta 1029, San isidro.</option>
-                        <!--  <option value="2">Retirar en H. de la Quintana 1540, Florida.</option> -->
-                        <option value="3">Envio a Domicilio</option>
+                        <option value="0" disabled selected>Que dia queres recibir?</option>
+                        <option value="1">Lunes</option>
+                        <option value="2">Martes</option>
+                        <option value="3">Miercoles</option>
+                        <option value="4">Jueves</option>
+                        <option value="5">Viernes</option>
+                        <option value="6">Sabado</option>
+                        <option value="7">Domingo</option>
                     </select>
                 </div>
                 <div class="preference">
-                    <div class="title">Escribinos aqui 3 variedades que te gustaria que enviemos en caso de faltantes.
+                    <div class="title">Dejanos cualquier comentario, aclaracion o sugerencia. Gracias!
                     </div>
                     <textarea type="text" class="pref" v-model="userData.preference"
-                        placeholder="Ejemplo (apio, anco, tomate)">
+                        placeholder="Comentarios, aclaraciones, sugerencias...">
                     </textarea>
                 </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
+                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == true" type="text"
                     placeholder="Direccion" v-model="userData.address">
-                <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 3" type="text"
+                <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == true" type="text"
                     placeholder="Localidad" v-model="userData.localidad">
                     
-                <div class="deliveryLabel" v-if="userData.delivery == 3">
+                <div class="deliveryLabel" v-if="userData.delivery == true">
                     <h1 style="font-size: 20px;">Costo promedio</h1> <br>
                     <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
                     San Isidro = $100 <br>
@@ -240,22 +243,14 @@
                     San Fernando = $200 <br>
                     <h4 style="font-size: 16px;">Vicente López:</h4><br>
                     Olivos = $200 <br>
-
                 </div>
-
             </form>
-            <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
-                <div class="title">
-                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO <br>
-                    Despues asegurate de hacer 'click' en 'Realizar Pedido'
-                </div>
-                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt=""
-                    class="logoMainIcon">
-                <div class="mailLink">Tambien podes usar este mail - theconjunto@gmail.com</div>
-            </div>
+
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
+            
             <div class="confirmSale" v-show="confirmModal == true"
                 v-bind:class="{ activateModal: confirmModal == true }" style="opacity: 0;">
+
                 <div class="modal">
                     <div class="modalItem" v-show="saleComplete === false && fieldsMissing === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
@@ -269,16 +264,10 @@
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
                         <div class="title">
-                            <div v-if="userData.delivery == 1">
+                            <div v-if="userData.delivery == true">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo el día Miércoles de la semana que viene <br>
-                                desde las 13:00 hasta las 14:30
-                                por el Nodo de Pura, Primera Junta 1029.
-                            </div>
-                            <div v-if="userData.delivery == 3">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
-                                Nos vamos a comunicar con vos para coordinar la entrega.
+                                Lo recibiras el dia que seleccionaste, <br>
+                                Nos vamos a estar comunicando para coordinar la entrega.
                             </div>
                         </div>
                     </div>
@@ -291,9 +280,6 @@
                     <div class="link">
                         <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/insta.png" alt=""
                             class="insta">
-                        <a href="http://instagram.com/vrde_club" target="_blank">Seguinos en Instagram /vrde_club</a>
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/insta.png" alt=""
-                        class="insta">
                         <a href="http://instagram.com/pura.alimentacion" target="_blank">Seguinos en Instagram /pura.alimentacion</a>
                     </div>
                     <div class="contact">
