@@ -51,9 +51,8 @@
                         <a class="button" v-bind:class="{active : active['medicina'].status}"
                             @click="setVisibility('medicina');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Medicina</a>
-<a href="http://"></a>
-                        <a class="button" href="http://" id="lines2"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Viandas Pura</a>
+                        <a class="button" href="http://www.elconjunto.org/puralimentacion" id="iconlink"><img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Puralimentacion</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +82,7 @@
                         ¿Tenés dudas? <br> 
                         Comunicate con nosotros por Whatsapp al 11 68857582<br>
                         Tambien podes encontrar nuestras viandas en <a href="http://www.elconjunto.org/puralimentacion">Puralimentacion.
-                        </a>
+                        </a><br><br>
         </div>
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
@@ -231,15 +230,15 @@
                     
                 <div class="deliveryLabel" v-if="userData.delivery == 3">
                     <h1 style="font-size: 20px;">Costo promedio</h1> <br>
-                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>
+                    <h4 style="font-size: 16px;">San Isidro:</h4> <br>
                     San Isidro = $100 <br>
                     Martinez = $150 <br>
-                    Beccar = $150 <br>
-                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
+                    Beccar = $150 <br><br>
+                    <h4 style="font-size: 16px;">San Fernando:</h4> <br>
                     Victoria = $150 <br>
-                    San Fernando = $200 <br>
+                    San Fernando = $200 <br><br>
                     <h4 style="font-size: 16px;">Vicente López:</h4><br>
-                    Olivos = $200 <br>
+                    Olivos = $200 <br><br>
 
                 </div>
 

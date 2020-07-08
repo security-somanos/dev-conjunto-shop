@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const productsRef = database.ref('productsElConjunto');
+const productsRef = database.ref('products/pura');
 
 var app = new Vue({
     el: '#app',
@@ -196,7 +196,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/pura').push(sale, function (error) {
+            database.ref('sales/pura/alimentacion').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -205,7 +205,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/pura').push(sale, function (error) {
+            database.ref('salesArchive/pura/alimentacion').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

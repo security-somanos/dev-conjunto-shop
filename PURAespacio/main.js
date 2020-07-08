@@ -201,7 +201,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('sales/pura').push(sale, function (error) {
+            database.ref('sales/pura/agroecologia').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
@@ -210,7 +210,7 @@ var app = new Vue({
                 }
             });
 
-            database.ref('salesArchive/pura').push(sale, function (error) {
+            database.ref('salesArchive/pura/agroecologia').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {

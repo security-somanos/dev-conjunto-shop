@@ -34,7 +34,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 14px;
     font-family: Ubuntu, sans-serif;
     line-height: 18px;
-    margin: 0 10px;
+    margin: 0px 10px 21px 0;
     font-weight: lighter;
     /* border-radius: 20px; */
     max-width: 490px;
@@ -316,7 +316,7 @@ width: 30px;
         justify-content: center;
         text-align: center;
         cursor: pointer;
-        max-width: 146px;
+        max-width: 155px;
         margin-bottom: 0;
         flex: 1;
         padding: 15px 13px 13px;
@@ -327,6 +327,13 @@ width: 30px;
         border-radius: 10px;
         background-color: #f0f0f0;
 }
+
+.filter .button#iconlink {
+    background-color: #d4956a;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+}   
 .filter .button#lines2 {
         place-items: center
 }
