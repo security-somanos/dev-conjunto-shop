@@ -35,8 +35,8 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Puragroecologia',
-            delivery: 0,
+            email: '',
+            delivery: '',
             pago: "Escoger forma de pago",
             preference: "",
             localidad: "",
@@ -143,7 +143,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
+            else if (this.userData.delivery !== '' && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -152,8 +152,8 @@ var app = new Vue({
             this.confirmModal = true;
         },
         changeLocation(event) {
-            if (event.target.value >= 1) {
-                this.userData.delivery = true;
+            if (event.target.value !== '') {
+                this.userData.delivery = event.target.value  ;
                 this.userData.address = "";
             }
             this.deliveryMethod = true;
