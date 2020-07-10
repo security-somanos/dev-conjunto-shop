@@ -39,6 +39,7 @@ var app = new Vue({
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
+            localidad: "",
         },
         active: {
             'verdura': { status: true },
