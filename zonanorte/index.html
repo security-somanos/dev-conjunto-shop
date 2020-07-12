@@ -22,16 +22,17 @@
                 <div class="contain">
                     <div class="search">
                         <div class="searchLabel">Bienvenides!</div>
+                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/onlyLogoVrde.png" alt="" class="headerLogo">
                         <input id="searchInput" v-on:input="scrollTopProducts()" type="text" v-model="search"
                             placeholder="Que buscas?">
                     </div>
-                    <div class="filter">
+                    <div class="filter" id="up">
                         <a class="button" v-bind:class="{active : active['verdura'].status}"
-                            @click="setVisibility('verdura');">
-                            <img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
+                        @click="setVisibility('verdura');">
+                        <img class="filterIcon"
+                        src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
                         <a class="button" v-bind:class="{active : active['fruta'].status}"
-                            @click="setVisibility('fruta');">
+                        @click="setVisibility('fruta');">
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/apple.png">Frutas</a>
                         <a class="button" v-bind:class="{active : active['almacen'].status}"
@@ -39,18 +40,21 @@
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
                     </div>
-                    <div class="filter">
+                    <div class="filter" id="down">
                         <a class="button" v-bind:class="{active : active['vinos'].status}"
-                            @click="setVisibility('vinos');"><img class="filterIcon"
+                            @click="setVisibility('vinos');">
+                            <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
 
-                        <a class="button" v-bind:class="{active : active['medicina'].status}"
-                            @click="setVisibility('medicina');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Medicina</a>
+                        <a class="button" id="lines2" v-bind:class="{active : active['medicina'].status}"
+                            @click="setVisibility('medicina');">
+                            <img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Cuidado Personal</a>
 
-                        <a class="button" v-bind:class="{active : active['comida'].status}"
-                            @click="setVisibility('comida');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Comida</a>
+                        <a class="button" id="lines2" v-bind:class="{active : active['comida'].status}"
+                            @click="setVisibility('comida');">
+                            <img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
                     </div>  
                     
                 </div>
@@ -314,8 +318,10 @@
             </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
     <script src="main.js"></script>

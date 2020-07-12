@@ -13,8 +13,10 @@ var config = {
 };
 
 firebase.initializeApp(config);
+firebase.analytics();
 
 var database = firebase.database();
+var perf = firebase.performance();
 
 const productsRef = database.ref('productsElConjunto');
 
@@ -294,11 +296,13 @@ window.addEventListener('scroll', function () {
     var cartDiv = document.getElementById("cart").getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
-        document.getElementsByClassName("filter")[0].classList.remove("fixed");
+        document.getElementById('up').classList.remove("fixed");
+        document.getElementById('down').classList.remove("fixed");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
-        document.getElementsByClassName("filter")[0].classList.add("fixed");
+        document.getElementById('up').classList.add("fixed");
+        document.getElementById('down').classList.add("fixed");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");
