@@ -63,8 +63,8 @@ a#nodo{
     align-items: center;
     justify-content: center;
     align-content: center;
-    margin-bottom: 60px;
-    margin-top: 60px;   
+    margin-bottom: 30px;
+    margin-top: 30px;   
     flex-wrap: wrap;
 }
 
@@ -97,21 +97,20 @@ a#nodo{
 }
 
 .container .item {
-    height: 160px;
+    height: 215px;
     position: relative;
-    width: 250px;
+    /* width: 250px; */
     background-color: red;
     cursor: pointer;
     text-align: center;
     align-content: center;
-    padding: 40px 0px;
-    margin: 0px 40px;
+    /* padding: 40px 0px; */
+    margin: 0px 40px 0px 0px;
     font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 250px;
-    margin-bottom: 25px;
 }
 .container .item.minorista{
 	background-image: url(../images/home/minorista.jpeg);
@@ -135,11 +134,12 @@ a#nodo{
 
 .container .item .title {
     background-color: #00000080;
-    padding: 10px;
+    padding: 5px 10px 0px 5px;
     position: absolute;
     bottom: 0px;
     left: 0px;
     color: white;
+    border-radius: 6px;
 }
 
 
@@ -226,7 +226,7 @@ color: #fff;
     z-index: 100;
 }
 .site .darkscreen.hide{
-display:none;
+    display:none;
 }
 .site .darkscreen .modal{
     background: white;
@@ -243,31 +243,18 @@ display:none;
 }
 .site .modal .close{
 	
-position: absolute;
-	
-top: 10px;
-	
-right: 10px;
-	
-cursor: pointer;
-	
-height: 30px;
-	
-width: 30px;
-	
-background-color: #00000038;
-	
-display: flex;
-	
-justify-content: center;
-	
-align-items: center;
-	
-color: #333333a8;
-	
-/* font-weight: bold; */
-	
-box-shadow: 0 3px 6px #33333329;
+    position: absolute;	
+    top: 10px;	
+    right: 10px;	
+    cursor: pointer;	
+    height: 30px;	
+    width: 30px;	
+    background-color: #00000038;	
+    display: flex;	
+    justify-content: center;	
+    align-items: center;
+    color: #333333a8;
+    box-shadow: 0 3px 6px #33333329;
 }
 .site .darkscreen .modal .title{
     font-family: 'Amatic SC', sans-serif;
@@ -295,8 +282,8 @@ box-shadow: 0 3px 6px #33333329;
     border-radius: 10px;
     color: white;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 160px;
     margin: 0 0 5px 15px;
     padding: 10px 22px;
     display: flex;
@@ -354,38 +341,22 @@ box-shadow: 0 3px 6px #33333329;
     align-items: center;
     align-content: center;
     text-align: center;
-    /* height: 400px; */
-    /* background-color: #333; */
-    /* background-image: url('../images/home/fractal-1.jpg'); */
-    /* background-color: black; */
-    /* background-size: cover; */
-    /* background-position: center; */
     color: black;
     padding: 50px;
 }
 
 .site .header .headerCopy {
-	
-/* color: white; */
-	
-/* font-weight: bold; */
-	
-margin: 20px;
-	
-line-height: 25px;
-	
-max-width: 500px;
-	
-font-size: 20px;
+    margin: 20px;
+    line-height: 25px;	
+    max-width: 500px;	
+    font-size: 20px;
 }
 .site .header .title{
     font-family: 'Amatic SC', sans-serif;
     font-size: 80px;
     font-weight: 700;
     position: relative;
-    /* margin-bottom: 60px; */
     top: 0;
-    /* color: white; */
 }
 .site .header .logo {
     height: 160px;
@@ -402,7 +373,6 @@ font-size: 20px;
     padding: 20px 40px;
 }
 .site .header .action{
-    /* margin-top: 40px; */
     background-color: #0000009e;
     padding: 14px;
     width: 160px;
@@ -427,22 +397,14 @@ font-size: 20px;
 
 }
 .site .new .sub{
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-align-items: center;
-
-flex-direction: row;
-
-background-image: url("images/Home/fractal-1.jpg");
-
-background-size: 100% 100%;
-
-background-color: #f67301;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-image: url("images/Home/fractal-1.jpg");
+    background-size: 100% 100%;
+    background-color: #f67301;
 }
 .site .new .title{
     font-size: 40px;
@@ -474,8 +436,6 @@ background-color: #f67301;
 
 }
 
-
-
 .site .new .newImg {
     height: 540px;
 }
@@ -502,8 +462,7 @@ background-color: #f67301;
     font-weight: bold;
     box-shadow: 0 3px 6px #33333329;
 }
-
-   
+ 
 .site .new .action:hover{
     background-color: #9370DB;
     -ms-transform: scale(1.5); /* IE 9 */
@@ -662,40 +621,30 @@ background-color: #f67301;
     color: #e3992b;
 }
 .site .footer .item2 {
-
-position: relative;
-
-padding: 0;
-
-/* width: 180px; */
-
-margin: 26px;
+    position: relative;
+    padding: 0;
+    /* width: 180px; */
+    margin: 26px;
 }
 
 .site .footer .itemf {
-color:white;
-text-decoration:none;
-cursor:pointer;
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
 }
-.site .footer .item2 img{
-	
-width: 15px;
+.site .footer .item2 img{	
+    width: 15px;
 }
 
 .site .footer .item2 .insta{
-	
-position: absolute;
-	
-left: -20px;
+    position: absolute;
+    left: -20px;
 }
 
 .site .footer .item2 .celu{
-	
-position: absolute;
-	
-left: -20px;
-	
-width: 15px;
+    position: absolute;
+    left: -20px;
+    width: 15px;
 }
 @media (max-width: 400px) {
    
@@ -724,16 +673,12 @@ width: 15px;
 		position: relative;
 	}
 	.site .gallery {
-
-padding: 0;
+    padding: 0;
 }
 .site .darkscreen .modal .section .item {
-
-width: 200px;
-
-height: 30px;
-
-justify-content: center;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
 }
 .site .darkscreen .modal .section .item p {
     height: 15px;
@@ -753,27 +698,18 @@ justify-content: center;
     align-content: center;
 }
 .site .darkscreen .modal .title {
-
-font-size: 25px;
-
-width: 190px;
-
-margin-bottom: 10px;
-
-margin-top: 0;
+    font-size: 25px;
+    width: 190px;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 .site .darkscreen .modal .sub {
-
-font-size: 14px;
-
-line-height: 18px;
+    font-size: 14px;
+    line-height: 18px;
 }
 .site .header .sub {
-
-padding: 10px;
-
-margin-top: 10px;
-
-font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 }
