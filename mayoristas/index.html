@@ -42,7 +42,7 @@
                             @click="setVisibility('almacen');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
                     </div>
-                    <div class="filter" id="down">
+                    <!-- <div class="filter" id="down">
                         <a class="button" v-bind:class="{active : active['vinos'].status}"
                             @click="setVisibility('vinos');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
@@ -54,7 +54,7 @@
                         <a class="button" id="lines2" v-bind:class="{active : active['comida'].status}"
                             @click="setVisibility('comida');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <div class="aviso">
                     <div class="avisoTitle">Compra Comunitaria La Lucila</div>
@@ -83,10 +83,15 @@
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`${item.image}`" class="productImage">
+                <div class="titleU">
+                    Uni. Mayorista: {{ item.cantidad }} {{ item.unidadM }}
+                    <br>
+                </div>
                 <div class="title">
                     {{ item.name }} = ${{ item.price }}
                     <br>
                 </div>
+
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
                     <input type="number" step="any" class="amount" v-on:input="updateValue(item)"
@@ -111,7 +116,7 @@
                             <div class="itemTotal">
                                 <div class="amount">${{item.price}} * {{item.amount}}</div>
                                 <div class="equals"> = </div>
-                                <div class="total"> ${{item.total}}</div>
+                                <div class="total"> ${{item.total}} </div>
                             </div>
                         </div>
                     </div>

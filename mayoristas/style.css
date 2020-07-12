@@ -625,13 +625,21 @@ line-height: 18px;
         transform: scale(1.5);
     }
 */
-.main .products .item .title {
+.main .products .item .title{ 
     color: #ffffff;
     padding: 7px 7px 7px 10px;
     font-size: 12px;
     width: 100%;
-    line-height: 17px;
+    line-height: 12px;
     background: #2d3436;
+}
+.main .products .item .titleU { 
+    color: #ffffff;
+    padding: 6px 7px 6px 10px;
+    font-size: 13px;
+    width: 100%;
+    line-height: 17px;
+    background: #7f2a82;
 }
 
 .main .products .item .price {

@@ -28,6 +28,8 @@ var app = new Vue({
         discounts: '',
         productList: [],
         cartTotal: 0,
+        cantidad: 0,
+        unidadM: "",
         cart: [],
         cartItems: 0,
         saleComplete: false,
@@ -70,6 +72,8 @@ var app = new Vue({
                     name: item.child('name').val(),
                     type: item.child('type').val(),
                     price: item.child('price').val(),
+                    unidadM: item.child('unidadM').val(),
+                    cantidad: item.child('cantidad').val(),
                     stock: item.child('stock').val(),
                     image: item.child('image').val(),
                     key: item.key,
@@ -297,12 +301,12 @@ window.addEventListener('scroll', function () {
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
         document.getElementById('up').classList.remove("fixed");
-        document.getElementById('down').classList.remove("fixed");
+        // document.getElementById('down').classList.remove("fixed");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
         document.getElementById('up').classList.add("fixed");
-        document.getElementById('down').classList.add("fixed");
+        // document.getElementById('down').classList.add("fixed");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");
