@@ -39,7 +39,7 @@ var app = new Vue({
             name: '',
             address: '',
             phone: '',
-            email: 'Amigues',
+            email: 'Mayorista',
             delivery: 0,
             pago: "Escoger forma de pago",
             preference: "",
@@ -146,10 +146,10 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '') {
                 this.fieldsMissing = true;
             }
             else {

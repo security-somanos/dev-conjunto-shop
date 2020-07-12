@@ -83,15 +83,14 @@
         <div class="products" id="products">
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`${item.image}`" class="productImage">
-                <div class="titleU">
-                    Uni. Mayorista: {{ item.cantidad }} {{ item.unidadM }}
-                    <br>
-                </div>
                 <div class="title">
-                    {{ item.name }} = ${{ item.price }}
+                    {{ item.name }} 
                     <br>
                 </div>
-
+                <div class="titleU">
+                    Uni. Mayorista: {{ item.cantidad }} {{ item.unidadM }} = ${{ item.price }}
+                    <br>
+                </div>
                 <div class="setAmount">
                     <div class="remove" v-on:click="removeItem(item)">-</div>
                     <input type="number" step="any" class="amount" v-on:input="updateValue(item)"
@@ -218,10 +217,10 @@
                     </select>
                 </div>
                 <div class="preference">
-                    <div class="title">Escribinos aqui 3 variedades que te gustaria que enviemos en caso de faltantes.
+                    <div class="title">Notas:
                     </div>
                     <textarea type="text" class="requiredText" v-model="userData.preference"
-                        placeholder="Ejemplo (apio, anco, tomate)">
+                        placeholder="Dejanos tu duda, aclaración o sugerencia.">
                     </textarea>
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
