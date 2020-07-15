@@ -56,28 +56,10 @@
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
                     </div> -->
                 </div>
-                <!-- <div class="aviso">
-                    <div class="avisoTitle">Compra Comunitaria La Lucila</div>
-                    Te damos la bienvenida a la compra comunitaria de La Lucila.
-                    <br><br>
-                    Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con
-                    los productores, eliminando así intermediarios innecesarios.
-                    <br><br>
-                    Lo revolucionario de este tipo de compra comunitaria está en
-                    que los precios de los productos son consecuencia de la cantidad de pedidos que se realicen,
-                    así reducimos los costos de los alimentos y su logística (transporte del campo a la ciudad).
-                    <br><br>
-                    Si somos más, pagamos menos.
-                    <br><br>
-                    Recordá que:<br>
-                    • Tenes tiempo de hacer tu pedido hasta el Sabado a las 18:00.<br>
-                    • Vas a poder retirarlo a partir del Miércoles entre las 17:00 y las 20:00.<br>
-                    • También realizamos envíos a domicilio los Miércoles a partir de las 16 hrs.
-                    <br>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
-                    <br>(de todas formas siempre vamos a buscar la manera de compensarte)
-                    <br><br>
-                    ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6955 3325
-                </div> -->
+                <div class="aviso">
+                    <h1>Compra Mayorista Agroecológica</h1>
+                    ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6222 0308
+                </div>
             </div>
         </div>
         <div class="products" id="products">
@@ -88,7 +70,7 @@
                     <br>
                 </div>
                 <div class="titleU">
-                    Uni. Mayorista: {{ item.cantidad }} {{ item.unidadM }} = ${{ item.price }}
+                    {{ item.cantidad }} {{ item.unidadM }} = ${{ item.price }}
                     <br>
                 </div>
                 <div class="setAmount">
@@ -111,11 +93,11 @@
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
-                            <div class="name">{{item.name}}</div>
+                            <div class="name">{{item.name}} [{{ item.cantidad }} {{ item.unidadM }}]</div>
                             <div class="itemTotal">
                                 <div class="amount">${{item.price}} * {{item.amount}}</div>
                                 <div class="equals"> = </div>
-                                <div class="total"> ${{item.total}} </div>
+                                <div class="total"> ${{item.total}} </div>  
                             </div>
                         </div>
                     </div>
@@ -125,7 +107,7 @@
                     <div class="item" v-for="item in cart" v-if="item.type == 'fruta'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
-                            <div class="name">{{item.name}}</div>
+                            <div class="name">{{item.name}} [{{ item.cantidad }} {{ item.unidadM }}]</div>
                             <div class="itemTotal">
                                 <div class="amount">${{ item.price }} * {{item.amount}}</div>
                                 <div class="equals">=</div>
@@ -141,7 +123,7 @@
                     <div class="item" v-for="item in cart" v-if="item.type == 'almacen'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
-                            <div class="name">{{item.name}}</div>
+                            <div class="name">{{item.name}} [{{ item.cantidad }} {{ item.unidadM }}]</div>
                             <div class="itemTotal">
                                 <div class="amount">${{ item.price }} * {{item.amount}}</div>
                                 <div class="equals">=</div>
@@ -280,7 +262,7 @@
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
+                                Preparate para recibirlo la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
                             <div v-if="userData.delivery == 2">
@@ -305,7 +287,7 @@
                     <div class="contact">
                         <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
                             class="phone">
-                        Dudas y consultas llamanos: 11 6955 3325
+                        Dudas y consultas llamanos: 11 6222 0308
                     </div>
                 </div>
             </div>
