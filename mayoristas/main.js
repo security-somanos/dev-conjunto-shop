@@ -41,7 +41,7 @@ var app = new Vue({
             phone: '',
             email: 'Mayorista',
             delivery: 0,
-            pago: "Escoger forma de pago",
+            pago: "",
             preference: "",
             localidad: "",
         },
@@ -149,7 +149,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.pago == '') {
                 this.fieldsMissing = true;
             }
             else {

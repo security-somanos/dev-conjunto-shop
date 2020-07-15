@@ -37,7 +37,7 @@ var app = new Vue({
             phone: '',
             email: '',
             delivery: '',
-            pago: "Escoger forma de pago",
+            pago: "",
             preference: "",
             localidad: "",
         },
@@ -142,7 +142,7 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery !== '' && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '') {
+            else if (this.userData.delivery !== '' && this.userData.address == '' && this.userData.pago == '' && this.userData.localidad == '' && this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {

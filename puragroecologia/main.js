@@ -37,7 +37,7 @@ var app = new Vue({
             phone: '',
             email: 'Puragroecologia',
             delivery: 0,
-            pago: "Escoger forma de pago",
+            pago: "",
             preference: "",
             localidad: "",
         },
@@ -140,10 +140,10 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
+            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false ||  this.userData.pago == '' ||  this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == ''&& this.userData.preference == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.pago == '' && this.userData.preference == '') {
                 this.fieldsMissing = true;
             }
             else {
@@ -207,6 +207,13 @@ var app = new Vue({
                 } else {
                     self.saleComplete = true;
                     setTimeout(function () { location.reload() }, 10000);
+                }
+            });
+            database.ref('salesElConjunto').push(sale, function (error) {
+                if (error) {
+                    console.log(error)
+                } else {
+                    self.saleComplete = true;
                 }
             });
 
@@ -294,11 +301,13 @@ window.addEventListener('scroll', function () {
     var cartDiv = document.getElementById("cart").getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
-        document.getElementsByClassName("filter")[0].classList.remove("fixed");
+        document.getElementById('up').classList.remove("fixed");
+        document.getElementById('down').classList.remove("fixed");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
-        document.getElementsByClassName("filter")[0].classList.add("fixed");
+        document.getElementById('up').classList.add("fixed");
+        document.getElementById('down').classList.add("fixed");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");

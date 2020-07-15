@@ -30,7 +30,7 @@
                         <input id="searchInput" v-on:input="scrollTopProducts()" type="text" v-model="search"
                             placeholder="Que buscas?">
                     </div>
-                    <div class="filter">
+                    <div class="filter" id="up">    
                         <a class="button" v-bind:class="{active : active['verdura'].status}"
                             @click="setVisibility('verdura');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
@@ -43,7 +43,7 @@
                             @click="setVisibility('almacen');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
                     </div>
-                    <div class="filter">
+                    <div class="filter" id="down">
                         <a class="button" v-bind:class="{active : active['vinos'].status}"
                             @click="setVisibility('vinos');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
