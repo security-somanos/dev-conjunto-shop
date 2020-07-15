@@ -42,20 +42,16 @@ var app = new Vue({
             localidad: "",
         },
         active: {
-            'verdura': { status: true },
-            'fruta': { status: false },
+            'desayunos': { status: true },
             'almacen': { status: false },
-            'vinos': { status: false },
-            'medicina': { status: false },
-            'comida': { status: false }
+            'elaborados': { status: false },
+            'viandas': { status: false },
         },
         cartHas: {
-            verdura: false,
-            fruta: false,
+            desayunos: false,
             almacen: false,
-            vinos: false,
-            medicina: false,
-            comida: false
+            elaborados: false,
+            viandas : false
         }
     },
     mixins: [Vue2Filters.mixin],
@@ -96,8 +92,8 @@ var app = new Vue({
                 if (this.cart[item].type == 'fruta') {
                     this.cartHas.fruta = true;
                 }
-                if (this.cart[item].type == 'verdura') {
-                    this.cartHas.verdura = true;
+                if (this.cart[item].type == 'desayunos') {
+                    this.cartHas.desayunos = true;
                 }
                 if (this.cart[item].type == "almacen") {
                     this.cartHas.almacen = true;
@@ -105,11 +101,14 @@ var app = new Vue({
                 if (this.cart[item].type == 'vinos') {
                     this.cartHas.vinos = true;
                 }
+                if (this.cart[item].type == 'elaborados') {
+                    this.cartHas.elaborados = true;
+                }
                 if (this.cart[item].type == 'medicina') {
                     this.cartHas.medicina = true;
                 }
-                if (this.cart[item].type == 'comida') {
-                    this.cartHas.comida = true;
+                if (this.cart[item].type == 'viandas ') {
+                    this.cartHas.viandas  = true;
                 }
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
@@ -265,12 +264,10 @@ var app = new Vue({
 
                 if (key == 8 || key == 46 && self.search == '') {
                     self.active = {
-                        'verdura': { status: true },
-                        'fruta': { status: false },
+                        'desayunos': { status: true },
+                        'elaborados': { status: false },
                         'almacen': { status: false },
-                        'vinos': { status: false },
-                        'medicina': { status: false },
-                        'comida': { status: false }
+                        'viandas ': { status: false }
                     }
                 }
             };
@@ -289,11 +286,13 @@ window.addEventListener('scroll', function () {
     var cartDiv = document.getElementById("cart").getBoundingClientRect();
     if (distance_from_top < 250) {
         document.getElementsByClassName("search")[0].classList.remove("fixed");
-        document.getElementsByClassName("filter")[0].classList.remove("fixed");
+        document.getElementById('up').classList.remove("fixed");
+        document.getElementById('down').classList.remove("fixed");
     }
     if (distance_from_top > 250) {
         document.getElementsByClassName("search")[0].classList.add("fixed");
-        document.getElementsByClassName("filter")[0].classList.add("fixed");
+        document.getElementById('up').classList.add("fixed");
+        document.getElementById('down').classList.add("fixed");
     }
     if (cartDiv.top < 200) {
         document.getElementById('totalFloat').classList.add("hide");

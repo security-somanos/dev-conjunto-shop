@@ -30,23 +30,25 @@
                         <input id="searchInput" v-on:input="scrollTopProducts()" type="text" v-model="search"
                             placeholder="Que buscas?">
                     </div>
-                    <div class="filter">
-                        <a class="button" id="lines2" v-bind:class="{active : active['verdura'].status}"
-                            @click="setVisibility('verdura');"><img class="filterIcon"
+                    <div class="filter" id="up">
+                        <a class="button" id="lines2" v-bind:class="{active : active['desayunos'].status}"
+                            @click="setVisibility('desayunos');"><img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/sandwich.png">Desayunos & Brunch</a>
 
-                        <a class="button" v-bind:class="{active : active['fruta'].status}"
-                            @click="setVisibility('fruta');"><img class="filterIcon"
-                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/comida.png">Viandas</a>
-
-                        
+                        <a class="button" v-bind:class="{active : active['viandas'].status}"
+                            @click="setVisibility('viandas');"><img class="filterIcon"
+                                src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/comida.png">Viandas</a> 
                     </div>
-                    <div class="filter">
+                    <div class="filter" id="down">
                         <a class="button" v-bind:class="{active : active['almacen'].status}"
                         @click="setVisibility('almacen');"><img class="filterIcon"
-                             src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/cake.png">Elaborados</a>
+                             src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/milk.png">Almacen</a>
+
+                        <a class="button" v-bind:class="{active : active['elaborados'].status}"
+                             @click="setVisibility('elaborados');"><img class="filterIcon"
+                                  src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/cake.png">Elaborados</a>
                              
-                        <a class="button" href="http://www.elconjunto.org/puraespacio" id="iconlink"><img class="filterIcon"
+                        <a class="button" href="http://www.elconjunto.org/puragroecologia" id="iconlink"><img class="filterIcon"
                           src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/carrot.png">Puragroecologia</a>
                     </div>
                 </div>
@@ -93,8 +95,8 @@
                         class="cartIcon">
                     <div class="title">Carrito</div>
                 </div>
-                <div class="verduraCart" v-if="cartHas.verdura == true" v-cloak>
-                    <div class="verduras">Verduras</div>
+                <div class="verduraCart" v-if="cartHas.desayunos == true" v-cloak>
+                    <div class="verduras">Desayunos</div>
                     <div class="item" v-for="item in cart" v-if="item.type == 'verdura'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
@@ -137,9 +139,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="verduraCart" v-if="cartHas.vinos == true" v-cloak>
-                    <div class="verduras">Vinos</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'vinos'">
+                
+                <div class="verduraCart" v-if="cartHas.elaborados == true" v-cloak>
+                    <div class="verduras">Elaborados</div>
+                    <div class="item" v-for="item in cart" v-if="item.type == 'elaborados'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
@@ -151,23 +154,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="frutaCart" v-if="cartHas.medicina == true">
-                    <div class="frutas">Medicina</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'medicina'">
-                        <img :src="item.image" alt="" class="img">
-                        <div class="itemName">
-                            <div class="name">{{item.name}}</div>
-                            <div class="itemTotal">
-                                <div class="amount">${{ item.price }} * {{item.amount}}</div>
-                                <div class="equals">=</div>
-                                <div class="total"> ${{item.total}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="almacenCart" v-if="cartHas.comida == true">
+                <div class="almacenCart" v-if="cartHas.viandas == true">
                     <div class="frutas">Viandas</div>
-                    <div class="item" v-for="item in cart" v-if="item.type == 'comida'">
+                    <div class="item" v-for="item in cart" v-if="item.type == 'viandas'">
                         <img :src="item.image" alt="" class="img">
                         <div class="itemName">
                             <div class="name">{{item.name}}</div>
