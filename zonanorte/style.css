@@ -439,9 +439,10 @@ font-size: 14px;
         font-size: 13px;
     }
     .preference textarea{
-        width:100%;
-        padding: 14px;
-        border-radius: 10px;
+        display: flex;
+        /* margin-top: 10px; */
+        font-size: 16px;
+        flex-direction: column-reverse;
     }
 
     

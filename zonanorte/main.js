@@ -35,6 +35,7 @@ var app = new Vue({
         fieldsMissing: false,
         confirmModal: false,
         deliveryMethod: false,
+        preferenceSelected: false,
         userData: {
             name: '',
             address: '',
@@ -42,7 +43,8 @@ var app = new Vue({
             email: '',
             delivery: 0,
             pago: "",
-            preference: "",
+            preference1: "",
+            preference2: "",
             localidad: "",            
         },
         active: {
@@ -53,6 +55,21 @@ var app = new Vue({
             'medicina': { status: false },
             'comida': { status: false }
         },
+        localidades: [
+            { text: 'La Lucila', value: '$100' },
+            { text: 'Olivos', value: '$120' },
+            { text: 'Florida', value: '$150' },
+            { text: 'Munro', value: '$200' },
+            { text: 'Martinez', value: '$150' },
+            { text: 'Acassuso', value: '$200' },
+            { text: 'San Isidro', value: '$250' },
+            { text: 'Beccar', value: '$300' },
+            { text: 'Tigre', value: '$400' },
+            { text: 'San Fernando', value: '$350' },
+            { text: 'Victoria', value: '$400' },
+            { text: 'Virreyes', value: '$400' },
+            { text: 'Tigre', value: '$500' }
+        ],
         cartHas: {
             verdura: false,
             fruta: false,
@@ -155,7 +172,7 @@ var app = new Vue({
             if (item.stock - item.amount >= 0) {
                 (item.amount = parseFloat(item.amount));
                 item.total = item.amount * item.price;
-                item.outOfStock = false;
+                item.outOfStock = false;    
             } else {
                 item.outOfStock = true;
             }
@@ -163,15 +180,24 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
+            if (this.userData.name == '' || this.userData.phone == '' || this.userData.pago == '' 
+                    || this.userData.preference1 == '' || this.userData.preference2 == '') {
                 this.fieldsMissing = true;
+                console.log(this.fieldsMissing)
+                console.log("if1")
             }
-            else if (this.userData.delivery === 1 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '' && this.userData.pago == '') {
+            else if (this.deliveryMethod == true && (this.userData.address == '' || this.userData.localidad == '' 
+                   || this.userData.preference1 == '' || this.userData.preference2 == '' || this.userData.pago == '')) {
                 this.fieldsMissing = true;
+                console.log(this.fieldsMissing)
+                console.log("if2")
+                
             }
             else {
                 this.fieldsMissing = false;
+                console.log(this.fieldsMissing)
             }
+            console.log(this.fieldsMissing)
             this.confirmModal = true;
         },
         changeLocation(event) {
@@ -186,8 +212,25 @@ var app = new Vue({
             else {
                 this.userData.delivery = 1;
                 this.userData.address = "";
+                this.deliveryMethod = true;
             }
-            this.deliveryMethod = true;
+            
+        },
+        changePreference(event) {
+            if (event.target.value === "") {
+                this.preferenceSelected = false;
+            }
+            else if (event.target.value != "") {
+                this.userData.preference1 = event.target.value;
+            }
+        },
+        changePreference2(event) {
+            if (event.target.value === "") {
+                this.preferenceSelected = false;
+            }
+            else if (event.target.value != "") {
+                this.userData.preference2 = event.target.value;
+            }
         },
         setPaymentType(event) {
             this.userData.pago = event.target.value;
@@ -207,9 +250,10 @@ var app = new Vue({
                 phone: this.userData.phone,
                 email: this.userData.email,
                 delivery: this.userData.delivery,
+                preference1: this.userData.preference1,
+                preference2: this.userData.preference2,
                 total: this.cartTotal,
                 pago: this.userData.pago,
-                preference: this.userData.preference,
                 localidad: this.userData.localidad,
                 items: []
             }];
