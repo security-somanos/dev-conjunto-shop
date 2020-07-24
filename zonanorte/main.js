@@ -185,17 +185,21 @@ var app = new Vue({
                 this.fieldsMissing = true;
                 console.log(this.fieldsMissing)
                 console.log("if1")
+                console.log(this.userData.preference1)
+                console.log(this.userData.preference2)
             }
             else if (this.deliveryMethod == true && (this.userData.address == '' || this.userData.localidad == '' 
                    || this.userData.preference1 == '' || this.userData.preference2 == '' || this.userData.pago == '')) {
                 this.fieldsMissing = true;
                 console.log(this.fieldsMissing)
+                console.log(this.userData.localidad)
                 console.log("if2")
                 
             }
             else {
                 this.fieldsMissing = false;
                 console.log(this.fieldsMissing)
+                console.log(this.userData.localidad)
             }
             console.log(this.fieldsMissing)
             this.confirmModal = true;
