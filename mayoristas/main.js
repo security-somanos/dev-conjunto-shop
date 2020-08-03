@@ -28,7 +28,10 @@ var app = new Vue({
         discounts: '',
         productList: [],
         cartTotal: 0,
+        subTotalCosto: 0,
+        totalCosto: 0,
         cantidad: 0,
+        totalUnidades: 0,
         unidadM: "",
         cart: [],
         cartItems: 0,
@@ -72,6 +75,7 @@ var app = new Vue({
                     name: item.child('name').val(),
                     type: item.child('type').val(),
                     price: item.child('price').val(),
+                    priceCosto: item.child('priceCosto').val(),
                     unidadM: item.child('unidadM').val(),
                     cantidad: item.child('cantidad').val(),
                     stock: item.child('stock').val(),
@@ -92,6 +96,8 @@ var app = new Vue({
             var self = this;
             this.cartTotal = 0;
             this.cartItems = 0;
+            this.totalCosto = 0;
+            this.subTotalCosto = 0;
 
             this.cart = this.productList.filter(function (item) {
                 return item.total > 0;
@@ -120,15 +126,26 @@ var app = new Vue({
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].price;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
-
+    
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
+
+                this.cart[item].subTotalCosto = this.cart[item].amount * this.cart[item].priceCosto;
+                this.cart[item].subTotalCosto = parseFloat(this.cart[item].subTotalCosto.toFixed(2))
+                
+                this.totalCosto += this.cart[item].subTotalCosto;
+                this.totalCosto = parseFloat(this.totalCosto.toFixed(2))
             }
         },
         addItem: function (item) {
             item.amount++;
             item.total = item.amount * item.price;
+            item.subTotalCosto = item.amount *  item.priceCosto;
+            console.log(item.total)
+            console.log(item.subTotalCosto)
             this.getTotal();
+            console.log(item.subTotalCosto)
+            console.log(item.total)
         },
         removeItem: function (item) {
             this.getTotal();
@@ -136,12 +153,16 @@ var app = new Vue({
                 item.amount--;
             }
             item.total = item.amount * item.price;
+            item.subTotalCosto = item.amount * item.priceCosto;
             this.getTotal();
         },
         updateValue: function (item) {
-            if (item.amount == '' || parseFloat(item.amount) == NaN) { item.amount = 0 }
+            if (item.amount == '' || parseFloat(item.amount) == NaN) {
+                 item.amount = 0 
+                }
             else (item.amount = parseFloat(item.amount))
             item.total = item.amount * item.price;
+            item.subTotalCosto = item.amount * item.priceCosto
             this.getTotal();
         },
         formValidate() {
@@ -187,6 +208,7 @@ var app = new Vue({
                 phone: this.userData.phone,
                 email: this.userData.email,
                 delivery: this.userData.delivery,
+                totalCosto: this.totalCosto,
                 total: this.cartTotal,
                 pago: this.userData.pago,
                 preference: this.userData.preference,
@@ -195,13 +217,16 @@ var app = new Vue({
             }];
 
             for (var item in cart) {
-                if (item.price === 0) {
+                if (item.price === 0 && item.priceCosto === 0) {
                     item.price = this.price;
+                    item.priceCosto = this.priceCosto;
                 }
+                console.log(item.priceCosto);
                 sale[0].items.push({
                     variedad: cart[item].name,
                     cantidad: cart[item].amount,
                     precio: cart[item].price,
+                    precioCosto: cart[item].priceCosto,
                     pago: cart[item].total
                 })
             }
@@ -212,7 +237,7 @@ var app = new Vue({
                     console.log(error)
                 } else {
                     self.saleComplete = true;
-                    setTimeout(function () { location.reload() }, 10000);
+                    setTimeout(function () { location.reload() }, 20000);
                 }
             });
 
@@ -244,6 +269,7 @@ var app = new Vue({
                 this.active[t].status = false;
             }
             this.active[type].status = true;
+
         },
         toggleActive: function (e) {
             e.target.classList.add('active');
