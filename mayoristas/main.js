@@ -225,7 +225,7 @@ var app = new Vue({
                 sale[0].items.push({
                     variedad: cart[item].name,
                     cantidad: cart[item].amount,
-                    precio: cart[item].priceMay,
+                    precioMay: cart[item].priceMay,
                     precioCosto: cart[item].priceCosto,
                     pago: cart[item].total
                 })
