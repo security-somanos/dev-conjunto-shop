@@ -55,14 +55,14 @@
                             @click="setVisibility('comida');">
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
-                    </div>  
-                    
+                    </div>
+
                 </div>
                 <div class="aviso">
                     <!--     Debido a la alta demanda de esta semana, vamos a estar tomando sus pedidos para que lo reciban el Miercoles de la proxima semana.<br>
-                    Gracias por la comprensión ♥ 
+                    Gracias por la comprensión ♥
                   <br><br>
-                   
+
                    Hace tu pedido entrando al siguiente link:<br>
                     <p><b><a class="two" href="https://www.elconjunto.org/amigues/" target="_blank">Compra Comunitaria Minorista</a></b></p>
                     -->
@@ -81,7 +81,7 @@
                     <br /> También realizamos COMPRAS COMUNITARIAS, accedé a toda la información:
                     www.elconjunto.org/amigues
                     <br />
-                    <br /> Consultas: 11 4409 0792
+                    <br /> Consultas: 11 6536 2299
 
                 </div>
             </div>
@@ -224,33 +224,33 @@
                     </div>
                     <select name="preference1" id="preference1" required="required" class="requiredInput" @change="changePreference($event)" >
                         <option value="" disabled selected>Elegí tu variedad </option>
-                        <option value="Platiqui">Devolución del dinero</option> 
-                        <option value="Acelga">Acelga</option>  
-                        <option value="Anco">Anco</option>  
-                        <option value="Apio">Apio</option>  
-                        <option value="Batata">Batata</option>  
-                        <option value="Cebolla">Cebolla</option>  
-                        <option value="Caboutia">Caboutia</option>  
-                        <option value="Espinaca">Espinaca</option>  
-                        <option value="Hakusai">Hakusai</option>  
-                        <option value="Hinojo">Hinojo</option>  
-                        <option value="Lechuga">Lechuga</option>  
-                        <option value="Nabo">Nabo</option>  
-                        <option value="Repollo">Repollo</option>  
-                        <option value="Papa">Papa</option>  
-                        <option value="Zapallito">Zapallito</option> 
+                        <option value="Platiqui">Devolución del dinero</option>
+                        <option value="Acelga">Acelga</option>
+                        <option value="Anco">Anco</option>
+                        <option value="Apio">Apio</option>
+                        <option value="Batata">Batata</option>
+                        <option value="Cebolla">Cebolla</option>
+                        <option value="Caboutia">Caboutia</option>
+                        <option value="Espinaca">Espinaca</option>
+                        <option value="Hakusai">Hakusai</option>
+                        <option value="Hinojo">Hinojo</option>
+                        <option value="Lechuga">Lechuga</option>
+                        <option value="Nabo">Nabo</option>
+                        <option value="Repollo">Repollo</option>
+                        <option value="Papa">Papa</option>
+                        <option value="Zapallito">Zapallito</option>
                     </select>
                     <select name="preference2" id="preference2" required="required" class="requiredInput" @change="changePreference2($event)" >
                     <option value="" disabled selected>Elegí tu variedad</option>
-                    <option value="Platiqui">Devolución del dinero</option> 
-                    <option value="Banana">Banana</option> 
-                    <option value="Limón">Limón</option> 
-                    <option value="Mandarina">Mandarina</option> 
-                    <option value="Manzana Roja">Manzana Roja</option> 
-                    <option value="Naranja">Naranja</option> 
-                    <option value="Palta">Palta</option> 
-                    <option value="Pera">Pera</option> 
-                    <option value="Pomelo">Pomelo</option> 
+                    <option value="Platiqui">Devolución del dinero</option>
+                    <option value="Banana">Banana</option>
+                    <option value="Limón">Limón</option>
+                    <option value="Mandarina">Mandarina</option>
+                    <option value="Manzana Roja">Manzana Roja</option>
+                    <option value="Naranja">Naranja</option>
+                    <option value="Palta">Palta</option>
+                    <option value="Pera">Pera</option>
+                    <option value="Pomelo">Pomelo</option>
                 </select>
                     <!-- <textarea type="text" class="requiredText" v-model="userData.preference"
                         placeholder="Ejemplo (apio, anco, tomate)"> -->
@@ -263,7 +263,7 @@
                     <option v-for="localidad in localidades" v-bind:value="localidad.text">
                         {{ localidad.text}} {{localidad.value }}
                     </option>
-                </select>    
+                </select>
                 <!-- <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1" type="text"
                     placeholder="Localidad" v-model="userData.localidad"> -->
                 <!-- <div class="deliveryLabel" v-if="userData.delivery == 1">
@@ -303,7 +303,7 @@
                 </div>
                 <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/qrconjunto.jpeg" alt=""
                     class="logoMainIcon">
-                <div class="mailLink">Tambien podes usar este mail - theconjunto@gmail.com</div> 
+                <div class="mailLink">Tambien podes usar este mail - theconjunto@gmail.com</div>
             </div>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
@@ -348,7 +348,7 @@
                     <div class="contact">
                         <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
                             class="phone">
-                        Dudas y consultas llamanos: 11 4409 0792
+                        Dudas y consultas llamanos: 11 6536 2299
                     </div>
                 </div>
             </div>

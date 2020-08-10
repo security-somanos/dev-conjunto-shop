@@ -25,30 +25,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .totalFloat {
-    
-position: fixed;
-    
-bottom: 20px;
-    
-left: 20px;
-    
-color: black;
-    
-padding: 20px;
-    
-font-size: 20px;
-    
-box-shadow: 0 3px 6px #33333329;
-    
-border-left: 2px solid #00cc65;
-    
-font-family: Ubuntu, sans-serif;
-    
-border-radius: 15px;
-    
-background-color: white;
-    
-z-index: 1;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: black;
+    padding: 20px;
+    font-size: 20px;
+    box-shadow: 0 3px 6px #33333329;
+    border-left: 2px solid #00cc65;
+    font-family: Ubuntu, sans-serif;
+    border-radius: 15px;
+    background-color: white;
+    z-index: 1;
 }
 
 
@@ -105,17 +93,17 @@ body {
 }
 
 .agotado {
-    
+
 width: 100%;
-    
+
 text-align: center;
-    
+
 padding: 10px;
-    
+
 background-color: #f94e45;
-    
+
 color: white;
-    
+
 font-size: 14px;
 
 }
@@ -310,7 +298,7 @@ font-size: 14px;
     height: 45px;
     flex: 1;
     margin-bottom: 13px;
-} 
+}
 
 .filter .button {
         color: #808080;
@@ -358,8 +346,6 @@ font-size: 14px;
 
 .headerDisplay {
     width: 100%;
-    /* box-shadow: 0 3px 6px #33333329; */
-    /* border-left: 2px solid #00cc65; */
     max-width: 644px;
     margin: 0 10px;
     border-radius: 10px;
@@ -445,12 +431,12 @@ font-size: 14px;
         flex-direction: column-reverse;
     }
 
-    
+
     select {
-        
-    height: 40px;    
+
+    height: 40px;
     width: 280px;
-    
+
 /* border-width: 0px; */
     padding: 9px;
     font-size: 16px;
