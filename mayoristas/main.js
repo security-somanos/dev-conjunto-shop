@@ -29,6 +29,7 @@ var app = new Vue({
         productList: [],
         cartTotal: 0,
         subTotalCosto: 0,
+        totalCantidad: 0,
         totalCosto: 0,
         cantidad: 0,
         totalUnidades: 0,
@@ -97,7 +98,7 @@ var app = new Vue({
             this.cartTotal = 0;
             this.cartItems = 0;
             this.totalCosto = 0;
-            this.subTotalCosto = 0;
+            this.totalCantidad = 0;
 
             this.cart = this.productList.filter(function (item) {
                 return item.total > 0;
@@ -126,26 +127,22 @@ var app = new Vue({
 
                 this.cart[item].total = this.cart[item].amount * this.cart[item].priceMay;
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2))
-    
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
-
                 this.cart[item].subTotalCosto = this.cart[item].amount * this.cart[item].priceCosto;
                 this.cart[item].subTotalCosto = parseFloat(this.cart[item].subTotalCosto.toFixed(2))
-                
                 this.totalCosto += this.cart[item].subTotalCosto;
                 this.totalCosto = parseFloat(this.totalCosto.toFixed(2))
+                this.totalCantidad += this.cart[item].amount;
+                this.totalCantidad = parseFloat(this.totalCantidad.toFixed(2))
             }
         },
         addItem: function (item) {
             item.amount++;
             item.total = item.amount * item.priceMay;
             item.subTotalCosto = item.amount *  item.priceCosto;
-            console.log(item.total)
-            console.log(item.subTotalCosto)
             this.getTotal();
-            console.log(item.subTotalCosto)
-            console.log(item.total)
+
         },
         removeItem: function (item) {
             this.getTotal();
@@ -162,7 +159,7 @@ var app = new Vue({
                 }
             else (item.amount = parseFloat(item.amount))
             item.total = item.amount * item.priceMay;
-            item.subTotalCosto = item.amount * item.priceCosto
+            item.subTotalCosto = item.amount * item.priceCosto;
             this.getTotal();
         },
         formValidate() {
@@ -209,8 +206,9 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 totalCosto: this.totalCosto,
-                total: this.cartTotal,
                 pago: this.userData.pago,
+                totalCantidad: this.totalCantidad,
+                total: this.cartTotal,
                 preference: this.userData.preference,
                 localidad: this.userData.localidad,
                 items: []
@@ -221,13 +219,15 @@ var app = new Vue({
                     item.priceMay = this.priceMay;
                     item.priceCosto = this.priceCosto;
                 }
-                console.log(item.priceCosto);
+               // console.log(item.priceCosto);
                 sale[0].items.push({
                     variedad: cart[item].name,
                     cantidad: cart[item].amount,
                     precioMay: cart[item].priceMay,
+                    pago: cart[item].total,
                     precioCosto: cart[item].priceCosto,
-                    pago: cart[item].total
+                    subTotalCosto: cart[item].subTotalCosto,
+
                 })
             }
 
