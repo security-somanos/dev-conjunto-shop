@@ -23,6 +23,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     /* min-width: 100%; */
     text-align: center;
 }
+.aviso .iconFA{
+    width: 100px;
+}
 
 .totalFloat {
     position: fixed;
