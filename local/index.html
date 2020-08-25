@@ -58,41 +58,6 @@
                     </div>
 
                 </div>
-                <div class="aviso">
-                    <!--     Debido a la alta demanda de esta semana, vamos a estar tomando sus pedidos para que lo reciban el Miercoles de la proxima semana.<br>
-                    Gracias por la comprensión ♥
-                  <br><br>
-
-                   Hace tu pedido entrando al siguiente link:<br>
-                    <p><b><a class="two" href="https://www.elconjunto.org/amigues/" target="_blank">Compra Comunitaria Minorista</a></b></p>
-                    -->
-                    <br><br>
-                    <h1>Todos nuestros productos son libres de agrotóxicos nocivos para tu salud:</h1>                    
-                    <ul>
-                        <li>AGROECOLÓGICOS  <i class="fas fa-check" style="color:green"></i></li>
-                        <li>ORGÁNICOS  <i class="fas fa-check" style="color:green"></i></li>
-                    </ul>
-                    <br>
-                    <i class="fas fa-store fa-2x"></i><br>
-                    Realizá tu pedido y retiralo por nuestro local en Dr. Tomás Anchorena 684, La Lucila: <br>
-                    <i class="fas fa-exclamation"></i> ATENCIÓN CAMBIO DE HORARIOS: <i class="fas fa-exclamation"></i> <br>
-                    <i class="far fa-clock" ></i> Martes a Viernes de 10 a 20 hs. <br>
-                    <i class="far fa-clock" ></i> Sábados de 12 a 15 hs.
-                    <br />
-                    <br />
-                    <i class="fas fa-bicycle fa-2x"></i><br>
-                    Envíos a domicilio: <br> <i class="far fa-clock" ></i> 
-                    Sábados a partir de las 16 hs. <br>
-                    Esperanos con tu bolsa para recibir el pedido, y el dinero en sobre ♥
-                    <br>
-                    <br />
-                    <i class="fas fa-users"></i>
-                    <br /> También realizamos COMPRAS COMUNITARIAS,<br> accedé a toda la información:
-                    <a href="http://www.elconjunto.org/amigues" target="_blank">www.elconjunto.org/amigues</a>
-                    <br />
-                    <br /><i class="fab fa-whatsapp"></i> Consultas: 11 6536 2299
-
-                </div>
             </div>
         </div>
         <div class="products" id="products">
@@ -209,9 +174,8 @@
             <form action="#" class="userForm">
                 <div class="title">Datos de Usuario</div>
                 <div class="required">* Por favor complete los campos requeridos</div>
-                <input class="requiredInput" type="text" placeholder="Nombre" v-model="userData.name" required>
-                <input class="requiredInput" type="tel" placeholder="Telefono" v-model="userData.phone" required
-                    min-length="8">
+                <input  type="text" placeholder="Nombre" v-model="userData.name">
+                <input  type="text" placeholder="Telefono" v-model="userData.phone">
                 <div class="delivery">
                     <select class="requiredInput" name="pago" id="pago" @change="setPaymentType($event)">
                         <option value="1" disabled selected>Escoger forma de pago</option>
@@ -220,89 +184,12 @@
                     </select>
                 </div>
                 <div class="delivery">
-                    <select name="delivery" id="delivery" required="required" class="requiredInput"
-                        @change="changeLocation($event)">
-                        <option value="0" disabled selected>Escoger forma de entrega</option>
-                        <option value="3">Retiro el Sábado (Anchorena)</option>
-                        <option value="2">Retiro en el día (Anchorena)</option>
-                        <option value="1">Envío a Domicilio</option>
+                    <select class="requiredInput" v-model="userData.support" required="required" @change="setSupport($event)" >
+                        <option disabled value="">Quien tomó el pedido?</option>
+                        <option v-for="supp in supports" v-bind:value="supp.value">
+                            {{ supp.text }}
+                        </option>
                     </select>
-                </div>
-                <div class="preference">
-                    <div class="title">Selecciona 2 variedades, en caso de faltantes:
-                    </div>
-                    <select name="preference1" id="preference1" required="required" class="requiredInput" @change="changePreference($event)" >
-                        <option value="" disabled selected>Elegí tu variedad </option>
-                        <option value="Platiqui">Devolución del dinero</option>
-                        <option value="Acelga">Acelga</option>
-                        <option value="Anco">Anco</option>
-                        <option value="Apio">Apio</option>
-                        <option value="Batata">Batata</option>
-                        <option value="Cebolla">Cebolla</option>
-                        <option value="Caboutia">Caboutia</option>
-                        <option value="Espinaca">Espinaca</option>
-                        <option value="Hakusai">Hakusai</option>
-                        <option value="Hinojo">Hinojo</option>
-                        <option value="Lechuga">Lechuga</option>
-                        <option value="Nabo">Nabo</option>
-                        <option value="Repollo">Repollo</option>
-                        <option value="Papa">Papa</option>
-                        <option value="Zapallito">Zapallito</option>
-                    </select>
-                    <select name="preference2" id="preference2" required="required" class="requiredInput" @change="changePreference2($event)" >
-                    <option value="" disabled selected>Elegí tu variedad</option>
-                    <option value="Platiqui">Devolución del dinero</option>
-                    <option value="Banana">Banana</option>
-                    <option value="Limón">Limón</option>
-                    <option value="Mandarina">Mandarina</option>
-                    <option value="Manzana Roja">Manzana Roja</option>
-                    <option value="Naranja">Naranja</option>
-                    <option value="Palta">Palta</option>
-                    <option value="Pera">Pera</option>
-                    <option value="Pomelo">Pomelo</option>
-                </select>
-                    <!-- <textarea type="text" class="requiredText" v-model="userData.preference"
-                        placeholder="Ejemplo (apio, anco, tomate)"> -->
-                </div>
-                <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text"
-                    placeholder="Direccion" v-model="userData.address">
-
-                <select class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1" >
-                    <option disabled value="">Seleccione una localidad</option>
-                    <option v-for="localidad in localidades" v-bind:value="localidad.text">
-                        {{ localidad.text}} {{localidad.value }}
-                    </option>
-                </select>
-                <!-- <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1" type="text"
-                    placeholder="Localidad" v-model="userData.localidad"> -->
-                <!-- <div class="deliveryLabel" v-if="userData.delivery == 1">
-                    <h1 style="font-size: 20px;">Costo promedio</h1> <br>
-                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
-                    La Lucila = $100 <br>
-                    Olivos = $120 <br>
-                    Florida = $150 <br>
-                    Munro = $200 <br><br>
-                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>                    Martinez = $150 <br>
-                    Martinez = $150 <br>
-                    Acassuso = $200 <br>
-                    San Isidro = $250 <br>
-                    Beccar = $300 <br>
-                    Tigre = $400 <br> <br>
-                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
-                    San Fernando = $350 <br>
-                    Victoria = $400 <br>
-                    Virreyes = $450 <br>
-                    Tigre = $500 <br>
-                </div> -->
-                <div class="deliveryLabel" v-if="userData.delivery == 2">
-                    <h1 style="font-size: 20px;">Horarios para retirar:</h1> <br>
-                    Martes a Viernes<br>
-                    de 10hs a 15hs <br>
-                </div>
-                <div class="deliveryLabel" v-if="userData.delivery == 3">
-                    <h1 style="font-size: 20px;">Horarios para retirar:</h1> <br>
-                    <b>Sábado</b><br>
-                    de 10hs a 18hs <br>
                 </div>
             </form>
             <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
@@ -324,40 +211,12 @@
                     </div>
                     <div class="modalItem" v-show="saleComplete === false && fieldsMissing === false">
                         <div class="closeModal" @click="confirmModal = false">X</div>
-                        <div class="title">Confirmar pedido?</div>
-                        <div class="confirmButton" v-on:click="saveSale(cart)">Confirmar</div>
+                        <div class="title">Estas segure {{ userData.support }} ?</div>
+                        <div class="confirmButton" v-on:click="saveSale(cart)">Seee, mandale! </div>
                     </div>
                     <div class="modalItem" v-show="saleComplete === true">
                         <div class="closeModal" @click="confirmModal = false">X</div>
-                        <div class="title">
-                            <div v-if="userData.delivery == 3">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el local Sábados de 16hs a 20 hs.
-                            </div>
-                            <div v-if="userData.delivery == 2">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo por el local, de Martes a Viernes entre las 10hs y las 15hs.
-                            </div>
-                            <div v-if="userData.delivery == 1">
-                                Gracias! Su pedido se ha realizado con exito. <br>
-                                Nos estaremos comunicando con vos para coordinar la entrega.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/onlyLogoVrde.png" alt="" class="footerLogo">
-                <div class="social">
-                    <div class="link">
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/insta.png" alt=""
-                            class="insta">
-                        <a href="http://instagram.com/vrde_club" target="_blank">Seguinos en Instagram /vrde_club</a>
-                    </div>
-                    <div class="contact">
-                        <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/whatsapp.png" alt=""
-                            class="phone">
-                        Dudas y consultas llamanos: 11 6536 2299
+                        <div class="title" v-show="saleComplete === true"> Quedate trancu que ya se mandó el pedido</div>
                     </div>
                 </div>
             </div>
