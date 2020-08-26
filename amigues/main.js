@@ -33,6 +33,7 @@ var app = new Vue({
         saleComplete: false,
         fieldsMissing: false,
         confirmModal: false,
+        preferenceSelected: false,
         userData: {
             name: '',
             address: '',
@@ -42,6 +43,7 @@ var app = new Vue({
             pago: "",
             preference: "",
             localidad: "",
+            status: "pendiente",
         },
         active: {
             'verdura': { status: true },
@@ -165,6 +167,22 @@ var app = new Vue({
             }
             this.deliveryMethod = true;
         },
+        changePreference(event) {
+            if (event.target.value === "") {
+                this.preferenceSelected = false;
+            }
+            else if (event.target.value != "") {
+                this.userData.preference1 = event.target.value;
+            }
+        },
+        changePreference2(event) {
+            if (event.target.value === "") {
+                this.preferenceSelected = false;
+            }
+            else if (event.target.value != "") {
+                this.userData.preference2 = event.target.value;
+            }
+        },
         setPaymentType(event) {
             this.userData.pago = event.target.value;
         },
@@ -187,6 +205,7 @@ var app = new Vue({
                 pago: this.userData.pago,
                 preference: this.userData.preference,
                 localidad: this.userData.localidad,
+                status: this.userData.status,
                 items: []
             }];
 

@@ -45,7 +45,8 @@ var app = new Vue({
             pago: "",
             preference1: "",
             preference2: "",
-            localidad: "",            
+            localidad: "",
+            status: "pendiente",
         },
         active: {
             'verdura': { status: true },
@@ -172,7 +173,7 @@ var app = new Vue({
             if (item.stock - item.amount >= 0) {
                 (item.amount = parseFloat(item.amount));
                 item.total = item.amount * item.price;
-                item.outOfStock = false;    
+                item.outOfStock = false;
             } else {
                 item.outOfStock = true;
             }
@@ -194,7 +195,6 @@ var app = new Vue({
                 console.log(this.fieldsMissing)
                 console.log(this.userData.localidad)
                 console.log("if2")
-                
             }
             else {
                 this.fieldsMissing = false;
@@ -208,17 +208,18 @@ var app = new Vue({
             if (event.target.value === "3") {
                 this.userData.delivery = 3;
                 this.userData.address = "Retira Sábado por el Local";
+                this.deliveryMethod  = false;
             }
             else if (event.target.value === "2") {
                 this.userData.delivery = 2;
                 this.userData.address = "Retira en el día";
+                this.deliveryMethod  = false;
             }
             else {
                 this.userData.delivery = 1;
                 this.userData.address = "";
                 this.deliveryMethod = true;
             }
-            
         },
         changePreference(event) {
             if (event.target.value === "") {
@@ -252,6 +253,7 @@ var app = new Vue({
                 name: this.userData.name,
                 address: this.userData.address,
                 phone: this.userData.phone,
+                status: this.userData.status,
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 preference1: this.userData.preference1,

@@ -46,7 +46,7 @@
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
 
-                        <a class="button" id="lines2" v-bind:class="{active : active['medicina'].status}"
+                         <a class="button" id="lines2" v-bind:class="{active : active['medicina'].status}"
                             @click="setVisibility('medicina');">
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Cuidado Personal</a>
@@ -59,13 +59,6 @@
 
                 </div>
                 <div class="aviso">
-                    <!--     Debido a la alta demanda de esta semana, vamos a estar tomando sus pedidos para que lo reciban el Miercoles de la proxima semana.<br>
-                    Gracias por la comprensión ♥
-                  <br><br>
-
-                   Hace tu pedido entrando al siguiente link:<br>
-                    <p><b><a class="two" href="https://www.elconjunto.org/amigues/" target="_blank">Compra Comunitaria Minorista</a></b></p>
-                    -->
                     <br><br>
                     <h1>Todos nuestros productos son libres de agrotóxicos nocivos para tu salud:</h1>                    
                     <ul>
@@ -238,31 +231,27 @@
                         <option value="Anco">Anco</option>
                         <option value="Apio">Apio</option>
                         <option value="Batata">Batata</option>
-                        <option value="Cebolla">Cebolla</option>
                         <option value="Caboutia">Caboutia</option>
                         <option value="Espinaca">Espinaca</option>
                         <option value="Hakusai">Hakusai</option>
                         <option value="Hinojo">Hinojo</option>
                         <option value="Lechuga">Lechuga</option>
-                        <option value="Nabo">Nabo</option>
                         <option value="Repollo">Repollo</option>
+                        <option value="Rucula">Rúcula</option>
                         <option value="Papa">Papa</option>
-                        <option value="Zapallito">Zapallito</option>
                     </select>
                     <select name="preference2" id="preference2" required="required" class="requiredInput" @change="changePreference2($event)" >
                     <option value="" disabled selected>Elegí tu variedad</option>
                     <option value="Platiqui">Devolución del dinero</option>
-                    <option value="Banana">Banana</option>
                     <option value="Limón">Limón</option>
                     <option value="Mandarina">Mandarina</option>
                     <option value="Manzana Roja">Manzana Roja</option>
+                    <option value="Manzana Vrde">Manzana Vrde</option>
                     <option value="Naranja">Naranja</option>
                     <option value="Palta">Palta</option>
                     <option value="Pera">Pera</option>
                     <option value="Pomelo">Pomelo</option>
                 </select>
-                    <!-- <textarea type="text" class="requiredText" v-model="userData.preference"
-                        placeholder="Ejemplo (apio, anco, tomate)"> -->
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text"
                     placeholder="Direccion" v-model="userData.address">
@@ -273,27 +262,6 @@
                         {{ localidad.text}} {{localidad.value }}
                     </option>
                 </select>
-                <!-- <input class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1" type="text"
-                    placeholder="Localidad" v-model="userData.localidad"> -->
-                <!-- <div class="deliveryLabel" v-if="userData.delivery == 1">
-                    <h1 style="font-size: 20px;">Costo promedio</h1> <br>
-                    <h4 style="font-size: 16px;">Vicente López:</h4><br>
-                    La Lucila = $100 <br>
-                    Olivos = $120 <br>
-                    Florida = $150 <br>
-                    Munro = $200 <br><br>
-                    <h4 style="font-size: 16px;">San Isidro:</h4> <br><br>                    Martinez = $150 <br>
-                    Martinez = $150 <br>
-                    Acassuso = $200 <br>
-                    San Isidro = $250 <br>
-                    Beccar = $300 <br>
-                    Tigre = $400 <br> <br>
-                    <h4 style="font-size: 16px;">San Fernando:</h4> <br><br>
-                    San Fernando = $350 <br>
-                    Victoria = $400 <br>
-                    Virreyes = $450 <br>
-                    Tigre = $500 <br>
-                </div> -->
                 <div class="deliveryLabel" v-if="userData.delivery == 2">
                     <h1 style="font-size: 20px;">Horarios para retirar:</h1> <br>
                     Martes a Viernes<br>

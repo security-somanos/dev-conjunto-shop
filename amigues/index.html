@@ -14,9 +14,6 @@
 
 <body>
     <div class="main" id="app">
-        <!-- <div class="top-bar">
-            <div data-netlify-identity-menu></div>
-        </div> -->
         <div class="totalFloat" id="totalFloat">${{cartTotal}}</div>
         <div class="header">
             <div class="headerDisplay">
@@ -239,11 +236,36 @@
                     </select>
                 </div>
                 <div class="preference">
-                    <div class="title">Escribinos aqui 3 variedades que te gustaria que enviemos en caso de faltantes.
+                    <div class="title">Selecciona 2 variedades, en caso de faltantes:
                     </div>
-                    <textarea type="text" class="requiredText" v-model="userData.preference"
-                        placeholder="Ejemplo (apio, anco, tomate)">
-                    </textarea>
+                    <select name="preference1" id="preference1" required="required" class="requiredInput" @change="changePreference($event)" >
+                        <option value="" disabled selected>Elegí tu variedad </option>
+                        <option value="Platiqui">Devolución del dinero</option>
+                        <option value="Acelga">Acelga</option>
+                        <option value="Anco">Anco</option>
+                        <option value="Apio">Apio</option>
+                        <option value="Batata">Batata</option>
+                        <option value="Caboutia">Caboutia</option>
+                        <option value="Espinaca">Espinaca</option>
+                        <option value="Hakusai">Hakusai</option>
+                        <option value="Hinojo">Hinojo</option>
+                        <option value="Lechuga">Lechuga</option>
+                        <option value="Repollo">Repollo</option>
+                        <option value="Rucula">Rúcula</option>
+                        <option value="Papa">Papa</option>
+                    </select>
+                    <select name="preference2" id="preference2" required="required" class="requiredInput" @change="changePreference2($event)" >
+                    <option value="" disabled selected>Elegí tu variedad</option>
+                    <option value="Platiqui">Devolución del dinero</option> 
+                    <option value="Limón">Limón</option>
+                    <option value="Mandarina">Mandarina</option>
+                    <option value="Manzana Roja">Manzana Roja</option>
+                    <option value="Manzana Vrde">Manzana Vrde</option>
+                    <option value="Naranja">Naranja</option>
+                    <option value="Palta">Palta</option>
+                    <option value="Pera">Pera</option>
+                    <option value="Pomelo">Pomelo</option>
+                </select>
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 3" type="text"
                     placeholder="Direccion" v-model="userData.address">
@@ -327,7 +349,7 @@
             </div>
         </div>
     </div>
-    <!-- <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+    <script src="https://kit.fontawesome.com/21ca6c38ad.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-performance.js"></script>
