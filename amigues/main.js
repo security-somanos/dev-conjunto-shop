@@ -144,10 +144,12 @@ var app = new Vue({
         },
         formValidate() {
             // form validation
-            if (this.userData.name == '' || this.userData.phone == '' || this.deliveryMethod == false || this.userData.pago == '' || this.userData.preference == '') {
+            if (this.userData.name == '' || this.userData.phone == '' || this.userData.deliveryMethod == '' || this.userData.pago == '' || this.userData.preferenceSelected == '') {
                 this.fieldsMissing = true;
+                console.log("if1")
             }
-            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preference == '' && this.userData.pago == '') {
+            else if (this.userData.delivery == 3 && this.userData.address == '' && this.userData.localidad == '' && this.userData.preferenceSelected == '' && this.userData.pago == '') {
+                console.log("if2")
                 this.fieldsMissing = true;
             }
             else {
@@ -163,7 +165,6 @@ var app = new Vue({
             else {
                 this.userData.delivery = 3;
                 this.userData.address = "";
-
             }
             this.deliveryMethod = true;
         },
@@ -173,6 +174,7 @@ var app = new Vue({
             }
             else if (event.target.value != "") {
                 this.userData.preference1 = event.target.value;
+                this.preferenceSelected = true;
             }
         },
         changePreference2(event) {
@@ -181,6 +183,7 @@ var app = new Vue({
             }
             else if (event.target.value != "") {
                 this.userData.preference2 = event.target.value;
+                this.preferenceSelected = true;
             }
         },
         setPaymentType(event) {
@@ -203,7 +206,8 @@ var app = new Vue({
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
                 pago: this.userData.pago,
-                preference: this.userData.preference,
+                preference: this.userData.preference1,
+                preference: this.userData.preference2,
                 localidad: this.userData.localidad,
                 status: this.userData.status,
                 items: []

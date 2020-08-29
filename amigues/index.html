@@ -19,32 +19,6 @@
             <div class="headerDisplay">
                 <img src="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/logoconjuro.png" alt=""
                     class="logo">
-                <!-- <div class="navbar">
-                        <div class="filterNav">
-                        <a class="buttonNav" v-bind:class="{active : active['verdura'].status}"    
-                        @click="setVisibility('verdura');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/carrot.png">Verduras</a>
-
-                        <a class="buttonNav" v-bind:class="{active : active['fruta'].status}"
-                        @click="setVisibility('fruta');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/apple.png">Frutas</a>
-
-                        <a class="buttonNav" v-bind:class="{active : active['almacen'].status}"
-                        @click="setVisibility('almacen');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/milk.png">Almacén</a>
-                        <a class="buttonNav" v-bind:class="{active : active['vinos'].status}"
-                        @click="setVisibility('vinos');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/wine.png">Vinos</a>
-
-                        <a class="buttonNav" id="lines2" v-bind:class="{active : active['medicina'].status}"
-                        @click="setVisibility('medicina');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/pills.png">Cuidado Personal</a>
-
-                        <a class="buttonNav" id="lines2" v-bind:class="{active : active['comida'].status}"
-                        @click="setVisibility('comida');"><img class="filterIcon nav"
-                            src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
-                    </div>
-                </div> -->
                 <div class="contain">
                     <div class="search">
                         <div class="searchLabel">Bienvenides!</div>
@@ -80,6 +54,44 @@
                     </div>
                 </div>
                 <div class="aviso">
+                    <i class="fas fa-users fa-4x" ></i>
+                    <h1>Te damos la bienvenida a la compra en Conjunto de Alimentos Agroecológicos de La Lucila,
+                         te invitamos a leer con atención como funciona </h1>                    
+                         <br>
+                    <i class="fas fa-truck-moving fa-2x"></i> <br>
+                    Buscamos acortar distancias entre el campo y el barrio, dándote la posibilidad de compra directa con los productores, eliminando así intermediarios innecesarios.</br>
+                    Lo revolucionario de este tipo de compra en Conjunto está en que los precios de los productos <br>
+                    son consecuencia de la cantidad de pedidos que se realicen, así reducimos los costos de los alimentos 
+                    y su logística (transporte del campo a la ciudad). <br>
+                    Si somos más, pagamos menos.
+                    <br><br>
+                    <i class="fas fa-exclamation fa-2x"></i> <br>
+                    Recordá que:
+                    <ul>
+                        <li>• Tenés tiempo de hacer tu pedido hasta los Domingos a las 18 hrs.</li>
+                        <li>• La disponibilidad del campo esta sujeta a factores climaticos o de estación.
+                            (de todas formas siempre vamos a buscar la manera de compensarte)</li>
+                    </ul><br>
+
+                    <i class="fas fa-store fa-2x"></i><br>
+                    Realizá tu pedido y retiralo por nuestro local en Dr. Tomás Anchorena 684, La Lucila: <br>
+                    <i class="fas fa-exclamation"></i> ATENCIÓN CAMBIO DE HORARIOS: <i class="fas fa-exclamation"></i> <br>
+                    <i class="far fa-clock" ></i> Jueves de 17 a 20 hs. <br>
+                    <br />
+                    <i class="fas fa-bicycle fa-2x"></i><br>
+                    Envíos a domicilio: <br> <i class="far fa-clock" ></i> 
+                    Jueves a partir de las 16 hs. <br>
+                    Esperanos con tu bolsa para recibir el pedido, y el dinero en sobre ♥
+                    <br>
+                    <br />
+
+                    <br /> También realizamos Compras Mayoristas,<br> accedé a toda la información:
+                    <a href="http://www.elconjunto.org/mayoristas" target="_blank">www.elconjunto.org/mayoristas</a>
+                    <br><br>
+                    ¿Tenés dudas? Comunicate con El Conjunto. 
+                    <br /><i class="fab fa-whatsapp"></i> Consultas: 11 6536 2299
+                </div>
+                <!-- <div class="aviso">
                     <div class="avisoTitle">Compra Comunitaria La Lucila</div>
                     Te damos la bienvenida a la compra comunitaria de La Lucila.
                     <br><br>
@@ -100,7 +112,7 @@
                     <br>(de todas formas siempre vamos a buscar la manera de compensarte)
                     <br><br>
                     ¿Tenés dudas? Comunicate con nosotros por Whatsapp al 11 6536 2299
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="products" id="products">
@@ -318,13 +330,13 @@
                         <div class="title">
                             <div v-if="userData.delivery == 1">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Podes retirarlo el día Miércoles de la semana que viene <br>
+                                Podes retirarlo el día Jueves de la semana que viene <br>
                                 desde las 17:00 hasta las 20:00hs
                                 por el Nodo de La Lucila, Doctor Tomás M. de Anchorena 684.
                             </div>
                             <div v-if="userData.delivery == 3">
                                 Gracias! Su pedido se ha realizado con exito. <br>
-                                Preparate para recibirlo el Miercoles de la semana que viene. <br>
+                                Preparate para recibirlo el Jueves de la semana que viene. <br>
                                 Nos vamos a comunicar con vos para coordinar la entrega.
                             </div>
                         </div>
