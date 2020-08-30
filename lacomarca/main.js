@@ -39,6 +39,7 @@ var app = new Vue({
             delivery: 0,
             pago: "",
             preference: "",
+            status: "pendiente",
         },
         active: {
             'verdura': { status: true },
@@ -183,6 +184,7 @@ var app = new Vue({
                 total: this.cartTotal,
                 pago: this.userData.pago,
                 preference: this.userData.preference,
+                status: this.userData.status,
                 items: []
             }];
 

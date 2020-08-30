@@ -40,6 +40,7 @@ var app = new Vue({
             support: '',
             pago: '',
             nodo: 'La lucila',
+            status: "pendiente",
         },
         active: {
             'verdura': { status: true },
@@ -207,6 +208,7 @@ var app = new Vue({
                 nodo: this.userData.nodo,
                 pago: this.userData.pago,
                 total: this.cartTotal,
+                status: this.userData.status,
                 items: []
             }];
 

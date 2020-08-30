@@ -40,6 +40,7 @@ var app = new Vue({
             pago: "",
             preference: "",
             localidad: "",
+            status: "pendiente",
         },
         active: {
             'verdura': { status: true },
@@ -185,6 +186,7 @@ var app = new Vue({
                 pago: this.userData.pago,
                 preference: this.userData.preference,
                 localidad: this.userData.localidad,
+                status: this.userData.status,
                 items: []
             }];
 
