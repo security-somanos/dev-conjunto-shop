@@ -13,7 +13,8 @@ var config = {
 };
 
 firebase.initializeApp(config);
-firebase.analytics();
+
+const defaultAnalytics = firebase.analytics();
 
 var database = firebase.database();
 var perf = firebase.performance();
@@ -47,6 +48,8 @@ var app = new Vue({
             preference2: "",
             localidad: "",
             status: "pendiente",
+            recargo: 0,
+            porcentajeRecargo: 0
         },
         active: {
             'verdura': { status: true },
@@ -144,7 +147,7 @@ var app = new Vue({
         },
         addItem: function (item) {
             if (item.stock > item.amount) {
-                console.log("Add", item)
+              //  console.log("Add", item)
                 item.outOfStock = false;
                 item.amount++;
                 item.total = item.amount * item.price;
@@ -153,6 +156,12 @@ var app = new Vue({
                 item.outOfStock = true;
             }
         },
+        addPayment: function () {
+            if (userData.pago != '') {
+                console.log(userData.pago);
+            }
+        },
+
         removeItem: function (item) {
             this.getTotal();
             if (item.amount > 0 && item.stock > 0) {
@@ -166,7 +175,7 @@ var app = new Vue({
             this.getTotal();
         },
         updateValue: function (item) {
-            console.log("Update", item)
+         //   console.log("Update", item)
             if (item.amount === '' || parseFloat(item.amount) == NaN) {
                 item.amount = 0
             }
@@ -184,22 +193,13 @@ var app = new Vue({
             if (this.userData.name == '' || this.userData.phone == '' || this.userData.pago == '' 
                     || this.userData.preference1 == '' || this.userData.preference2 == '') {
                 this.fieldsMissing = true;
-                console.log(this.fieldsMissing)
-                console.log("if1")
-                console.log(this.userData.preference1)
-                console.log(this.userData.preference2)
             }
             else if (this.deliveryMethod == true && (this.userData.address == '' || this.userData.localidad == '' 
                    || this.userData.preference1 == '' || this.userData.preference2 == '' || this.userData.pago == '')) {
                 this.fieldsMissing = true;
-                console.log(this.fieldsMissing)
-                console.log(this.userData.localidad)
-                console.log("if2")
             }
             else {
                 this.fieldsMissing = false;
-                console.log(this.fieldsMissing)
-                console.log(this.userData.localidad)
             }
             console.log(this.fieldsMissing)
             this.confirmModal = true;
@@ -239,6 +239,15 @@ var app = new Vue({
         },
         setPaymentType(event) {
             this.userData.pago = event.target.value;
+            if (event.target.value == 'Mercado Pago Recargo') {
+                console.log(event.target.value);
+                this.userData.porcentajeRecargo = 8;
+                var partialValue = this.userData.porcentajeRecargo;
+                this.userData.recargo = function (partialValue, totalValue) {
+                    console.log(partialValue);
+                    return (100 * partialValue) / totalValue;
+                 };
+        }
         },
         saveSale(cart) {
             // send to firebase
@@ -260,6 +269,7 @@ var app = new Vue({
                 preference2: this.userData.preference2,
                 total: this.cartTotal,
                 pago: this.userData.pago,
+                recargo: this.userData.recargo,
                 localidad: this.userData.localidad,
                 items: []
             }];
@@ -304,7 +314,6 @@ var app = new Vue({
                 }
             }
         },
-
         //toggle category buttons
         setVisibility: function (type) {
             let p = document.getElementById("products");
@@ -323,6 +332,15 @@ var app = new Vue({
         }
     },
     computed: {
+        // totalRecargo: function (totalR) {
+        //   var self = this;
+        //   var partialValue = this.userData.porcentajeRecargo;
+        //   var totalR = function (partialValue, totalValue) {
+        //     return (100 * partialValue) / totalValue;
+        //  } 
+        //  return totalR
+
+        // };
 
         // returns filtered list by search term or category
         filteredItems: function () {

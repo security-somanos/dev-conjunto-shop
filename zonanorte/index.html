@@ -56,34 +56,27 @@
                             <img class="filterIcon"
                                 src="https://storage.cloud.google.com/el-conjunto.appspot.com/comida.png">Productos Locales</a>
                     </div>
-
                 </div>
                 <div class="aviso">
                     <br><br>
-                    <h1>Todos nuestros productos son libres de agrotóxicos nocivos para tu salud:</h1>                    
+                    <h1>Todos nuestros productos son libres de agrotóxicos nocivos para tu salud:</h1>
                     <ul>
                         <li>AGROECOLÓGICOS  <i class="fas fa-check" style="color:green"></i></li>
                         <li>ORGÁNICOS  <i class="fas fa-check" style="color:green"></i></li>
-                    </ul>
-                    <br>
+                    </ul><br>
                     <i class="fas fa-store fa-2x"></i><br>
                     Realizá tu pedido y retiralo por nuestro local en Dr. Tomás Anchorena 684, La Lucila: <br>
                     <i class="fas fa-exclamation"></i> ATENCIÓN CAMBIO DE HORARIOS: <i class="fas fa-exclamation"></i> <br>
                     <i class="far fa-clock" ></i> Martes a Viernes de 10 a 20 hs. <br>
-                    <i class="far fa-clock" ></i> Sábados de 12 a 15 hs.
-                    <br />
-                    <br />
+                    <i class="far fa-clock" ></i> Sábados de 12 a 15 hs.<br> <br>
                     <i class="fas fa-bicycle fa-2x"></i><br>
-                    Envíos a domicilio: <br> <i class="far fa-clock" ></i> 
+                    Envíos a domicilio: <br> <i class="far fa-clock" ></i>
                     Sábados a partir de las 16 hs. <br>
-                    Esperanos con tu bolsa para recibir el pedido, y el dinero en sobre ♥
-                    <br>
-                    <br />
+                    Esperanos con tu bolsa para recibir el pedido, y el dinero en sobre ♥<br><br>
                     <i class="fas fa-users"></i>
                     <br /> También realizamos COMPRAS COMUNITARIAS,<br> accedé a toda la información:
-                    <a href="http://www.elconjunto.org/amigues" target="_blank">www.elconjunto.org/amigues</a>
-                    <br />
-                    <br /><i class="fab fa-whatsapp"></i> Consultas: 11 6536 2299
+                    <a href="http://www.elconjunto.org/amigues" target="_blank">www.elconjunto.org/amigues</a><br><br>
+                    <i class="fab fa-whatsapp"></i> Consultas: 11 6536 2299
                 </div>
             </div>
         </div>
@@ -91,8 +84,7 @@
             <div v-cloak class="item" v-for="item in orderBy(filteredItems, 'name')">
                 <img :src="`${item.image}`" class="productImage">
                 <div class="title">
-                    {{item.name}} = ${{ item.price }}
-                    <br>
+                    {{item.name}} = ${{ item.price }}<br>
                 </div>
                 <div class="agotado" v-if="item.outOfStock === true">Agotado</div>
                 <div class="setAmount">
@@ -207,7 +199,8 @@
                 <div class="delivery">
                     <select class="requiredInput" name="pago" id="pago" @change="setPaymentType($event)">
                         <option value="1" disabled selected>Escoger forma de pago</option>
-                        <option value="Mercado Pago">Mercado Pago</option>
+                        <option value="Mercado Pago Sin Recargo">Mercado Pago (Debito o Plata en la cuenta)</option>
+                        <option value="Mercado Pago Recargo">Mercado Pago (Credito + 7% )</option>
                         <option value="Efectivo">Efectivo</option>
                     </select>
                 </div>
@@ -272,14 +265,19 @@
                     de 10hs a 18hs <br>
                 </div>
             </form>
-            <div class="schedule" v-if="userData.pago == 'Mercado Pago'">
+            <div class="schedule" v-if="userData.pago == 'Mercado Pago Sin Recargo' || userData.pago ==  'Mercado Pago Recargo'">
                 <div class="title">
-                    ESCANEÁ EL SIGUIENTE CÓDIGO PARA PAGAR CON MERCADO PAGO <br>
-                    Despues asegurate de hacer 'click' en 'Realizar Pedido'
+                    <i class="fas fa-exclamation fa-2x"></i><br>
+                     CAMBIAMOS DE LUGAR EL QR. <br><br>
+                     Tambien agregamos un 7% de recargo para pago con Tarjeta de Credito.
+                    Hace Click en realizar pedido para enviarnos tu pedido y poder abonar. <br><br>
                 </div>
-                <img src="https://github.com/vrde-club/shopV/blob/master/images/qr.jpg?raw=true" alt=""
+                <!-- <img src="https://github.com/vrde-club/shopV/blob/master/images/qr.jpg?raw=true" alt=""
                     class="logoMainIcon">
-                <div class="mailLink">Tambien podes usar este mail - club.vrde@gmail.com</div>
+                <div class="mailLink">Tambien podes usar este mail - club.vrde@gmail.com</div> -->
+                <div class="title">
+                    <i class="fas fa-arrow-down fa-2x"></i>
+                </div>
             </div>
             <div class="confirm" v-on:click="formValidate(cart)">Realizar pedido</div>
             <div class="confirmSale" v-show="confirmModal == true"
@@ -331,13 +329,13 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/21ca6c38ad.js" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-performance.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js" defer="defer"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js" defer="defer"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-performance.js" defer="defer"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js" defer="defer"></script>
+    <script src="main.js" defer="defer"></script>
 </body>
 
 </html>
