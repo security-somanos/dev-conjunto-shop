@@ -37,6 +37,10 @@ var app = new Vue({
         confirmModal: false,
         deliveryMethod: false,
         preferenceSelected: false,
+        paymentSelected: false,
+        valorPorcentaje: '7',
+        totalConRecargo: 0,
+        valorRecargo: 0,
         userData: {
             name: '',
             address: '',
@@ -142,7 +146,8 @@ var app = new Vue({
                 this.cart[item].total = parseFloat(this.cart[item].total.toFixed(2));
 
                 this.cartTotal += this.cart[item].total;
-                this.cartTotal = parseFloat(this.cartTotal.toFixed(2))
+                this.cartTotal = parseFloat(this.cartTotal.toFixed(2));
+                this.setPaymentType();
             }
         },
         addItem: function (item) {
@@ -156,10 +161,13 @@ var app = new Vue({
                 item.outOfStock = true;
             }
         },
-        addPayment: function () {
-            if (userData.pago != '') {
-                console.log(userData.pago);
-            }
+        checkPayment: function () {
+            // if (this.userData.pago != '') {
+            //     this.userData.pago = '';
+            //     this.paymentSelected = false;
+            // }
+            console.log("check");
+            this.setPaymentType();
         },
 
         removeItem: function (item) {
@@ -237,16 +245,34 @@ var app = new Vue({
                 this.userData.preference2 = event.target.value;
             }
         },
-        setPaymentType(event) {
-            this.userData.pago = event.target.value;
-            if (event.target.value == 'Mercado Pago Recargo') {
-                console.log(event.target.value);
-                this.userData.porcentajeRecargo = 8;
+        setPaymentType() {
+            
+            if (this.userData.pago == 'Mercado Pago Recargo') {
+                console.log("Total Cart:", this.cartTotal)
+                // carga porcentaje
+                this.userData.porcentajeRecargo = this.valorPorcentaje;
                 var partialValue = this.userData.porcentajeRecargo;
-                this.userData.recargo = function (partialValue, totalValue) {
-                    console.log(partialValue);
-                    return (100 * partialValue) / totalValue;
-                 };
+                console.log("porcentaje", partialValue)
+                this.valorRecargo = 0;
+                this.totalConRecargo = 0;
+                this.userData.totalConRecargo;
+                this.userData.recargo;
+                this.totalFinal = 0;
+                console.log("Valor Parcial", partialValue)
+                // porcentua
+                this.valorRecargo = (partialValue / 100) * this.cartTotal;
+                console.log("Valor Recargo", this.valorRecargo)
+                //total carro + recargo = totalConRecargo.
+                this.userData.recargo = this.valorRecargo;
+                this.totalConRecargo = this.cartTotal + this.valorRecargo;
+                console.log('totalconrecargo',this.totalConRecargo)
+                this.userData.totalConRecargo = this.totalConRecargo;
+        }
+        else {
+            cartTotal = this.cartTotal;
+            console.log("llega",cartTotal);
+            this.cartTotal - this.valorRecargo;
+            console.log("valorrec",this.valorRecargo)
         }
         },
         saveSale(cart) {
@@ -269,11 +295,16 @@ var app = new Vue({
                 preference2: this.userData.preference2,
                 total: this.cartTotal,
                 pago: this.userData.pago,
-                recargo: this.userData.recargo,
                 localidad: this.userData.localidad,
                 items: []
             }];
-
+            if (this.userData.pago == 'Mercado Pago Recargo') {
+              this.sale = [{
+                   total: this.totalConRecargo,
+                   porcentaje: this.valorPorcentaje,
+                   valorRecargo: this.valorRecargo,
+                }];
+            };
             for (var item in cart) {
                 if (item.price === 0) {
                     item.price = this.price;
@@ -332,16 +363,27 @@ var app = new Vue({
         }
     },
     computed: {
-        // totalRecargo: function (totalR) {
-        //   var self = this;
-        //   var partialValue = this.userData.porcentajeRecargo;
-        //   var totalR = function (partialValue, totalValue) {
-        //     return (100 * partialValue) / totalValue;
-        //  } 
-        //  return totalR
-
-        // };
-
+        totalFinal: function () {
+            if (this.userData.pago == 'Mercado Pago Recargo') {
+                this.setPaymentType();
+                this.cartTotal = this.totalConRecargo;
+                console.log('totalrecargo comp',this.totalConRecargo);
+                console.log('carrito comp',this.cartTotal)
+                // console.log("Total Cart:", this.cartTotal)
+                // this.userData.porcentajeRecargo = this.valorPorcentaje;
+                // var partialValue = this.userData.porcentajeRecargo;
+                // console.log("Valor Parcial", partialValue)
+                // var valorRecargo = (partialValue / 100) * this.cartTotal;
+                // console.log("Valor Recargo", valorRecargo)
+                // this.userData.recargo = valorRecargo;
+                // this.totalConRecargo = this.cartTotal + valorRecargo;
+                // this.userData.totalConRecargo = this.totalConRecargo;
+            }
+            else{
+                this.cartTotal = 0;
+            }
+            return this.totalConRecargo;
+        },
         // returns filtered list by search term or category
         filteredItems: function () {
             var self = this;

@@ -716,7 +716,6 @@ line-height: 18px;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-bottom: 50px;
     max-width: 320px;
 }
 
@@ -752,10 +751,11 @@ line-height: 18px;
     border-left: 2px solid #00cc65;
 }
 
-.main .cart .verduraCart .titleCart {
-    padding: 10px;
+.subTitleCart {
+    padding-left: 12px;
     color: #00cc65;
     font-size: 25px;
+    text-align: center;
 }
 
 .main .cart .price {
@@ -785,26 +785,22 @@ line-height: 18px;
 
 .main .cart .item .itemTotal {
     display: flex;
-    padding-top: 10px;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 0;
 }
 
 .main .cart .item .img {
     height: 60px;
     width: 60px;
     margin-right: 10px;
+    border-radius: 20px;
     object-fit: cover;
 }
 
 .main .cart .item .name {
-    margin-right: -10px;
-    font-size: 14px;
-    padding-right: 20px;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    line-height: 18px;
     flex: 1 1 100%;
     font-weight: bold;
 }
@@ -817,10 +813,6 @@ line-height: 18px;
 
 .main .cart .item .total {
     color: #00cc70;
-}
-
-.btc {
-    width: 50px;
 }
 
 .main .cart .cartTotal {
@@ -902,8 +894,8 @@ line-height: 18px;
 }
 
 .modal .modalItem {
-    width: 400px;
-    height: 160px;
+    width: 60%;
+    height: 30%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -914,7 +906,19 @@ line-height: 18px;
     border-left: 2px solid #00cc65;
     border-radius: 10px;
 }
-
+.modal .modalItem .qr{
+    width: 93px;
+    margin-right: 20px;
+}
+.modal .modalItem .confWindow {
+    flex-direction: row;
+    width: 78%;
+    display: flex;
+    align-items: unset;
+}
+.mailLink{
+    align-self: center;
+}
 .modal .modalItem .title {
     font-size: 15px;
     color: #333;
@@ -922,6 +926,7 @@ line-height: 18px;
     text-align: center;
     position: relative;
     line-height: 20px;
+    margin-top: 10px;
 }
 
 .modal .modalItem .title.error {
