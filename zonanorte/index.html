@@ -299,7 +299,7 @@
                         <div class="title error">Por favor complete los <br> campos requeridos.</div>
                     </div>
                     <div class="modalItem" v-show="saleComplete === false && fieldsMissing === false">
-                        <div class="closeModal" @click="confirmModal = false">X</div>
+                        <div class="closeModal" @click="confirmModal = false"><i class="fas fa-window-close fa-2x"></i></div>
                         <div class="confWindow" v-if="userData.pago == 'Mercado Pago Sin Recargo' || userData.pago ==  'Mercado Pago Recargo'">
                             <img class="qr" src="https://github.com/vrde-club/shopV/blob/master/images/qr.jpg?raw=true" alt=""
                              class="logoMainIcon">
