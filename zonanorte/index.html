@@ -275,7 +275,7 @@
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text"
                     placeholder="Direccion" v-model="userData.address">
 
-                <select class="requiredInput" v-model="userData.localidad">
+                <select class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1">
                     <option disabled value="">Seleccione una localidad</option>
                     <option v-for="localidad in localidades" >
                         {{ localidad.text}}  ${{localidad.value }}
