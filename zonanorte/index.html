@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico"
         href="https://storage.cloud.google.com/el-conjunto.appspot.com/icons/faviconvrde.ico" />
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+        <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -188,6 +190,7 @@
                 </div>
                 <div class="almacenCart" v-if="userData.pago == 'Mercado Pago Recargo' ">
                     <div class="item">
+                        <i class="far fa-credit-card fa-3x" style="margin-right:15px;"></i>
                         <div class="itemName">
                             <div class="name">Mercado Pago 
                             </div>
@@ -195,9 +198,20 @@
                             <div class="equals">=</div>
                             <div class="total">${{valorRecargo}}</div>
                         </div>
-                        
                     </div>
                 </div>
+                <!-- <div class="almacenCart" v-if="userData.delivery == 1">
+                    <div class="item">
+                        <i class="fas fa-bicycle fa-3x" style="margin-right:15px;"></i>
+                        <div class="itemName">
+                            <div class="name">Envio a Domicilio
+                            </div>
+                            <div class="amount"> {{ this.userData.localidad }}</div>
+                            <div class="equals">=</div>
+                            <div class="total">$</div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div class="cartTotal" v-if="userData.pago == 'Mercado Pago Recargo' ">Total Final = ${{totalFinal}}</div>
             <div class="cartTotal" v-else>Total = ${{cartTotal}}</div>
@@ -255,14 +269,16 @@
                     <option value="Pera">Pera</option>
                     <option value="Pomelo">Pomelo</option>
                 </select>
+                <!-- <b-form-select v-model="userData.localidad" :options="localidades">
+                </b-form-select> -->
                 </div>
                 <input class="requiredInput" v-model="userData.address" v-if="userData.delivery == 1" type="text"
                     placeholder="Direccion" v-model="userData.address">
 
-                <select class="requiredInput" v-model="userData.localidad" v-if="userData.delivery == 1" >
+                <select class="requiredInput" v-model="userData.localidad">
                     <option disabled value="">Seleccione una localidad</option>
-                    <option v-for="localidad in localidades" v-bind:value="localidad.text">
-                        {{ localidad.text}} {{localidad.value }}
+                    <option v-for="localidad in localidades" >
+                        {{ localidad.text}}  ${{localidad.value }}
                     </option>
                 </select>
                 <div class="deliveryLabel" v-if="userData.delivery == 2">
@@ -295,7 +311,10 @@
                 v-bind:class="{ activateModal: confirmModal == true }" style="opacity: 0;">
                 <div class="modal">
                     <div class="modalItem" v-show="saleComplete === false && fieldsMissing === true">
-                        <div class="closeModal" @click="confirmModal = false">X</div>
+                        <div class="closeModal" @click="confirmModal = false"><i class="fas fa-window-close fa-2x"></i></div>
+                        <div>
+                            <i class="fas fa-exclamation-circle fa-4x"></i>
+                        </div>
                         <div class="title error">Por favor complete los <br> campos requeridos.</div>
                     </div>
                     <div class="modalItem" v-show="saleComplete === false && fieldsMissing === false">
@@ -345,6 +364,9 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/21ca6c38ad.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js" ></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js" ></script>
@@ -353,6 +375,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
     <script src="main.js" ></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 </body>
 
 </html>

@@ -51,6 +51,7 @@ var app = new Vue({
             preference1: "",
             preference2: "",
             localidad: "",
+            precioLocalidad: 0,
             status: "pendiente",
             recargo: 0,
             porcentajeRecargo: 0
@@ -64,19 +65,19 @@ var app = new Vue({
             'comida': { status: false }
         },
         localidades: [
-            { text: 'La Lucila', value: '$100' },
-            { text: 'Olivos', value: '$120' },
-            { text: 'Florida', value: '$150' },
-            { text: 'Munro', value: '$200' },
-            { text: 'Martinez', value: '$150' },
-            { text: 'Acassuso', value: '$200' },
-            { text: 'San Isidro', value: '$250' },
-            { text: 'Beccar', value: '$300' },
-            { text: 'Tigre', value: '$400' },
-            { text: 'San Fernando', value: '$350' },
-            { text: 'Victoria', value: '$400' },
-            { text: 'Virreyes', value: '$400' },
-            { text: 'Tigre', value: '$500' }
+            { text: 'La Lucila', value: '100' },
+            { text: 'Olivos', value: '120' },
+            { text: 'Florida', value: '150' },
+            { text: 'Munro', value: '200' },
+            { text: 'Martinez', value: '150' },
+            { text: 'Acassuso', value: '200' },
+            { text: 'San Isidro', value: '250' },
+            { text: 'Beccar', value: '300' },
+            { text: 'San Fernando', value: '350' },
+            { text: 'Tigre', value: '400' },
+            { text: 'Victoria', value: '400' },
+            { text: 'Virreyes', value: '400' },
+            { text: 'Tigre', value: '500' }
         ],
         cartHas: {
             verdura: false,
@@ -147,7 +148,7 @@ var app = new Vue({
 
                 this.cartTotal += this.cart[item].total;
                 this.cartTotal = parseFloat(this.cartTotal.toFixed(2));
-                this.setPaymentType();
+               // this.setPaymentType();
             }
         },
         addItem: function (item) {
@@ -166,7 +167,7 @@ var app = new Vue({
             //     this.userData.pago = '';
             //     this.paymentSelected = false;
             // }
-            console.log("check");
+            //console.log("check");
             this.setPaymentType();
         },
 
@@ -229,6 +230,24 @@ var app = new Vue({
                 this.deliveryMethod = true;
             }
         },
+        changeLocalidad(event) {
+            var locV = event.target.value;
+            var locN = event.target.options[event.target.options.selectedIndex].text
+            console.log(locV);
+            console.log(locN);
+            console.dir(event.target);
+            console.dir(event.target.value);
+            // if (event.target.value === "") {
+            //     this.userData.localidad = '';
+            //     this.userData.precioLocalidad = 0;
+            // }
+            // else if (event.target.value != "") {
+            //     this.userData.localidad = event.target.value;
+            //     this.userData.precioLocalidad = event.target.text;
+            // }
+            console.log('arraylocalidad'+ this.userData.localidad.value);
+            console.log('arraylocalidad'+ this.userData.localidad);
+        },
         changePreference(event) {
             if (event.target.value === "") {
                 this.preferenceSelected = false;
@@ -246,34 +265,33 @@ var app = new Vue({
             }
         },
         setPaymentType() {
-            
+            this.valorRecargo = 0;
+            this.totalConRecargo = 0;
+            this.userData.totalConRecargo;
+            this.userData.recargo;
+            this.totalFinal = 0;
+        
             if (this.userData.pago == 'Mercado Pago Recargo') {
-                console.log("Total Cart:", this.cartTotal)
+                //console.log("Total Cart:", this.cartTotal)
                 // carga porcentaje
                 this.userData.porcentajeRecargo = this.valorPorcentaje;
                 var partialValue = this.userData.porcentajeRecargo;
-                console.log("porcentaje", partialValue)
-                this.valorRecargo = 0;
-                this.totalConRecargo = 0;
-                this.userData.totalConRecargo;
-                this.userData.recargo;
-                this.totalFinal = 0;
                 console.log("Valor Parcial", partialValue)
-                // porcentua
-                this.valorRecargo = (partialValue / 100) * this.cartTotal;
+                // porcentual
+                this.valorRecargo = Math.round((partialValue / 100) * this.cartTotal);
                 console.log("Valor Recargo", this.valorRecargo)
                 //total carro + recargo = totalConRecargo.
                 this.userData.recargo = this.valorRecargo;
                 this.totalConRecargo = this.cartTotal + this.valorRecargo;
                 console.log('totalconrecargo',this.totalConRecargo)
                 this.userData.totalConRecargo = this.totalConRecargo;
-        }
-        else {
+            }
+            else {
             cartTotal = this.cartTotal;
             console.log("llega",cartTotal);
-            this.cartTotal - this.valorRecargo;
+            this.cartTotal =  this.valorRecargo--;
             console.log("valorrec",this.valorRecargo)
-        }
+            }
         },
         saveSale(cart) {
             // send to firebase
@@ -282,9 +300,12 @@ var app = new Vue({
                 month: 'numeric',
                 year: 'numeric'
             }).split('/').join('-');
+            var d = new Date();
+            var time = d.getHours() + ':' + d.getMinutes();
 
             var sale = [{
                 date: today,
+                time: time,
                 name: this.userData.name,
                 address: this.userData.address,
                 phone: this.userData.phone,
@@ -366,18 +387,6 @@ var app = new Vue({
         totalFinal: function () {
             if (this.userData.pago == 'Mercado Pago Recargo') {
                 this.setPaymentType();
-                this.cartTotal = this.totalConRecargo;
-                console.log('totalrecargo comp',this.totalConRecargo);
-                console.log('carrito comp',this.cartTotal)
-                // console.log("Total Cart:", this.cartTotal)
-                // this.userData.porcentajeRecargo = this.valorPorcentaje;
-                // var partialValue = this.userData.porcentajeRecargo;
-                // console.log("Valor Parcial", partialValue)
-                // var valorRecargo = (partialValue / 100) * this.cartTotal;
-                // console.log("Valor Recargo", valorRecargo)
-                // this.userData.recargo = valorRecargo;
-                // this.totalConRecargo = this.cartTotal + valorRecargo;
-                // this.userData.totalConRecargo = this.totalConRecargo;
             }
             else{
                 this.cartTotal = 0;
@@ -388,7 +397,6 @@ var app = new Vue({
         filteredItems: function () {
             var self = this;
             var newList = this.productList.sort().filter(function (item) {
-                console.log(item)
                 return item.name && item.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 && item.active !== false && item.stock > 0;
             });
             if (self.search != '') {
@@ -399,11 +407,9 @@ var app = new Vue({
                     self.active[newList[i].type].status = true;
                 }
             }
-
             var input = document.getElementById('searchInput');
             input.onkeyup = function () {
                 var key = event.keyCode || event.charCode;
-
                 if (key == 8 || key == 46 && self.search == '') {
                     self.active = {
                         'verdura': { status: true },
@@ -415,7 +421,6 @@ var app = new Vue({
                     }
                 }
             };
-
             return newList.filter(function (item) {
                 return self.active[item.type].status == true;
             }).sort();

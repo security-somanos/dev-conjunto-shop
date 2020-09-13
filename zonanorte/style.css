@@ -923,7 +923,7 @@ line-height: 18px;
 .modalItem .title {
     font-size: 15px;
     color: #333;
-    padding: 0 20px;
+    padding: 30px 20px;
     text-align: center;
     position: relative;
     line-height: 20px;
@@ -933,6 +933,7 @@ line-height: 18px;
 .modal .modalItem .title.error {
     /* border-left: 2px solid #fe5046; */
     text-align:left;
+    margin-top: 0;
 }
 
 
