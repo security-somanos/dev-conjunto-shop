@@ -914,10 +914,10 @@ select {
     bottom: 120px;
 }
 
-.footer {
+#footer {
     width: 100%;
+    position: unset;
     padding: 20px;
-    color: white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -926,43 +926,24 @@ select {
     background-color: #333;
 }
 
-.footer .footerLogo {
-    height: 60px;
-    position: relative;
-    margin-right: 15px;
-}
-
-.footer .social {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.social ul li {
     top: 3px;
     color: #ffffffbf;
+    line-height: 30px;
+    font-size: 1.1em;
+    font-family: sans-serif;
 }
-
-.footer .social .footerLogo {
+.feedback {
+    top: 3px;
+    color: #ffffffbf;
+    line-height: 30px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+#footerLogo {
     width: 160px;
     position: absolute;
     left: 0;
-}
-
-.footer .social .insta {
-    height: 20px;
-    position: relative;
-    top: 4px;
-    margin-right: 8px;
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
-}
-
-.footer .social .fb {
-    height: 18px;
-    position: relative;
-    top: 3px;
-    margin-right: 7px;
-    left: 2px;
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
 }
 
 .footer .social .link {
@@ -986,35 +967,6 @@ select {
     text-decoration: none;
     margin-bottom: 2px;
     position: relative;
-}
-
-.footer .contact {
-    position: relative;
-    margin-top: 3px;
-    line-height: 26px;
-    font-size: 0.8em;
-}
-
-.footer .contact .phone {
-    position: relative;
-    height: 20px;
-    top: 4px;
-    margin-right: 5px;
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
-}
-
-.footer .zones {
-    margin-top: 2px;
-    position: relative;
-    line-height: 26px;
-}
-
-.footer .zones .zone {
-    position: relative;
-    height: 20px;
-    top: 5px;
-    margin-right: 5px;
 }
 
 [v-cloak] {
