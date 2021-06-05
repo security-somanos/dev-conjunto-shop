@@ -2,14 +2,14 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyBvYdUi3Ydfl1_HCDNjiOQdjqtyrFIcM2U",
-    authDomain: "el-conjunto.firebaseapp.com",
-    databaseURL: "https://el-conjunto.firebaseio.com",
-    projectId: "el-conjunto",
-    storageBucket: "el-conjunto.appspot.com",
-    messagingSenderId: "506296486519",
-    appId: "1:506296486519:web:4a7e691e275ee14047d472",
-    measurementId: "G-0JT0Z4J3TT"
+    apiKey: "AIzaSyCkh0tqLFK9LVQKG8yIukuPASPkY8DnCnE",
+    authDomain: "el-conjunto-93a89.firebaseapp.com",
+    databaseURL: "https://el-conjunto-93a89-default-rtdb.firebaseio.com",
+    projectId: "el-conjunto-93a89",
+    storageBucket: "el-conjunto-93a89.appspot.com",
+    messagingSenderId: "306465039355",
+    appId: "1:306465039355:web:d787f834c44f30d489a15e",
+    measurementId: "G-GHLFFLFL0J"
 };
 
 firebase.initializeApp(config);
