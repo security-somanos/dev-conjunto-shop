@@ -23,6 +23,7 @@ const productsRef = database.ref('products');
 var app = new Vue({
     el: '#app',
     data: {
+        type: 'Mayorista',
         search: '',
         priceMay: 50,
         discounts: '',
@@ -71,19 +72,21 @@ var app = new Vue({
         productsRef.on('value', snap => {
             let products = []
             snap.forEach(item => {
-                products.push({
-                    active: item.child('active').val(),
-                    name: item.child('name').val(),
-                    type: item.child('type').val(),
-                    priceMay: item.child('priceMay').val(),
-                    priceCosto: item.child('priceCosto').val(),
-                    unidadM: item.child('unidadM').val(),
-                    cantidad: item.child('cantidad').val(),
-                    stock: item.child('stock').val(),
-                    image: item.child('image').val(),
-                    key: item.key,
-                    amount: 0
-                })
+                if (item.child('view').val() == this.type || item.child('view').val() == "Todas"){
+                    products.push({
+                        active: item.child('active').val(),
+                        name: item.child('name').val(),
+                        type: item.child('type').val(),
+                        priceMay: item.child('priceMay').val(),
+                        priceCosto: item.child('priceCosto').val(),
+                        unidadM: item.child('unidadM').val(),
+                        cantidad: item.child('cantidad').val(),
+                        stock: item.child('stock').val(),
+                        image: item.child('image').val(),
+                        key: item.key,
+                        amount: 0
+                    });
+                }
             });
             this.setProducts(products);
         });
@@ -206,6 +209,7 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 totalCosto: this.totalCosto,
+                Type: this.type,
                 pago: this.userData.pago,
                 totalCantidad: this.totalCantidad,
                 total: this.cartTotal,

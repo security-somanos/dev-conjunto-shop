@@ -16,11 +16,12 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const productsRef = database.ref('productsElConjunto');
+const productsRef = database.ref('products');
 
 var app = new Vue({
     el: '#app',
     data: {
+        type: 'Comunitaria',
         search: '',
         price: 50,
         discounts: '',
@@ -63,16 +64,18 @@ var app = new Vue({
         productsRef.on('value', snap => {
             let products = []
             snap.forEach(item => {
-                products.push({
-                    active: item.child('active').val(),
-                    name: item.child('name').val(),
-                    type: item.child('type').val(),
-                    price: item.child('price').val(),
-                    stock: item.child('stock').val(),
-                    image: item.child('image').val(),
-                    key: item.key,
-                    amount: 0
-                })
+                if (item.child('view').val() == this.type || item.child('view').val() == "Todas"){
+                    products.push({
+                        active: item.child('active').val(),
+                        name: item.child('name').val(),
+                        type: item.child('type').val(),
+                        price: item.child('priceMin').val(),
+                        stock: item.child('stock').val(),
+                        image: item.child('image').val(),
+                        key: item.key,
+                        amount: 0
+                    });
+                }
             });
             this.setProducts(products);
         });
@@ -182,6 +185,7 @@ var app = new Vue({
                 email: this.userData.email,
                 delivery: this.userData.delivery,
                 total: this.cartTotal,
+                type: this.type,
                 pago: this.userData.pago,
                 preference: this.userData.preference,
                 status: this.userData.status,
@@ -201,7 +205,7 @@ var app = new Vue({
             }
 
             var self = this;
-            database.ref('salesElConjunto/').push(sale, function (error) {
+            database.ref('sales/minorista').push(sale, function (error) {
                 if (error) {
                     console.log(error)
                 } else {
