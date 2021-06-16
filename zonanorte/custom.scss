@@ -5,40 +5,30 @@ $font-family-base: "Ubuntu", sans-serif;
 
 .btn {
   border-radius: 5%;
-  
 }
-
-
-// @import 'node_modules/bootstrap-vue/src/index.scss';
-
-// Bootstrap and its default variables
-//@import 'node_modules/bootstrap/scss/bootstrap';
-//@import 'node_modules/bootstrap-vue/src/index.scss';
 #logout {
   background-color: #cc3838;
 }
 .card {
-  background-color:  #f39c12bf!important;
+  background-color: #f39c12bf !important;
 }
 body {
-    background-color: white;
-    margin-top: 110px;
-    color: #333;
-    text-align: center;
+  background-color: white;
+  margin-top: 110px;
+  color: #333;
+  text-align: center;
 }
-.navbar{
+.navbar {
   background-color: #333;
 }
-.navbar{
+.navbar {
   background-color: #333;
 }
 a {
-    color: whitesmoke;
-    background-color: #41b883;
-    padding: 6px;
+  color: whitesmoke;
+  background-color: #41b883;
+  padding: 6px;
 }
 .btn-light {
   border-radius: 5%;
 }
-//@import '~bootstrap/scss/bootstrap.scss';
-//@import '~bootstrap-vue/src/index.scss';
